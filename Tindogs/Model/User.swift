@@ -1,6 +1,6 @@
 import Foundation
 
-class User {
+final class User {
     let _id: String
     let firstName: String
     let lastName: String
