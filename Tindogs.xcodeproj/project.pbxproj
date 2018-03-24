@@ -13,9 +13,10 @@
 		5D14CB3120476F940076F8C3 /* Tindogs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D14CB2F20476F940076F8C3 /* Tindogs.xcdatamodeld */; };
 		5D14CB3320476F940076F8C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D14CB3220476F940076F8C3 /* Assets.xcassets */; };
 		5D14CB3620476F940076F8C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D14CB3420476F940076F8C3 /* LaunchScreen.storyboard */; };
-		5D14CB4120476F950076F8C3 /* TindogsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D14CB4020476F950076F8C3 /* TindogsTests.swift */; };
+		5D14CB4120476F950076F8C3 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D14CB4020476F950076F8C3 /* UserTests.swift */; };
 		E5451C20206586450006D23E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5451C1F206586450006D23E /* User.swift */; };
 		E5451C222065977A0006D23E /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5451C212065977A0006D23E /* Dog.swift */; };
+		E5451C242066FA6E0006D23E /* DogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5451C232066FA6E0006D23E /* DogTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,10 +39,11 @@
 		5D14CB3520476F940076F8C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D14CB3720476F940076F8C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D14CB3C20476F950076F8C3 /* TindogsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TindogsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D14CB4020476F950076F8C3 /* TindogsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TindogsTests.swift; sourceTree = "<group>"; };
+		5D14CB4020476F950076F8C3 /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		5D14CB4220476F950076F8C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5451C1F206586450006D23E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E5451C212065977A0006D23E /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
+		E5451C232066FA6E0006D23E /* DogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +99,8 @@
 		5D14CB3F20476F950076F8C3 /* TindogsTests */ = {
 			isa = PBXGroup;
 			children = (
-				5D14CB4020476F950076F8C3 /* TindogsTests.swift */,
+				5D14CB4020476F950076F8C3 /* UserTests.swift */,
+				E5451C232066FA6E0006D23E /* DogTests.swift */,
 				5D14CB4220476F950076F8C3 /* Info.plist */,
 			);
 			path = TindogsTests;
@@ -244,7 +247,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D14CB4120476F950076F8C3 /* TindogsTests.swift in Sources */,
+				E5451C242066FA6E0006D23E /* DogTests.swift in Sources */,
+				5D14CB4120476F950076F8C3 /* UserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

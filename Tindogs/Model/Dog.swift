@@ -1,21 +1,16 @@
 import Foundation 
 
 final class Dog {
-    var _id: String
-    var name: String
-    var age: Int? = nil
-    var breed: String? = ""
-    var pureBreed: Bool? = nil
-    var color: String? = nil
-    var query: Query? = nil
-    var likesFromOthers: [LikesFromOthers]? = nil
-    var description: String? = ""
-    var photos: [String]? = nil
-    
-    init(_id: String, name: String){
-        self._id = _id
-        self.name = name
-    }
+    let _id: String
+    let name: String
+    let age: Int?
+    let breed: String?
+    let pureBreed: Bool?
+    let color: String?
+    let query: Query?
+    let likesFromOthers: [LikesFromOthers]?
+    let description: String?
+    let photos: [String]?
     
     init(_id: String, name: String, age: Int?, breed: String?, pureBreed: Bool?, color: String?, query: Query?, likesFromOthers: [LikesFromOthers]?, description: String?, photos: [String]?){
         self._id = _id
@@ -28,6 +23,10 @@ final class Dog {
         self.likesFromOthers = likesFromOthers
         self.description = description
         self.photos = photos
+    }
+    
+    convenience init(_id: String, name: String){
+        self.init(_id: _id, name: name, age: nil, breed: "", pureBreed: nil, color: "", query: nil, likesFromOthers: nil, description: "", photos: nil)
     }
 }
 
