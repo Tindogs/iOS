@@ -3,12 +3,19 @@ import XCTest
 
 class UserTests: XCTestCase {
     
-    var dog1 : Dog!
+    var user1: User!
+    var user2: User!
+    var dog1: Dog!
+    var dog2: Dog!
     
     override func setUp() {
         super.setUp()
         
         dog1 = Dog(_id: "5aa9b60ccc9b4e411d36abac", name: "haptic")
+        dog2 = Dog(_id: "5aa9b60ccc9b4e411d36ab70", name: "multi-byte")
+        
+        user1 = User(_id: "5aa9b60ccc9b4e411d36abad", firstName: "Mario", lastName: "Velásquez", email: "Sergio80@hotmail.com", userName: "Lucas.Vera21")
+        user2 = User(_id: "5aa9b60ccc9b4e411d36ab99", firstName: "Jesús", lastName: "Frías", email: "Laura_Naranjo@hotmail.com", userName: "Horacio82", coordinates: [37.39954097923211,-0.5426998389300168], photo: "http://lorempixel.com/640/480/animals", dogs: [dog1])
     }
     
     override func tearDown() {
@@ -17,13 +24,37 @@ class UserTests: XCTestCase {
     }
     
     func testUserExistence() {
-    
-        let user1 = User(_id: "5aa9b60ccc9b4e411d36abad", firstName: "Mario", lastName: "Velásquez", email: "Sergio80@hotmail.com", userName: "Lucas.Vera21")
-        let user2 = User(_id: "5aa9b60ccc9b4e411d36abad", firstName: "Mario", lastName: "Velásquez", email: "Sergio80@hotmail.com", userName: "Lucas.Vera21", coordinates: [37.80074961014888,-3.9022045745662908], photo:"http://lorempixel.com/640/480/animals", dogs: [dog1])
-        
         
         XCTAssertNotNil(user1)
         XCTAssertNotNil(user2)
+    }
+    
+    func testAddDogToUser() {
+        
+        XCTAssertEqual(user1.dogs?.count, 0)
+        
+        user1.addDog(dog: dog2)
+        
+        XCTAssertEqual(user1.dogs?.count, 1)
+        
+        
+        XCTAssertEqual(user2.dogs?.count, 1)
+        
+        user2.addDog(dog: dog2)
+        
+        XCTAssertEqual(user2.dogs?.count, 2)
+
+    }
+    
+    func testAddCoordinatesToUser() {
+
+        let newCoordinates : [Double] = [39.00776703201089,-3.1326542649830564]
+        
+        XCTAssertEqual(user1.coordinates?.count, 0)
+        
+        user1.addCoordinates(coordinates: newCoordinates)
+        
+        XCTAssertEqual(user1.coordinates?.count, 2)
     }
     
 }

@@ -6,9 +6,9 @@ final class User {
     let lastName: String
     let email: String
     let userName: String
-    let coordinates : [Double]?
-    let photo: String?
-    let dogs : [Dog]?
+    var coordinates : [Double]?
+    var photo: String?
+    var dogs : [Dog]?
     
     init(_id: String, firstName: String, lastName: String, email: String, userName: String, coordinates : [Double]?, photo: String?, dogs : [Dog]?){
         self._id = _id
@@ -22,6 +22,18 @@ final class User {
     }
     
     convenience init(_id: String, firstName: String, lastName: String, email: String, userName: String) {
-        self.init(_id: _id, firstName: firstName, lastName: lastName, email: email, userName: userName, coordinates : nil, photo: "", dogs : nil)
+        self.init(_id: _id, firstName: firstName, lastName: lastName, email: email, userName: userName, coordinates : [], photo: "", dogs : [])
+    }
+}
+
+extension User {
+    public func addDog(dog: Dog) {
+        self.dogs?.append(dog)
+    }
+}
+
+extension User {
+    public func addCoordinates(coordinates: [Double]) {
+        self.coordinates? = coordinates
     }
 }
