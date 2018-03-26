@@ -27,13 +27,13 @@ final class User {
 }
 
 extension User {
-    public func addDog(dog: Dog) {
+    func addDog(dog: Dog) {
         self.dogs?.append(dog)
     }
 }
 
 extension User {
-    public func addCoordinates(coordinates: [Double]) {
+    func addCoordinates(coordinates: [Double]) {
         self.coordinates? = coordinates
     }
 }
