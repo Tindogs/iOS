@@ -1,11 +1,3 @@
-//
-//  RegisterViewController.swift
-//  Tindogs
-//
-//  Created by Fabio Gomez on 26/3/18.
-//  Copyright © 2018 Appvengers. All rights reserved.
-//
-
 import UIKit
 
 class RegisterViewController: UIViewController {
@@ -88,24 +80,29 @@ class RegisterViewController: UIViewController {
                     let json = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments) as? NSDictionary
                     //let result = json["result"] as! [Dictionary<String, Any>]
                     if let parseJson = json {
-                        let result = parseJson.object(forKey: "result") as! NSDictionary
-                        
-                        for (key, value) in result {
-                            print(key)
-                            print(value)
-                        } // cierre del for
-                    } // cierre del if
-                    
-                    
-            } // cierre del do
+                        if ((json?.value(forKey: "success") as! Bool) == true) {
+                            
+                            // TODO : EL TOKEN HABRA QUE GUARDARLO EN EL 
+                            let token = json?.value(forKey: "token") as! String
+                            let result = parseJson.object(forKey: "result") as! NSDictionary
+                            
+                            // TODO : MAPEO A OBJETOS, CUANTO TENGAMOS COREDATA
+                            let first_name  = result.value(forKey: "first_name") as! String
+                            let last_name   = result.value(forKey: "last_name") as! String
+                            let email       = result.value(forKey: "email") as! String
+                            let username    = result.value(forKey: "username") as! String
+                            let coordinates = result.value(forKey: "coordinates") as! [Double]
+                            let dogs        = result.value(forKey: "dogs") as! [Dog]
+                            let _id         = result.value(forKey: "_id") as! String
+                        }
+                    }
+            }
                 catch {
                     self.hideActivityIndicator(activityIndicator: ActivityInd)
                     self.showAlert(message: "error parseando JSON")
                     print(error)
                 }
-            
             } // cierre clausura
-        
         task.resume()
     } // cierre IBAction saveButton
     

@@ -20,6 +20,7 @@
 		E5451C27206952F80006D23E /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5451C26206952F80006D23E /* LogInViewController.swift */; };
 		E5451C2B206958220006D23E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5451C2A206958220006D23E /* RegisterViewController.swift */; };
 		E5451C2D20696C730006D23E /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5451C2C20696C730006D23E /* UserProfileViewController.swift */; };
+		E5751850206A938400FAE728 /* RegisterUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E575184F206A938400FAE728 /* RegisterUserInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		E5451C26206952F80006D23E /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		E5451C2A206958220006D23E /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E5451C2C20696C730006D23E /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		E575184F206A938400FAE728 /* RegisterUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 		E5451C2520682C580006D23E /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
+				E575184F206A938400FAE728 /* RegisterUserInteractor.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				E5451C2D20696C730006D23E /* UserProfileViewController.swift in Sources */,
 				5D14CB3120476F940076F8C3 /* Tindogs.xcdatamodeld in Sources */,
 				E5451C2B206958220006D23E /* RegisterViewController.swift in Sources */,
+				E5751850206A938400FAE728 /* RegisterUserInteractor.swift in Sources */,
 				E5451C27206952F80006D23E /* LogInViewController.swift in Sources */,
 				5D14CB2B20476F940076F8C3 /* ViewController.swift in Sources */,
 				E5451C222065977A0006D23E /* Dog.swift in Sources */,

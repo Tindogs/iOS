@@ -1,11 +1,3 @@
-//
-//  LogInViewController.swift
-//  Tindogs
-//
-//  Created by Fabio Gomez on 26/3/18.
-//  Copyright © 2018 Appvengers. All rights reserved.
-//
-
 import UIKit
 
 class LogInViewController: UIViewController {
@@ -39,15 +31,5 @@ class LogInViewController: UIViewController {
         
         self.present(registerVC, animated: true )
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
