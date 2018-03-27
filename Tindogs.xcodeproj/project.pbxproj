@@ -14,6 +14,10 @@
 		5D14CB3320476F940076F8C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D14CB3220476F940076F8C3 /* Assets.xcassets */; };
 		5D14CB3620476F940076F8C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D14CB3420476F940076F8C3 /* LaunchScreen.storyboard */; };
 		5D14CB4120476F950076F8C3 /* TindogsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D14CB4020476F950076F8C3 /* TindogsTests.swift */; };
+		DF5A5705206AC865004485A8 /* LoginFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5A5703206AC865004485A8 /* LoginFormView.swift */; };
+		DF5A5706206AC865004485A8 /* LoginFormView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF5A5704206AC865004485A8 /* LoginFormView.xib */; };
+		DF5A5708206AC875004485A8 /* LoginFormPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5A5707206AC875004485A8 /* LoginFormPresenter.swift */; };
+		DF5A570D206AD199004485A8 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5A570C206AD199004485A8 /* NibLoadableView.swift */; };
 		DF9C2840206972DB00E95A0B /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9C283F206972DB00E95A0B /* AppAssembly.swift */; };
 		DF9C28432069733B00E95A0B /* CoreAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9C28422069733B00E95A0B /* CoreAssembly.swift */; };
 		DF9C284720697FED00E95A0B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9C284520697FED00E95A0B /* LoginViewController.swift */; };
@@ -44,6 +48,10 @@
 		5D14CB3C20476F950076F8C3 /* TindogsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TindogsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D14CB4020476F950076F8C3 /* TindogsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TindogsTests.swift; sourceTree = "<group>"; };
 		5D14CB4220476F950076F8C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF5A5703206AC865004485A8 /* LoginFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormView.swift; sourceTree = "<group>"; };
+		DF5A5704206AC865004485A8 /* LoginFormView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginFormView.xib; sourceTree = "<group>"; };
+		DF5A5707206AC875004485A8 /* LoginFormPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormPresenter.swift; sourceTree = "<group>"; };
+		DF5A570C206AD199004485A8 /* NibLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
 		DF9C283F206972DB00E95A0B /* AppAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
 		DF9C28422069733B00E95A0B /* CoreAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAssembly.swift; sourceTree = "<group>"; };
 		DF9C284520697FED00E95A0B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +99,7 @@
 		5D14CB2720476F940076F8C3 /* Tindogs */ = {
 			isa = PBXGroup;
 			children = (
+				DF5A5709206AD071004485A8 /* Common */,
 				DF9C284420697FA000E95A0B /* Login */,
 				DF9C28412069731D00E95A0B /* DI */,
 				5D14CB2820476F940076F8C3 /* AppDelegate.swift */,
@@ -112,6 +121,14 @@
 				5D14CB4220476F950076F8C3 /* Info.plist */,
 			);
 			path = TindogsTests;
+			sourceTree = "<group>";
+		};
+		DF5A5709206AD071004485A8 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				DF5A570C206AD199004485A8 /* NibLoadableView.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		DF9C28412069731D00E95A0B /* DI */ = {
@@ -137,6 +154,9 @@
 				DF9C284520697FED00E95A0B /* LoginViewController.swift */,
 				DF9C284620697FED00E95A0B /* LoginViewController.xib */,
 				DF9C28492069853C00E95A0B /* LoginPresenter.swift */,
+				DF5A5703206AC865004485A8 /* LoginFormView.swift */,
+				DF5A5704206AC865004485A8 /* LoginFormView.xib */,
+				DF5A5707206AC875004485A8 /* LoginFormPresenter.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -233,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF9C284820697FED00E95A0B /* LoginViewController.xib in Resources */,
+				DF5A5706206AC865004485A8 /* LoginFormView.xib in Resources */,
 				5D14CB3620476F940076F8C3 /* LaunchScreen.storyboard in Resources */,
 				5D14CB3320476F940076F8C3 /* Assets.xcassets in Resources */,
 				5D14CB2E20476F940076F8C3 /* Main.storyboard in Resources */,
@@ -253,11 +274,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF5A5708206AC875004485A8 /* LoginFormPresenter.swift in Sources */,
 				DF9C284720697FED00E95A0B /* LoginViewController.swift in Sources */,
 				5D14CB3120476F940076F8C3 /* Tindogs.xcdatamodeld in Sources */,
 				DF9C284A2069853C00E95A0B /* LoginPresenter.swift in Sources */,
 				DF9C2840206972DB00E95A0B /* AppAssembly.swift in Sources */,
+				DF5A570D206AD199004485A8 /* NibLoadableView.swift in Sources */,
 				5D14CB2B20476F940076F8C3 /* ViewController.swift in Sources */,
+				DF5A5705206AC865004485A8 /* LoginFormView.swift in Sources */,
 				DF9C28432069733B00E95A0B /* CoreAssembly.swift in Sources */,
 				5D14CB2920476F940076F8C3 /* AppDelegate.swift in Sources */,
 				DF9C284E20698CCC00E95A0B /* LoginAssembly.swift in Sources */,
@@ -416,6 +440,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7V48MNE2R2;
 				INFOPLIST_FILE = Tindogs/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.appvengers.Tindogs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -431,6 +456,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7V48MNE2R2;
 				INFOPLIST_FILE = Tindogs/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.appvengers.Tindogs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
