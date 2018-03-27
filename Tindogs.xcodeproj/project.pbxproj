@@ -14,6 +14,12 @@
 		5D14CB3320476F940076F8C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D14CB3220476F940076F8C3 /* Assets.xcassets */; };
 		5D14CB3620476F940076F8C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D14CB3420476F940076F8C3 /* LaunchScreen.storyboard */; };
 		5D14CB4120476F950076F8C3 /* TindogsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D14CB4020476F950076F8C3 /* TindogsTests.swift */; };
+		DF9C2840206972DB00E95A0B /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9C283F206972DB00E95A0B /* AppAssembly.swift */; };
+		DF9C28432069733B00E95A0B /* CoreAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9C28422069733B00E95A0B /* CoreAssembly.swift */; };
+		DF9C284720697FED00E95A0B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9C284520697FED00E95A0B /* LoginViewController.swift */; };
+		DF9C284820697FED00E95A0B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF9C284620697FED00E95A0B /* LoginViewController.xib */; };
+		DF9C284A2069853C00E95A0B /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9C28492069853C00E95A0B /* LoginPresenter.swift */; };
+		DF9C284E20698CCC00E95A0B /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9C284D20698CCC00E95A0B /* LoginAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +44,12 @@
 		5D14CB3C20476F950076F8C3 /* TindogsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TindogsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D14CB4020476F950076F8C3 /* TindogsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TindogsTests.swift; sourceTree = "<group>"; };
 		5D14CB4220476F950076F8C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF9C283F206972DB00E95A0B /* AppAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
+		DF9C28422069733B00E95A0B /* CoreAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAssembly.swift; sourceTree = "<group>"; };
+		DF9C284520697FED00E95A0B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DF9C284620697FED00E95A0B /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		DF9C28492069853C00E95A0B /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		DF9C284D20698CCC00E95A0B /* LoginAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +91,8 @@
 		5D14CB2720476F940076F8C3 /* Tindogs */ = {
 			isa = PBXGroup;
 			children = (
+				DF9C284420697FA000E95A0B /* Login */,
+				DF9C28412069731D00E95A0B /* DI */,
 				5D14CB2820476F940076F8C3 /* AppDelegate.swift */,
 				5D14CB2A20476F940076F8C3 /* ViewController.swift */,
 				5D14CB2C20476F940076F8C3 /* Main.storyboard */,
@@ -86,6 +100,7 @@
 				5D14CB3420476F940076F8C3 /* LaunchScreen.storyboard */,
 				5D14CB3720476F940076F8C3 /* Info.plist */,
 				5D14CB2F20476F940076F8C3 /* Tindogs.xcdatamodeld */,
+				DF9C283F206972DB00E95A0B /* AppAssembly.swift */,
 			);
 			path = Tindogs;
 			sourceTree = "<group>";
@@ -97,6 +112,41 @@
 				5D14CB4220476F950076F8C3 /* Info.plist */,
 			);
 			path = TindogsTests;
+			sourceTree = "<group>";
+		};
+		DF9C28412069731D00E95A0B /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				DF9C28422069733B00E95A0B /* CoreAssembly.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		DF9C284420697FA000E95A0B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				DF9C284C20698CB900E95A0B /* DI */,
+				DF9C284B20698CA300E95A0B /* Presentation */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		DF9C284B20698CA300E95A0B /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				DF9C284520697FED00E95A0B /* LoginViewController.swift */,
+				DF9C284620697FED00E95A0B /* LoginViewController.xib */,
+				DF9C28492069853C00E95A0B /* LoginPresenter.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		DF9C284C20698CB900E95A0B /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				DF9C284D20698CCC00E95A0B /* LoginAssembly.swift */,
+			);
+			path = DI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF9C284820697FED00E95A0B /* LoginViewController.xib in Resources */,
 				5D14CB3620476F940076F8C3 /* LaunchScreen.storyboard in Resources */,
 				5D14CB3320476F940076F8C3 /* Assets.xcassets in Resources */,
 				5D14CB2E20476F940076F8C3 /* Main.storyboard in Resources */,
@@ -202,9 +253,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF9C284720697FED00E95A0B /* LoginViewController.swift in Sources */,
 				5D14CB3120476F940076F8C3 /* Tindogs.xcdatamodeld in Sources */,
+				DF9C284A2069853C00E95A0B /* LoginPresenter.swift in Sources */,
+				DF9C2840206972DB00E95A0B /* AppAssembly.swift in Sources */,
 				5D14CB2B20476F940076F8C3 /* ViewController.swift in Sources */,
+				DF9C28432069733B00E95A0B /* CoreAssembly.swift in Sources */,
 				5D14CB2920476F940076F8C3 /* AppDelegate.swift in Sources */,
+				DF9C284E20698CCC00E95A0B /* LoginAssembly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
