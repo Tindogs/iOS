@@ -1,7 +1,7 @@
 import Foundation 
 
 final class Dog {
-    let _id: String
+    let _id: String?
     let name: String
     var age: Int?
     var breed: String?
@@ -12,7 +12,7 @@ final class Dog {
     var description: String?
     var photos: [String]?
     
-    init(_id: String, name: String, age: Int?, breed: String?, pureBreed: Bool?, color: String?, query: Query?, likesFromOthers: [LikesFromOthers]?, description: String?, photos: [String]?){
+    init(_id: String?, name: String, age: Int?, breed: String?, pureBreed: Bool?, color: String?, query: Query?, likesFromOthers: [LikesFromOthers]?, description: String?, photos: [String]?){
         self._id = _id
         self.name = name
         self.age = age
@@ -25,8 +25,8 @@ final class Dog {
         self.photos = photos
     }
     
-    convenience init(_id: String, name: String){
-        self.init(_id: _id, name: name, age: nil, breed: "", pureBreed: nil, color: "", query: nil, likesFromOthers: [], description: "", photos: [])
+    convenience init(name: String){
+        self.init(_id: "", name: name, age: nil, breed: "", pureBreed: nil, color: "", query: nil, likesFromOthers: [], description: "", photos: [])
     }
 }
 

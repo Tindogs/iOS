@@ -1,7 +1,9 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
-
+    
+    var user : User?
+    
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -41,69 +43,89 @@ class RegisterViewController: UIViewController {
         ActivityInd.hidesWhenStopped = false
         ActivityInd.startAnimating()
         view.addSubview(ActivityInd)
+
+        let registerUserInteractor: RegisterUserInteractor = RegisterUserInteractorFakeImpl()
         
-        // Register to local NodeJS
-        let url = URL(string: "http://localhost:3000/apiv1/users/register")
-        var request = URLRequest(url:url!)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "content-type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
+//        registerUserInteractor.execute(firstName: firstNameTextField.text!, lastName: lastNameTextField.text!, email: emailTextField.text!, userName: userNameTextField.text!, password: passwordTextField.text!, onSuccess: { (user: User) in
+//            // POR AQUI EL OK
+//        }) { (error: Error) in
+//            // POR AQUI EL ERROR
+//        }
         
-        // fill dictionary
-        let dictionary = [
-            "first_name" : firstNameTextField.text!,
-            "last_name"  : lastNameTextField.text!,
-            "email"      : emailTextField.text!,
-            "username"   : userNameTextField.text!,
-            "password"   : passwordTextField.text!
-            ] as [String: String]
+        registerUserInteractor.execute(firstName: firstNameTextField.text!, lastName: lastNameTextField.text!, email: emailTextField.text!, userName: userNameTextField.text!, password: passwordTextField.text!) { (user: User) in
         
-        do {
-            request.httpBody = try JSONSerialization.data(withJSONObject: dictionary, options: .prettyPrinted)
-        }  catch let error {
-            print(error)
-            showAlert(message: "💩 Error en la petición")
-            return
+            self.hideActivityIndicator(activityIndicator: ActivityInd)
+            self.showAlertAndDismissVC(message: "Hola \(user.firstName), te has registrado correctamente")
+            self.user = user
         }
         
-        let task = URLSession.shared.dataTask(with: request) {(data: Data?,response: URLResponse?,error: Error?) in
-            self.hideActivityIndicator(activityIndicator: ActivityInd)
-            
-            if error != nil {
-                print(error!)
-                self.showAlert(message: "💩 Error en la respuesta")
-                return
-            }
         
-                do {
-                    //let json = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments) as! Dictionary<String, Any>
-                    let json = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments) as? NSDictionary
-                    //let result = json["result"] as! [Dictionary<String, Any>]
-                    if let parseJson = json {
-                        if ((json?.value(forKey: "success") as! Bool) == true) {
-                            
-                            // TODO : EL TOKEN HABRA QUE GUARDARLO EN EL 
-                            let token = json?.value(forKey: "token") as! String
-                            let result = parseJson.object(forKey: "result") as! NSDictionary
-                            
-                            // TODO : MAPEO A OBJETOS, CUANTO TENGAMOS COREDATA
-                            let first_name  = result.value(forKey: "first_name") as! String
-                            let last_name   = result.value(forKey: "last_name") as! String
-                            let email       = result.value(forKey: "email") as! String
-                            let username    = result.value(forKey: "username") as! String
-                            let coordinates = result.value(forKey: "coordinates") as! [Double]
-                            let dogs        = result.value(forKey: "dogs") as! [Dog]
-                            let _id         = result.value(forKey: "_id") as! String
-                        }
-                    }
-            }
-                catch {
-                    self.hideActivityIndicator(activityIndicator: ActivityInd)
-                    self.showAlert(message: "error parseando JSON")
-                    print(error)
-                }
-            } // cierre clausura
-        task.resume()
+        
+// *************************** MOVER A UN INTERACTOR ***************************
+//        // Register to local NodeJS
+//        let url = URL(string: baseUrl + EndPoints.registerUser.rawValue)
+//        var request = URLRequest(url:url!)
+//
+//        request.httpMethod = "POST"
+//        request.addValue("application/json", forHTTPHeaderField: "content-type")
+//        request.addValue("application/json", forHTTPHeaderField: "Accept")
+//
+//        // fill dictionary
+//        let dictionary = [
+//            "first_name" : firstNameTextField.text!,
+//            "last_name"  : lastNameTextField.text!,
+//            "email"      : emailTextField.text!,
+//            "username"   : userNameTextField.text!,
+//            "password"   : passwordTextField.text!
+//            ] as [String: String]
+//
+//        do {
+//            request.httpBody = try JSONSerialization.data(withJSONObject: dictionary, options: .prettyPrinted)
+//        }  catch let error {
+//            print(error)
+//            showAlert(message: "💩 Error en la petición")
+//            return
+//        }
+//
+//        let task = URLSession.shared.dataTask(with: request) {(data: Data?,response: URLResponse?,error: Error?) in
+//            self.hideActivityIndicator(activityIndicator: ActivityInd)
+//
+//            if error != nil {
+//                print(error!)
+//                self.showAlert(message: "💩 Error en la respuesta")
+//                return
+//            }
+//
+//                do {
+//                    let json = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments) as? NSDictionary
+//
+//                    if let parseJson = json {
+//                        if ((json?.value(forKey: "success") as! Bool) == true) {
+//
+//                            // TODO : EL TOKEN HABRA QUE GUARDARLO EN EL
+//                            let token = json?.value(forKey: "token") as! String
+//                            let result = parseJson.object(forKey: "result") as! NSDictionary
+//
+//                            // TODO : MAPEO A OBJETOS, CUANTO TENGAMOS COREDATA
+//                            let first_name  = result.value(forKey: "first_name") as! String
+//                            let last_name   = result.value(forKey: "last_name") as! String
+//                            let email       = result.value(forKey: "email") as! String
+//                            let username    = result.value(forKey: "username") as! String
+//                            let coordinates = result.value(forKey: "coordinates") as! [Double]
+//                            let dogs        = result.value(forKey: "dogs") as! [Dog]
+//                            let _id         = result.value(forKey: "_id") as! String
+//                        }
+//                    }
+//            }
+//                catch {
+//                    self.hideActivityIndicator(activityIndicator: ActivityInd)
+//                    self.showAlert(message: "error parseando JSON")
+//                    print(error)
+//                }
+//            } // cierre clausura
+//        task.resume()
+// *************************** FIN MOVER A UN INTERACTOR ***************************
+        
     } // cierre IBAction saveButton
     
     @IBAction func cancelButton(_ sender: Any) {
@@ -113,16 +135,30 @@ class RegisterViewController: UIViewController {
     
     func hideActivityIndicator(activityIndicator : UIActivityIndicatorView) {
         
-        DispatchQueue.main.async {
+        OperationQueue.main.addOperation {
             activityIndicator.stopAnimating()
             activityIndicator.removeFromSuperview()
         }
+        
+//        DispatchQueue.main.async {
+//            activityIndicator.stopAnimating()
+//            activityIndicator.removeFromSuperview()
+//        }
     }
-    
     
     func showAlert(message: String) {
         let alert = UIAlertController(title: "Guau Guau! Grrr..", message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Vale", style: .destructive, handler: { (action) -> Void in })
+        
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func showAlertAndDismissVC(message: String) {
+        let alert = UIAlertController(title: "Guau Guau!", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Vale", style: .destructive, handler: { (action) -> Void in
+            self.dismiss(animated: true, completion: nil)
+        })
         
         alert.addAction(okAction)
         present(alert, animated: true, completion: nil)

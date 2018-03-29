@@ -21,6 +21,9 @@
 		E5451C2B206958220006D23E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5451C2A206958220006D23E /* RegisterViewController.swift */; };
 		E5451C2D20696C730006D23E /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5451C2C20696C730006D23E /* UserProfileViewController.swift */; };
 		E5751850206A938400FAE728 /* RegisterUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E575184F206A938400FAE728 /* RegisterUserInteractor.swift */; };
+		E5751853206C431A00FAE728 /* Url+Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5751852206C431A00FAE728 /* Url+Endpoints.swift */; };
+		E5751855206D724300FAE728 /* RegisterUserInteractorFakeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5751854206D724300FAE728 /* RegisterUserInteractorFakeImpl.swift */; };
+		E5751858206D729D00FAE728 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5751857206D729D00FAE728 /* Typealias.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,9 @@
 		E5451C2A206958220006D23E /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E5451C2C20696C730006D23E /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		E575184F206A938400FAE728 /* RegisterUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserInteractor.swift; sourceTree = "<group>"; };
+		E5751852206C431A00FAE728 /* Url+Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Url+Endpoints.swift"; sourceTree = "<group>"; };
+		E5751854206D724300FAE728 /* RegisterUserInteractorFakeImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserInteractorFakeImpl.swift; sourceTree = "<group>"; };
+		E5751857206D729D00FAE728 /* Typealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,8 @@
 				E5451C1C206579FA0006D23E /* Model */,
 				E5451C1D20657A010006D23E /* View */,
 				E5451C1E20657A070006D23E /* Controller */,
+				E5751856206D728700FAE728 /* Utils */,
+				E5751851206C42AF00FAE728 /* Config */,
 				5D14CB3220476F940076F8C3 /* Assets.xcassets */,
 				5D14CB3720476F940076F8C3 /* Info.plist */,
 				5D14CB2F20476F940076F8C3 /* Tindogs.xcdatamodeld */,
@@ -148,8 +156,25 @@
 			isa = PBXGroup;
 			children = (
 				E575184F206A938400FAE728 /* RegisterUserInteractor.swift */,
+				E5751854206D724300FAE728 /* RegisterUserInteractorFakeImpl.swift */,
 			);
 			path = Interactors;
+			sourceTree = "<group>";
+		};
+		E5751851206C42AF00FAE728 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				E5751852206C431A00FAE728 /* Url+Endpoints.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		E5751856206D728700FAE728 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E5751857206D729D00FAE728 /* Typealias.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,14 +280,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5751853206C431A00FAE728 /* Url+Endpoints.swift in Sources */,
 				E5451C20206586450006D23E /* User.swift in Sources */,
 				E5451C2D20696C730006D23E /* UserProfileViewController.swift in Sources */,
 				5D14CB3120476F940076F8C3 /* Tindogs.xcdatamodeld in Sources */,
 				E5451C2B206958220006D23E /* RegisterViewController.swift in Sources */,
+				E5751855206D724300FAE728 /* RegisterUserInteractorFakeImpl.swift in Sources */,
 				E5751850206A938400FAE728 /* RegisterUserInteractor.swift in Sources */,
 				E5451C27206952F80006D23E /* LogInViewController.swift in Sources */,
 				5D14CB2B20476F940076F8C3 /* ViewController.swift in Sources */,
 				E5451C222065977A0006D23E /* Dog.swift in Sources */,
+				E5751858206D729D00FAE728 /* Typealias.swift in Sources */,
 				5D14CB2920476F940076F8C3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

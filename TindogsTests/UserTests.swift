@@ -11,11 +11,11 @@ class UserTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        dog1 = Dog(_id: "5aa9b60ccc9b4e411d36abac", name: "haptic")
-        dog2 = Dog(_id: "5aa9b60ccc9b4e411d36ab70", name: "multi-byte")
-        
-        user1 = User(_id: "5aa9b60ccc9b4e411d36abad", firstName: "Mario", lastName: "Velásquez", email: "Sergio80@hotmail.com", userName: "Lucas.Vera21")
-        user2 = User(_id: "5aa9b60ccc9b4e411d36ab99", firstName: "Jesús", lastName: "Frías", email: "Laura_Naranjo@hotmail.com", userName: "Horacio82", coordinates: [37.39954097923211,-0.5426998389300168], photo: "http://lorempixel.com/640/480/animals", dogs: [dog1])
+        dog1 = Dog(name: "haptic")
+        dog2 = Dog(name: "multi-byte")
+
+        user1 = User(firstName: "Mario", lastName: "Velásquez", email: "Sergio80@hotmail.com", userName: "Lucas.Vera21", password: "mipass")
+        user2 = User(_id: "5aa9b60ccc9b4e411d36ab99", firstName: "Jesús", lastName: "Frías", email: "Laura_Naranjo@hotmail.com", userName: "Horacio82", password:"mipass", coordinates: [37.39954097923211,-0.5426998389300168], photo: "http://lorempixel.com/640/480/animals", dogs: [dog1])
     }
     
     override func tearDown() {

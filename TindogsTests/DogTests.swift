@@ -21,7 +21,7 @@ class DogTests: XCTestCase {
     
     func testDogExistence() {
     
-        let dog1 = Dog(_id: "5aa9b60ccc9b4e411d36abac", name: "haptic")
+        let dog1 = Dog(name: "haptic")
         let dog2 = Dog(_id: "5aa9b60ccc9b4e411d36abac", name: "haptic", age: 3, breed: "Husky", pureBreed: true, color: "Negro y blanco", query: query, likesFromOthers: [likesFromOthers], description: "Perrete muy guapo y obediente", photos: ["http://lorempixel.com/640/480/animals","http://lorempixel.com/640/480/animals"])
         
         XCTAssertNotNil(dog1)
