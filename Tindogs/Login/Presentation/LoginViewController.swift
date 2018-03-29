@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         presenter.view = self as? LoginView
         presenter.didLoad()
-        loginFormView = LoginFormView.instantiate()
+        loginFormView.addSubview(LoginFormView.instantiate())
     }
     
     //Required by Swift

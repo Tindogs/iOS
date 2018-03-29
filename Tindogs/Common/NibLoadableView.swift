@@ -15,3 +15,4 @@ extension NibLoadableView where Self: UIView {
             .instantiate(withOwner: nil, options: nil)[0] as! Self
     }
 }
+

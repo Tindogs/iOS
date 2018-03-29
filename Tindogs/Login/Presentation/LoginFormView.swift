@@ -8,17 +8,12 @@
 
 import UIKit
 
-class LoginFormView: UIView, NibLoadableView {
+final class LoginFormView: UIView, NibLoadableView {
     private enum Constants {
-        static let height: CGFloat = 176
+        static let height: CGFloat = 280
     }
 
     // MARK: - Outlets
-    
-    @IBOutlet weak var userInput: UITextField!
-    @IBOutlet weak var passwordInput: UITextField!
-    @IBOutlet weak var loginButton: UIButton!
-    
     
     override var intrinsicContentSize: CGSize {
         return CGSize(width: UIViewNoIntrinsicMetric, height: Constants.height)
