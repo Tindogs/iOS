@@ -11,7 +11,7 @@ enum Method: String {
 enum EndPoints: String {
     case findOrUpdateUser       = "users/"
     case registerUser           = "users/register/"
-    case authenticate           = "users/autenthicate"
+    case authenticate           = "users/authenticate"
     case findDogsFromUser       = "dogs/fromuser/"
     case addOrUpdateDogByUserId = "dogs/withuser/"
 }
