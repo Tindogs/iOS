@@ -44,7 +44,7 @@ class RegisterViewController: UIViewController {
         ActivityInd.startAnimating()
         view.addSubview(ActivityInd)
 
-        let registerUserInteractor: RegisterUserInteractor = RegisterUserInteractorNSOpImpl()
+        let registerUserInteractor: RegisterUserInteractor = RegisterUserInteractorImpl()
         
 //        registerUserInteractor.execute(firstName: firstNameTextField.text!, lastName: lastNameTextField.text!, email: emailTextField.text!, userName: userNameTextField.text!, password: passwordTextField.text!, onSuccess: { (user: User) in
 //            // POR AQUI EL OK
@@ -71,11 +71,6 @@ class RegisterViewController: UIViewController {
             activityIndicator.stopAnimating()
             activityIndicator.removeFromSuperview()
         }
-        
-//        DispatchQueue.main.async {
-//            activityIndicator.stopAnimating()
-//            activityIndicator.removeFromSuperview()
-//        }
     }
     
     func showAlert(message: String) {

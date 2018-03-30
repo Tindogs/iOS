@@ -25,7 +25,6 @@ class LogInViewController: UIViewController {
     }
     
     @IBAction func registerButton(_ sender: Any) {
-        print("register tapped")
         
         let registerVC = self.storyboard?.instantiateViewController(withIdentifier: "RegisterViewController") as! RegisterViewController
         

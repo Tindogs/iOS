@@ -1,6 +1,8 @@
 import Foundation
 
-let baseUrl: String = "http://localhost:3000/apiv1/"
+struct CONSTANTS {
+    static let BASEURL: String = "http://localhost:3000/apiv1/"
+}
 
 enum Method: String {
     case GET  = "GET"
