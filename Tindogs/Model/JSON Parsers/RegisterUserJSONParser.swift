@@ -26,7 +26,7 @@ func registerUserParseData (data: Data) -> User {
             }
         }
     } catch {
-        print("Error parsing RegisterUserJSON")
+        print("💩 Error parsing RegisterUserJSONParser")
     }
     return user!
 }
