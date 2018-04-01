@@ -14,10 +14,23 @@
 		5D14CB3320476F940076F8C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D14CB3220476F940076F8C3 /* Assets.xcassets */; };
 		5D14CB3620476F940076F8C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D14CB3420476F940076F8C3 /* LaunchScreen.storyboard */; };
 		5D14CB4120476F950076F8C3 /* TindogsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D14CB4020476F950076F8C3 /* TindogsTests.swift */; };
+		DF002BA1206D764B003AD99D /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF002BA0206D764B003AD99D /* Endpoint.swift */; };
+		DF10BB3D206EA30B00852AAE /* WebServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF10BB3C206EA30B00852AAE /* WebServiceAssembly.swift */; };
+		DF10BB4E206EB35600852AAE /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF10BB45206EB1F700852AAE /* RxCocoa.framework */; };
+		DF10BB4F206EB35600852AAE /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DF10BB45206EB1F700852AAE /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DF10BB50206EB35600852AAE /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF45B0B4206E3DC400D36D4E /* Kingfisher.framework */; };
+		DF10BB51206EB35600852AAE /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DF45B0B4206E3DC400D36D4E /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DF10BB52206EB35600852AAE /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF45B0B1206E3C7E00D36D4E /* RxSwift.framework */; };
+		DF10BB53206EB35600852AAE /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DF45B0B1206E3C7E00D36D4E /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DF45B0AD206E2BC200D36D4E /* WebServiceConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45B0AC206E2BC200D36D4E /* WebServiceConfiguration.swift */; };
+		DF45B0AF206E2CBB00D36D4E /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF45B0AE206E2CBB00D36D4E /* WebService.swift */; };
 		DF5A5705206AC865004485A8 /* LoginFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5A5703206AC865004485A8 /* LoginFormView.swift */; };
 		DF5A5706206AC865004485A8 /* LoginFormView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF5A5704206AC865004485A8 /* LoginFormView.xib */; };
 		DF5A5708206AC875004485A8 /* LoginFormPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5A5707206AC875004485A8 /* LoginFormPresenter.swift */; };
 		DF5A570D206AD199004485A8 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5A570C206AD199004485A8 /* NibLoadableView.swift */; };
+		DF603101206F72550002711D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF603100206F72550002711D /* User.swift */; };
+		DF603103206F72660002711D /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF603102206F72660002711D /* Dog.swift */; };
+		DF603106206F73B80002711D /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF603105206F73B80002711D /* LoginRepository.swift */; };
 		DF9C2840206972DB00E95A0B /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9C283F206972DB00E95A0B /* AppAssembly.swift */; };
 		DF9C28432069733B00E95A0B /* CoreAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9C28422069733B00E95A0B /* CoreAssembly.swift */; };
 		DF9C284720697FED00E95A0B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9C284520697FED00E95A0B /* LoginViewController.swift */; };
@@ -36,6 +49,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		DF10BB54206EB35600852AAE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DF10BB51206EB35600852AAE /* Kingfisher.framework in Embed Frameworks */,
+				DF10BB4F206EB35600852AAE /* RxCocoa.framework in Embed Frameworks */,
+				DF10BB53206EB35600852AAE /* RxSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		5D14CB2520476F940076F8C3 /* Tindogs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tindogs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D14CB2820476F940076F8C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,10 +77,20 @@
 		5D14CB3C20476F950076F8C3 /* TindogsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TindogsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D14CB4020476F950076F8C3 /* TindogsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TindogsTests.swift; sourceTree = "<group>"; };
 		5D14CB4220476F950076F8C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF002BA0206D764B003AD99D /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		DF10BB3C206EA30B00852AAE /* WebServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceAssembly.swift; sourceTree = "<group>"; };
+		DF10BB45206EB1F700852AAE /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		DF45B0AC206E2BC200D36D4E /* WebServiceConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceConfiguration.swift; sourceTree = "<group>"; };
+		DF45B0AE206E2CBB00D36D4E /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		DF45B0B1206E3C7E00D36D4E /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		DF45B0B4206E3DC400D36D4E /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		DF5A5703206AC865004485A8 /* LoginFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormView.swift; sourceTree = "<group>"; };
 		DF5A5704206AC865004485A8 /* LoginFormView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginFormView.xib; sourceTree = "<group>"; };
 		DF5A5707206AC875004485A8 /* LoginFormPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormPresenter.swift; sourceTree = "<group>"; };
 		DF5A570C206AD199004485A8 /* NibLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
+		DF603100206F72550002711D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DF603102206F72660002711D /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
+		DF603105206F73B80002711D /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
 		DF9C283F206972DB00E95A0B /* AppAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
 		DF9C28422069733B00E95A0B /* CoreAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAssembly.swift; sourceTree = "<group>"; };
 		DF9C284520697FED00E95A0B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +104,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF10BB50206EB35600852AAE /* Kingfisher.framework in Frameworks */,
+				DF10BB4E206EB35600852AAE /* RxCocoa.framework in Frameworks */,
+				DF10BB52206EB35600852AAE /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +126,7 @@
 				5D14CB2720476F940076F8C3 /* Tindogs */,
 				5D14CB3F20476F950076F8C3 /* TindogsTests */,
 				5D14CB2620476F940076F8C3 /* Products */,
+				DF45B0B0206E3C7E00D36D4E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +142,8 @@
 		5D14CB2720476F940076F8C3 /* Tindogs */ = {
 			isa = PBXGroup;
 			children = (
+				DF6030FF206F72400002711D /* Model */,
+				DF002B9F206D75BF003AD99D /* WebService */,
 				DF5A5709206AD071004485A8 /* Common */,
 				DF9C284420697FA000E95A0B /* Login */,
 				DF9C28412069731D00E95A0B /* DI */,
@@ -123,12 +168,50 @@
 			path = TindogsTests;
 			sourceTree = "<group>";
 		};
+		DF002B9F206D75BF003AD99D /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				DF002BA0206D764B003AD99D /* Endpoint.swift */,
+				DF45B0AC206E2BC200D36D4E /* WebServiceConfiguration.swift */,
+				DF45B0AE206E2CBB00D36D4E /* WebService.swift */,
+				DF10BB3C206EA30B00852AAE /* WebServiceAssembly.swift */,
+			);
+			path = WebService;
+			sourceTree = "<group>";
+		};
+		DF45B0B0206E3C7E00D36D4E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DF10BB45206EB1F700852AAE /* RxCocoa.framework */,
+				DF45B0B4206E3DC400D36D4E /* Kingfisher.framework */,
+				DF45B0B1206E3C7E00D36D4E /* RxSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DF5A5709206AD071004485A8 /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				DF5A570C206AD199004485A8 /* NibLoadableView.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		DF6030FF206F72400002711D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DF603100206F72550002711D /* User.swift */,
+				DF603102206F72660002711D /* Dog.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DF603104206F73840002711D /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				DF603105206F73B80002711D /* LoginRepository.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		DF9C28412069731D00E95A0B /* DI */ = {
@@ -142,6 +225,7 @@
 		DF9C284420697FA000E95A0B /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				DF603104206F73840002711D /* Repositories */,
 				DF9C284C20698CB900E95A0B /* DI */,
 				DF9C284B20698CA300E95A0B /* Presentation */,
 			);
@@ -179,6 +263,7 @@
 				5D14CB2120476F940076F8C3 /* Sources */,
 				5D14CB2220476F940076F8C3 /* Frameworks */,
 				5D14CB2320476F940076F8C3 /* Resources */,
+				DF10BB54206EB35600852AAE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -214,7 +299,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = Appvengers;
 				TargetAttributes = {
 					5D14CB2420476F940076F8C3 = {
@@ -275,16 +360,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF5A5708206AC875004485A8 /* LoginFormPresenter.swift in Sources */,
+				DF002BA1206D764B003AD99D /* Endpoint.swift in Sources */,
+				DF45B0AF206E2CBB00D36D4E /* WebService.swift in Sources */,
 				DF9C284720697FED00E95A0B /* LoginViewController.swift in Sources */,
+				DF603101206F72550002711D /* User.swift in Sources */,
+				DF10BB3D206EA30B00852AAE /* WebServiceAssembly.swift in Sources */,
 				5D14CB3120476F940076F8C3 /* Tindogs.xcdatamodeld in Sources */,
 				DF9C284A2069853C00E95A0B /* LoginPresenter.swift in Sources */,
 				DF9C2840206972DB00E95A0B /* AppAssembly.swift in Sources */,
+				DF603103206F72660002711D /* Dog.swift in Sources */,
 				DF5A570D206AD199004485A8 /* NibLoadableView.swift in Sources */,
 				5D14CB2B20476F940076F8C3 /* ViewController.swift in Sources */,
 				DF5A5705206AC865004485A8 /* LoginFormView.swift in Sources */,
 				DF9C28432069733B00E95A0B /* CoreAssembly.swift in Sources */,
 				5D14CB2920476F940076F8C3 /* AppDelegate.swift in Sources */,
+				DF45B0AD206E2BC200D36D4E /* WebServiceConfiguration.swift in Sources */,
 				DF9C284E20698CCC00E95A0B /* LoginAssembly.swift in Sources */,
+				DF603106206F73B80002711D /* LoginRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +432,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -347,6 +440,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -397,6 +491,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -404,6 +499,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -439,6 +535,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7V48MNE2R2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Tindogs/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -455,6 +555,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7V48MNE2R2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Tindogs/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

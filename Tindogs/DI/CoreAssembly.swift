@@ -10,7 +10,9 @@ import UIKit
 
 final public class CoreAssembly {
     
-    public private(set) lazy var loginAssembly = LoginAssembly()
+    public private(set) lazy var loginAssembly = LoginAssembly(webServiceAssembly: webServiceAssembly)
+    
+    private(set) lazy var webServiceAssembly = WebServiceAssembly()
     
     public let navigationController: UINavigationController
     

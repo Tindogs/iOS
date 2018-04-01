@@ -10,15 +10,25 @@ import UIKit
 
 final public class LoginAssembly {
     
+    private let webServiceAssembly: WebServiceAssembly
+    
+    init(webServiceAssembly: WebServiceAssembly) {
+        self.webServiceAssembly = webServiceAssembly
+    }
+    
     public func viewController() -> UIViewController {
         return LoginViewController(loginPresenter: presenter(), loginFormPresenter: loginFormPresenter())
     }
     
     func presenter() -> LoginPresenter {
-        return LoginPresenter()
+        return LoginPresenter(repository: loginRepository())
     }
     
     func loginFormPresenter() -> LoginFormPresenter {
         return LoginFormPresenter()
+    }
+    
+    func loginRepository() -> LoginRepositoryProtocol {
+        return LoginRepository(webService: webServiceAssembly.webService)
     }
 }

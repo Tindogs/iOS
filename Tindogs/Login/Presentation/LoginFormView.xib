@@ -47,8 +47,12 @@
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4OX-ar-NQ8">
                     <rect key="frame" x="137" y="168" width="100" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <gestureRecognizers/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                     <state key="normal" title="ENTRAR"/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="w5h-91-1dg" appends="YES" id="w2g-YT-JdS"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Mo-7b-riU">
                     <rect key="frame" x="115" y="230" width="145" height="30"/>
@@ -59,7 +63,13 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <connections>
+                <outlet property="passInput" destination="LHk-n4-awc" id="P93-rg-tRa"/>
+                <outlet property="tapGestureRecognizer" destination="w5h-91-1dg" id="8Qj-Km-zXL"/>
+                <outlet property="userInput" destination="eSv-GK-cC7" id="6CV-GH-EOH"/>
+            </connections>
             <point key="canvasLocation" x="36.5" y="55"/>
         </view>
+        <tapGestureRecognizer id="w5h-91-1dg"/>
     </objects>
 </document>

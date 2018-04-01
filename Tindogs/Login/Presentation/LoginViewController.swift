@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class LoginViewController: UIViewController {
     
@@ -19,6 +21,7 @@ class LoginViewController: UIViewController {
     
     private let presenter: LoginPresenter
     private let loginFormPresenter: LoginFormPresenter
+    private let disposeBag = DisposeBag()
     
     // MARK: - Initialization
     
@@ -35,7 +38,16 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         presenter.view = self as? LoginView
         presenter.didLoad()
-        loginFormView.addSubview(LoginFormView.instantiate())
+        
+        let loginFormViewInstance = LoginFormView.instantiate()
+        
+        loginFormViewInstance.tapGestureRecognizer.rx.event
+            .subscribe(onNext: { [weak self] _ in
+                self?.presenter.didSelect(user: loginFormViewInstance.userInput.text!, pass: loginFormViewInstance.passInput.text!)
+            })
+            .disposed(by: disposeBag)
+        
+        loginFormView.addSubview(loginFormViewInstance)
     }
     
     //Required by Swift

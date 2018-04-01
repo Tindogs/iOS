@@ -14,6 +14,9 @@ final class LoginFormView: UIView, NibLoadableView {
     }
 
     // MARK: - Outlets
+    @IBOutlet weak var userInput: UITextField!
+    @IBOutlet weak var passInput: UITextField!
+    @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
     
     override var intrinsicContentSize: CGSize {
         return CGSize(width: UIViewNoIntrinsicMetric, height: Constants.height)
