@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5D14CB2920476F940076F8C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D14CB2820476F940076F8C3 /* AppDelegate.swift */; };
-		5D14CB2B20476F940076F8C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D14CB2A20476F940076F8C3 /* ViewController.swift */; };
 		5D14CB2E20476F940076F8C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D14CB2C20476F940076F8C3 /* Main.storyboard */; };
 		5D14CB3120476F940076F8C3 /* Tindogs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D14CB2F20476F940076F8C3 /* Tindogs.xcdatamodeld */; };
 		5D14CB3320476F940076F8C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D14CB3220476F940076F8C3 /* Assets.xcassets */; };
@@ -27,6 +26,7 @@
 		E575185A206E7C2E00FAE728 /* RegisterUserInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5751859206E7C2D00FAE728 /* RegisterUserInteractorImpl.swift */; };
 		E575185D206EBB1600FAE728 /* RegisterUserJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E575185C206EBB1600FAE728 /* RegisterUserJSONParser.swift */; };
 		E5751860206EEDA000FAE728 /* RegisterUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E575185F206EEDA000FAE728 /* RegisterUserRequest.swift */; };
+		E5751863206FB95100FAE728 /* String+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5751862206FB95100FAE728 /* String+Image.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +42,6 @@
 /* Begin PBXFileReference section */
 		5D14CB2520476F940076F8C3 /* Tindogs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tindogs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D14CB2820476F940076F8C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5D14CB2A20476F940076F8C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5D14CB2D20476F940076F8C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5D14CB3020476F940076F8C3 /* Tindogs.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tindogs.xcdatamodel; sourceTree = "<group>"; };
 		5D14CB3220476F940076F8C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,6 +63,7 @@
 		E5751859206E7C2D00FAE728 /* RegisterUserInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserInteractorImpl.swift; sourceTree = "<group>"; };
 		E575185C206EBB1600FAE728 /* RegisterUserJSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserJSONParser.swift; sourceTree = "<group>"; };
 		E575185F206EEDA000FAE728 /* RegisterUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserRequest.swift; sourceTree = "<group>"; };
+		E5751862206FB95100FAE728 /* String+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Image.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +154,6 @@
 			children = (
 				E5451C2A206958220006D23E /* RegisterViewController.swift */,
 				E5451C26206952F80006D23E /* LogInViewController.swift */,
-				5D14CB2A20476F940076F8C3 /* ViewController.swift */,
 				E5451C2C20696C730006D23E /* UserProfileViewController.swift */,
 			);
 			path = Controller;
@@ -163,9 +162,7 @@
 		E5451C2520682C580006D23E /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
-				E575184F206A938400FAE728 /* RegisterUserInteractor.swift */,
-				E5751854206D724300FAE728 /* RegisterUserInteractorFakeImpl.swift */,
-				E5751859206E7C2D00FAE728 /* RegisterUserInteractorImpl.swift */,
+				E5751861206EF27F00FAE728 /* RegisterUser */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -182,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				E5751857206D729D00FAE728 /* Typealias.swift */,
+				E5751862206FB95100FAE728 /* String+Image.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -200,6 +198,16 @@
 				E575185F206EEDA000FAE728 /* RegisterUserRequest.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		E5751861206EF27F00FAE728 /* RegisterUser */ = {
+			isa = PBXGroup;
+			children = (
+				E575184F206A938400FAE728 /* RegisterUserInteractor.swift */,
+				E5751854206D724300FAE728 /* RegisterUserInteractorFakeImpl.swift */,
+				E5751859206E7C2D00FAE728 /* RegisterUserInteractorImpl.swift */,
+			);
+			path = RegisterUser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,11 +323,11 @@
 				E5751855206D724300FAE728 /* RegisterUserInteractorFakeImpl.swift in Sources */,
 				E5751850206A938400FAE728 /* RegisterUserInteractor.swift in Sources */,
 				E5451C27206952F80006D23E /* LogInViewController.swift in Sources */,
-				5D14CB2B20476F940076F8C3 /* ViewController.swift in Sources */,
 				E575185A206E7C2E00FAE728 /* RegisterUserInteractorImpl.swift in Sources */,
 				E5451C222065977A0006D23E /* Dog.swift in Sources */,
 				E5751858206D729D00FAE728 /* Typealias.swift in Sources */,
 				5D14CB2920476F940076F8C3 /* AppDelegate.swift in Sources */,
+				E5751863206FB95100FAE728 /* String+Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

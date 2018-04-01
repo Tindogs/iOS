@@ -46,17 +46,17 @@ class RegisterViewController: UIViewController {
 
         let registerUserInteractor: RegisterUserInteractor = RegisterUserInteractorImpl()
         
-//        registerUserInteractor.execute(firstName: firstNameTextField.text!, lastName: lastNameTextField.text!, email: emailTextField.text!, userName: userNameTextField.text!, password: passwordTextField.text!, onSuccess: { (user: User) in
-//            // POR AQUI EL OK
-//        }) { (error: Error) in
-//            // POR AQUI EL ERROR
-//        }
-        
-        registerUserInteractor.execute(firstName: firstNameTextField.text!, lastName: lastNameTextField.text!, email: emailTextField.text!, userName: userNameTextField.text!, password: passwordTextField.text!) { (user: User) in
-        
+        let user = User(firstName: firstNameTextField.text!, lastName: lastNameTextField.text!, email: emailTextField.text!, userName: userNameTextField.text!, password: passwordTextField.text!)
+
+        registerUserInteractor.execute(user: user, onSuccess: { (user: User) in
+
             self.hideActivityIndicator(activityIndicator: ActivityInd)
             self.showAlertAndDismissVC(message: "Hola \(user.firstName), te has registrado correctamente")
             self.user = user
+
+        }) { (error: Error) in
+            self.hideActivityIndicator(activityIndicator: ActivityInd)
+            self.showAlert(message: error as! String)
         }
     }
     

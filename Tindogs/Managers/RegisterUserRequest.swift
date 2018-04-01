@@ -1,6 +1,6 @@
 import Foundation
 
-func RegisterUserRequest(firstName: String, lastName: String, email: String, userName: String, password: String) -> URLRequest{
+func RegisterUserRequest(user: User) -> URLRequest{
     
     let url = URL(string: CONSTANTS.BASEURL + EndPoints.registerUser.rawValue)
     var request = URLRequest(url:url!)
@@ -10,7 +10,7 @@ func RegisterUserRequest(firstName: String, lastName: String, email: String, use
     request.addValue("application/json", forHTTPHeaderField: "Accept")
     
     // fill dictionary
-    let dictionary = ["first_name": firstName, "last_name": lastName, "email": email,"username": userName,"password": password] as [String: String]
+    let dictionary = ["first_name": user.firstName, "last_name": user.lastName, "email": user.email,"username": user.userName,"password": user.password] as [String: String]
     
     do {
         request.httpBody = try JSONSerialization.data(withJSONObject: dictionary, options: .prettyPrinted)
