@@ -11,15 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner">
-            <connections>
-                <outlet property="emailInput" destination="8qS-Zb-Ndl" id="Iuk-Tx-Zi4"/>
-                <outlet property="firstNameInput" destination="SS3-9g-B8q" id="5Vm-jc-8Y5"/>
-                <outlet property="lastNameInput" destination="4dU-Dz-FNt" id="YiJ-Mr-oxg"/>
-                <outlet property="passwordInput" destination="RAF-7v-3m6" id="fJ5-lo-2ZR"/>
-                <outlet property="userNameInput" destination="5C2-pY-vtd" id="H6c-lA-hAC"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="Register Form View" customClass="RegisterFormView" customModule="Tindogs" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="343" height="400"/>
@@ -132,12 +124,12 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
-                <outlet property="emailInput" destination="8qS-Zb-Ndl" id="aMU-g4-FBw"/>
-                <outlet property="firstNameInput" destination="SS3-9g-B8q" id="25D-X7-RKN"/>
-                <outlet property="lastNameInput" destination="4dU-Dz-FNt" id="2Ky-0h-Roq"/>
-                <outlet property="passwordInput" destination="RAF-7v-3m6" id="1IN-Uv-QLy"/>
+                <outlet property="emailInput" destination="8qS-Zb-Ndl" id="quh-zJ-fmb"/>
+                <outlet property="firstNameInput" destination="SS3-9g-B8q" id="yEx-d3-RGN"/>
+                <outlet property="lastNameInput" destination="4dU-Dz-FNt" id="nGT-Ay-ADC"/>
+                <outlet property="passwordInput" destination="RAF-7v-3m6" id="xPo-Be-YWf"/>
                 <outlet property="tapGestureRecognizer" destination="kax-hH-yDQ" id="FPM-KV-fvH"/>
-                <outlet property="userNameInput" destination="5C2-pY-vtd" id="Hi0-cG-rvN"/>
+                <outlet property="userNameInput" destination="5C2-pY-vtd" id="8gA-Hk-C3O"/>
             </connections>
             <point key="canvasLocation" x="-27" y="59"/>
         </view>

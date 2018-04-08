@@ -26,6 +26,8 @@ internal extension Endpoint {
         
         var request = URLRequest(url: components.url!)
         request.httpMethod = method.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.httpBody = try? JSONSerialization.data(withJSONObject: body)
         
         return request
@@ -51,7 +53,7 @@ private extension Endpoint {
     var path: String {
         switch self {
         case .authenticate:
-            return "authenticate/"
+            return "users/authenticate/"
         case .register:
             return "users/register/"
         }
@@ -70,8 +72,8 @@ private extension Endpoint {
         switch self {
         case .authenticate(let user, let pass):
             return [
-                "email" : user,
-                "password" : pass
+                "email": user,
+                "password": pass
             ]
         case .register(let firstName, let lastName, let email, let userName, let password):
             return[

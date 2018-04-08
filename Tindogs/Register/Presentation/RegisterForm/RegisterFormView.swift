@@ -17,7 +17,7 @@ final class RegisterFormView: UIView, NibLoadableView {
     @IBOutlet weak var emailInput: UITextField!
     @IBOutlet weak var userNameInput: UITextField!
     @IBOutlet weak var passwordInput: UITextField!
-
+    
     @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
     
     override var intrinsicContentSize: CGSize {

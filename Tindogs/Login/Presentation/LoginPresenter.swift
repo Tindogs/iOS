@@ -29,7 +29,8 @@ final class LoginPresenter {
     func didSelect(user: String, pass: String) {
         let loginObsevable = repository.login(user: user, pass: pass)
         loginObsevable.subscribe(onNext: { user in
-            print(user)
+            print("user: \(user)")
+//            print("user: \(user.result.first_name)")
         }, onError: { error in
             print(error)
         }, onCompleted: {

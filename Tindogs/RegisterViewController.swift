@@ -44,11 +44,12 @@ class RegisterViewController: UIViewController {
         
         registerFormViewInstance.tapGestureRecognizer.rx.event
             .subscribe(onNext: { [weak self] _ in
-                self?.presenter.didSelect(firstName: firstNameInput.text!, lastName: lastNameInput.text!, email: emailInput.text!, userName: userNameInput.text!, password: passwordInput.text!)
+                self?.presenter.didSelect(
+                    firstName: registerFormViewInstance.firstNameInput.text!, lastName: registerFormViewInstance.lastNameInput.text!, email: registerFormViewInstance.emailInput.text!, userName: registerFormViewInstance.userNameInput.text!, password: registerFormViewInstance.passwordInput.text!)
             })
             .disposed(by: disposeBag)
         
-        RegisterFormView.addSubview(registerFormViewInstance)
+        registerFormView.addSubview(registerFormViewInstance)
     }
     
     //Required by Swift

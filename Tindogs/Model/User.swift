@@ -9,25 +9,18 @@
 import Foundation
 
 struct User: Decodable {
-    let _id: String?
-    let firstName: String
-    let lastName: String
-    let email: String
-    let userName: String
-    let password: String
-    var coordinates : [Double]?
-    var photo: String?
-    var dogs : [Dog]?
-    
-    private enum CodingKeys: String, CodingKey {
-        case _id
-        case firstName
-        case lastName
-        case email
-        case userName
-        case password
-        case coordinates
-        case photo
-        case dogs
+    struct UserResponse: Decodable {
+        let _id: String?
+        let first_name: String
+        let last_name: String
+        let email: String
+        let username: String
+        let password: String
+        let coordinates : [Double]?
+        let photo: String?
+        let dogs : [Dog]?
     }
+    
+    let result: UserResponse
+    
 }

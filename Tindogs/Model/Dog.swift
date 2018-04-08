@@ -10,24 +10,11 @@ import Foundation
 
 struct Dog: Decodable {
     let _id: String
-    let name: String
-    var age: Int
-    var breed: String
-    var pureBreed: Bool
-    var color: String
-    var likesFromOthers: [String]
-    var description: String
-    var photos: [String]
-    
-    private enum CodingKeys: String, CodingKey {
-        case _id
-        case name
-        case age
-        case breed
-        case pureBreed
-        case color
-        case likesFromOthers
-        case description
-        case photos
-    }
+    let name: String?
+    let age: Int?
+    let purebreed: Bool?
+    let likes_from_others: [String]
+    let description: String?
+    let photos: [String]
+
 }
