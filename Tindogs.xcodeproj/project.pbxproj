@@ -13,6 +13,11 @@
 		5D14CB3320476F940076F8C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D14CB3220476F940076F8C3 /* Assets.xcassets */; };
 		5D14CB3620476F940076F8C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D14CB3420476F940076F8C3 /* LaunchScreen.storyboard */; };
 		5D14CB4120476F950076F8C3 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D14CB4020476F950076F8C3 /* UserTests.swift */; };
+		771EEA0B6BC644A67D0347D0 /* Pods_Tindogs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DE4725202055AFAE2C069C /* Pods_Tindogs.framework */; };
+		E5120BD1207CE708009EF7A8 /* RegisterViewController+imagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5120BD0207CE708009EF7A8 /* RegisterViewController+imagePicker.swift */; };
+		E533022B207EA2CD00B05A58 /* UploadImageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533022A207EA2CD00B05A58 /* UploadImageInteractor.swift */; };
+		E533022E207EA3AB00B05A58 /* UploadImageInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533022D207EA3AB00B05A58 /* UploadImageInteractorImpl.swift */; };
+		E5330230207EB0DD00B05A58 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E533022F207EB0DD00B05A58 /* GoogleService-Info.plist */; };
 		E5451C20206586450006D23E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5451C1F206586450006D23E /* User.swift */; };
 		E5451C222065977A0006D23E /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5451C212065977A0006D23E /* Dog.swift */; };
 		E5451C242066FA6E0006D23E /* DogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5451C232066FA6E0006D23E /* DogTests.swift */; };
@@ -50,6 +55,13 @@
 		5D14CB3C20476F950076F8C3 /* TindogsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TindogsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D14CB4020476F950076F8C3 /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		5D14CB4220476F950076F8C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E82028454B5C2E661D942BE /* Pods-Tindogs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tindogs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tindogs/Pods-Tindogs.debug.xcconfig"; sourceTree = "<group>"; };
+		7BC467F0984D31D198245EE5 /* Pods-Tindogs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tindogs.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tindogs/Pods-Tindogs.release.xcconfig"; sourceTree = "<group>"; };
+		B4DE4725202055AFAE2C069C /* Pods_Tindogs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tindogs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5120BD0207CE708009EF7A8 /* RegisterViewController+imagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegisterViewController+imagePicker.swift"; sourceTree = "<group>"; };
+		E533022A207EA2CD00B05A58 /* UploadImageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageInteractor.swift; sourceTree = "<group>"; };
+		E533022D207EA3AB00B05A58 /* UploadImageInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageInteractorImpl.swift; sourceTree = "<group>"; };
+		E533022F207EB0DD00B05A58 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E5451C1F206586450006D23E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E5451C212065977A0006D23E /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
 		E5451C232066FA6E0006D23E /* DogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogTests.swift; sourceTree = "<group>"; };
@@ -71,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				771EEA0B6BC644A67D0347D0 /* Pods_Tindogs.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,12 +97,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E1C0741C07D5EF3088D43A6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B4DE4725202055AFAE2C069C /* Pods_Tindogs.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		26785740A356A74115950903 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6E82028454B5C2E661D942BE /* Pods-Tindogs.debug.xcconfig */,
+				7BC467F0984D31D198245EE5 /* Pods-Tindogs.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5D14CB1C20476F940076F8C3 = {
 			isa = PBXGroup;
 			children = (
 				5D14CB2720476F940076F8C3 /* Tindogs */,
 				5D14CB3F20476F950076F8C3 /* TindogsTests */,
 				5D14CB2620476F940076F8C3 /* Products */,
+				26785740A356A74115950903 /* Pods */,
+				1E1C0741C07D5EF3088D43A6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,6 +148,7 @@
 				E5751851206C42AF00FAE728 /* Config */,
 				5D14CB3220476F940076F8C3 /* Assets.xcassets */,
 				5D14CB3720476F940076F8C3 /* Info.plist */,
+				E533022F207EB0DD00B05A58 /* GoogleService-Info.plist */,
 				5D14CB2F20476F940076F8C3 /* Tindogs.xcdatamodeld */,
 			);
 			path = Tindogs;
@@ -129,6 +162,15 @@
 				5D14CB4220476F950076F8C3 /* Info.plist */,
 			);
 			path = TindogsTests;
+			sourceTree = "<group>";
+		};
+		E533022C207EA31F00B05A58 /* UploadImage */ = {
+			isa = PBXGroup;
+			children = (
+				E533022A207EA2CD00B05A58 /* UploadImageInteractor.swift */,
+				E533022D207EA3AB00B05A58 /* UploadImageInteractorImpl.swift */,
+			);
+			path = UploadImage;
 			sourceTree = "<group>";
 		};
 		E5451C1C206579FA0006D23E /* Model */ = {
@@ -155,6 +197,7 @@
 				E5451C2A206958220006D23E /* RegisterViewController.swift */,
 				E5451C26206952F80006D23E /* LogInViewController.swift */,
 				E5451C2C20696C730006D23E /* UserProfileViewController.swift */,
+				E5120BD0207CE708009EF7A8 /* RegisterViewController+imagePicker.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -162,6 +205,7 @@
 		E5451C2520682C580006D23E /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
+				E533022C207EA31F00B05A58 /* UploadImage */,
 				E5751861206EF27F00FAE728 /* RegisterUser */,
 			);
 			path = Interactors;
@@ -217,9 +261,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5D14CB4520476F950076F8C3 /* Build configuration list for PBXNativeTarget "Tindogs" */;
 			buildPhases = (
+				60F1E46992390129793A76DF /* [CP] Check Pods Manifest.lock */,
 				5D14CB2120476F940076F8C3 /* Sources */,
 				5D14CB2220476F940076F8C3 /* Frameworks */,
 				5D14CB2320476F940076F8C3 /* Resources */,
+				301FF38BF9A85223D15416D8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -294,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D14CB3620476F940076F8C3 /* LaunchScreen.storyboard in Resources */,
+				E5330230207EB0DD00B05A58 /* GoogleService-Info.plist in Resources */,
 				5D14CB3320476F940076F8C3 /* Assets.xcassets in Resources */,
 				5D14CB2E20476F940076F8C3 /* Main.storyboard in Resources */,
 			);
@@ -308,14 +355,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		301FF38BF9A85223D15416D8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Tindogs/Pods-Tindogs-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tindogs/Pods-Tindogs-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		60F1E46992390129793A76DF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tindogs-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5D14CB2120476F940076F8C3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E5751853206C431A00FAE728 /* Url+Endpoints.swift in Sources */,
+				E533022E207EA3AB00B05A58 /* UploadImageInteractorImpl.swift in Sources */,
 				E5451C20206586450006D23E /* User.swift in Sources */,
 				E5451C2D20696C730006D23E /* UserProfileViewController.swift in Sources */,
+				E5120BD1207CE708009EF7A8 /* RegisterViewController+imagePicker.swift in Sources */,
 				E5751860206EEDA000FAE728 /* RegisterUserRequest.swift in Sources */,
 				5D14CB3120476F940076F8C3 /* Tindogs.xcdatamodeld in Sources */,
 				E575185D206EBB1600FAE728 /* RegisterUserJSONParser.swift in Sources */,
@@ -325,6 +417,7 @@
 				E5451C27206952F80006D23E /* LogInViewController.swift in Sources */,
 				E575185A206E7C2E00FAE728 /* RegisterUserInteractorImpl.swift in Sources */,
 				E5451C222065977A0006D23E /* Dog.swift in Sources */,
+				E533022B207EA2CD00B05A58 /* UploadImageInteractor.swift in Sources */,
 				E5751858206D729D00FAE728 /* Typealias.swift in Sources */,
 				5D14CB2920476F940076F8C3 /* AppDelegate.swift in Sources */,
 				E5751863206FB95100FAE728 /* String+Image.swift in Sources */,
@@ -479,6 +572,7 @@
 		};
 		5D14CB4620476F950076F8C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E82028454B5C2E661D942BE /* Pods-Tindogs.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -495,6 +589,7 @@
 		};
 		5D14CB4720476F950076F8C3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BC467F0984D31D198245EE5 /* Pods-Tindogs.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -1,7 +1,7 @@
 import Foundation
 
 struct CONSTANTS {
-    static let BASEURL: String = "http://localhost:3000/apiv1/"
+    static let BASEURL: String = "http://34.239.83.44:3000/apiv1/"
 }
 
 enum Method: String {

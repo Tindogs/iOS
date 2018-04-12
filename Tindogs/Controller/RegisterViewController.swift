@@ -3,6 +3,8 @@ import UIKit
 class RegisterViewController: UIViewController {
     
     var user : User?
+    var pickedImage : UIImage?
+    var photoName : String?
     
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
@@ -10,6 +12,8 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var repeatPasswordTextField: UITextField!
+    @IBOutlet weak var photoImageView: UIImageView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +24,12 @@ class RegisterViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    @IBAction func showImagePickerButton(_ sender: Any) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
+        self.present(imagePicker, animated: true, completion: nil)
     }
     
     @IBAction func saveButton(_ sender: Any) {
@@ -43,11 +53,26 @@ class RegisterViewController: UIViewController {
         ActivityInd.hidesWhenStopped = false
         ActivityInd.startAnimating()
         view.addSubview(ActivityInd)
-
+        
         let registerUserInteractor: RegisterUserInteractor = RegisterUserInteractorImpl()
         
-        let user = User(firstName: firstNameTextField.text!, lastName: lastNameTextField.text!, email: emailTextField.text!, userName: userNameTextField.text!, password: passwordTextField.text!)
+        let user = User(firstName: firstNameTextField.text!, lastName: lastNameTextField.text!, email: emailTextField.text!, userName: userNameTextField.text!, password: passwordTextField.text!, photo: "")
 
+        // Check if there is an image selected
+        if let image = pickedImage, let name = photoName {
+            
+            let uploadImageInteractor: UploadImageInteractor = UploadImageInteractorImpl()
+            uploadImageInteractor.save(name: name, image: image, onSuccess: { (url) in
+                user.photo = url
+                
+            }, onError: { (error) in
+                print("💩 error uploading image")
+            })
+        }
+        
+        
+        // Tal como está así el código se ejecuta el register ANTES de la clausura success del upload. Pero realmente necesito que se ejecute antes, y usar el id del usuario como nombre de la imagen, por tanto la subida de imagen se tiene que hacer a posteriori, hay métodos en node para actualizar la imagen?
+        
         registerUserInteractor.execute(user: user, onSuccess: { (user: User) in
 
             self.hideActivityIndicator(activityIndicator: ActivityInd)
