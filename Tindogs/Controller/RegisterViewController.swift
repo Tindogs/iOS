@@ -2,7 +2,7 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
-    var user : User?
+    var user: User?
     var pickedImage : UIImage?
     var photoName : String?
     
@@ -55,33 +55,40 @@ class RegisterViewController: UIViewController {
         view.addSubview(ActivityInd)
         
         let registerUserInteractor: RegisterUserInteractor = RegisterUserInteractorImpl()
+        var user = User(firstName: self.firstNameTextField.text!, lastName: self.lastNameTextField.text!, email: self.emailTextField.text!, userName: self.userNameTextField.text!, password: self.passwordTextField.text!, photo: "")
         
-        let user = User(firstName: firstNameTextField.text!, lastName: lastNameTextField.text!, email: emailTextField.text!, userName: userNameTextField.text!, password: passwordTextField.text!, photo: "")
-
         // Check if there is an image selected
         if let image = pickedImage, let name = photoName {
-            
+            // So upload image
             let uploadImageInteractor: UploadImageInteractor = UploadImageInteractorImpl()
             uploadImageInteractor.save(name: name, image: image, onSuccess: { (url) in
+                
+                // If success Register user
                 user.photo = url
+                registerUserInteractor.execute(user: user, onSuccess: { (user: User) in
+                    self.hideActivityIndicator(activityIndicator: ActivityInd)
+                    self.showAlertAndDismissVC(message: "Hola \(user.firstName), te has registrado correctamente")
+                    self.user = user
+                }) { (error: Error) in
+                    self.hideActivityIndicator(activityIndicator: ActivityInd)
+                    self.showAlert(message: error as! String)
+                }
                 
             }, onError: { (error) in
                 print("💩 error uploading image")
+                self.showAlert(message: "Error durante el proceso de registro -profile photo upl err-" + (error as! String))
             })
-        }
-        
-        
-        // Tal como está así el código se ejecuta el register ANTES de la clausura success del upload. Pero realmente necesito que se ejecute antes, y usar el id del usuario como nombre de la imagen, por tanto la subida de imagen se tiene que hacer a posteriori, hay métodos en node para actualizar la imagen?
-        
-        registerUserInteractor.execute(user: user, onSuccess: { (user: User) in
-
-            self.hideActivityIndicator(activityIndicator: ActivityInd)
-            self.showAlertAndDismissVC(message: "Hola \(user.firstName), te has registrado correctamente")
-            self.user = user
-
-        }) { (error: Error) in
-            self.hideActivityIndicator(activityIndicator: ActivityInd)
-            self.showAlert(message: error as! String)
+        } else {
+            
+            // if there's no image selected register user without photo
+            registerUserInteractor.execute(user: user, onSuccess: { (user: User) in
+                self.hideActivityIndicator(activityIndicator: ActivityInd)
+                self.showAlertAndDismissVC(message: "Hola \(user.firstName), te has registrado correctamente")
+                self.user = user
+            }) { (error: Error) in
+                self.hideActivityIndicator(activityIndicator: ActivityInd)
+                self.showAlert(message: error as! String)
+            }
         }
     }
     

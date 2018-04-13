@@ -21,8 +21,9 @@ func registerUserParseData (data: Data) -> User {
                 let email       = result.value(forKey: "email") as! String
                 let username    = result.value(forKey: "username") as! String
                 let password    = result.value(forKey: "password") as! String
+                let photo       = result.value(forKey: "photo") as! String
                 
-                user = User(_id: _id, firstName: first_name, lastName: last_name, email: email, userName: username, password: password)
+                user = User(_id: _id, firstName: first_name, lastName: last_name, email: email, userName: username, password: password, photo: photo)
             }
         }
     } catch {

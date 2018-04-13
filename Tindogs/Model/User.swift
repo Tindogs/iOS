@@ -27,8 +27,8 @@ final class User {
         self.init(_id: "", firstName: firstName, lastName: lastName, email: email, userName: userName, password: password, coordinates : [], photo: "", dogs : [])
     }
     
-    convenience init(_id: String, firstName: String, lastName: String, email: String, userName: String, password: String) {
-        self.init(_id: _id, firstName: firstName, lastName: lastName, email: email, userName: userName, password: password, coordinates : [], photo: "", dogs : [])
+    convenience init(_id: String, firstName: String, lastName: String, email: String, userName: String, password: String, photo: String) {
+        self.init(_id: _id, firstName: firstName, lastName: lastName, email: email, userName: userName, password: password, coordinates : [], photo: photo, dogs : [])
     }
     
     convenience init(firstName: String, lastName: String, email: String, userName: String, password: String, photo: String) {

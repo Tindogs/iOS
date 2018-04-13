@@ -10,7 +10,7 @@ func RegisterUserRequest(user: User) -> URLRequest{
     request.addValue("application/json", forHTTPHeaderField: "Accept")
     
     // fill dictionary
-    let dictionary = ["first_name": user.firstName, "last_name": user.lastName, "email": user.email,"username": user.userName,"password": user.password] as [String: String]
+    let dictionary = ["first_name": user.firstName, "last_name": user.lastName, "email": user.email,"username": user.userName,"password": user.password, "photo": user.photo] as! [String: String]
     
     do {
         request.httpBody = try JSONSerialization.data(withJSONObject: dictionary, options: .prettyPrinted)
