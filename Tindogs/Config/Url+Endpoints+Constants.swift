@@ -2,6 +2,8 @@ import Foundation
 
 struct CONSTANTS {
     static let BASEURL: String = "http://34.239.83.44:3000/apiv1/"
+    static let userDefaults_id: String = "_id"
+    static let userDefaultsToken: String = "token"
 }
 
 enum Method: String {
@@ -18,3 +20,6 @@ enum EndPoints: String {
     case addOrUpdateDogByUserId = "dogs/withuser/"
 }
 
+enum MyError: Error {
+    case found404(String)
+}

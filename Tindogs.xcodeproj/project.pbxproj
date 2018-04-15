@@ -18,6 +18,12 @@
 		E533022B207EA2CD00B05A58 /* UploadImageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533022A207EA2CD00B05A58 /* UploadImageInteractor.swift */; };
 		E533022E207EA3AB00B05A58 /* UploadImageInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533022D207EA3AB00B05A58 /* UploadImageInteractorImpl.swift */; };
 		E5330230207EB0DD00B05A58 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E533022F207EB0DD00B05A58 /* GoogleService-Info.plist */; };
+		E5330233208163E000B05A58 /* LoginUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5330232208163E000B05A58 /* LoginUserInteractor.swift */; };
+		E53302352082670D00B05A58 /* LoginUserInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53302342082670D00B05A58 /* LoginUserInteractorImpl.swift */; };
+		E53302372082680700B05A58 /* LoginUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53302362082680700B05A58 /* LoginUserRequest.swift */; };
+		E53302392082706900B05A58 /* LoginUserJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53302382082706900B05A58 /* LoginUserJSONParser.swift */; };
+		E533023E2082A14F00B05A58 /* WriteNSUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533023D2082A14F00B05A58 /* WriteNSUserDefaults.swift */; };
+		E53302402082ADD100B05A58 /* ReadNSUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533023F2082ADD100B05A58 /* ReadNSUserDefaults.swift */; };
 		E5451C20206586450006D23E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5451C1F206586450006D23E /* User.swift */; };
 		E5451C222065977A0006D23E /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5451C212065977A0006D23E /* Dog.swift */; };
 		E5451C242066FA6E0006D23E /* DogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5451C232066FA6E0006D23E /* DogTests.swift */; };
@@ -25,7 +31,7 @@
 		E5451C2B206958220006D23E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5451C2A206958220006D23E /* RegisterViewController.swift */; };
 		E5451C2D20696C730006D23E /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5451C2C20696C730006D23E /* UserProfileViewController.swift */; };
 		E5751850206A938400FAE728 /* RegisterUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E575184F206A938400FAE728 /* RegisterUserInteractor.swift */; };
-		E5751853206C431A00FAE728 /* Url+Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5751852206C431A00FAE728 /* Url+Endpoints.swift */; };
+		E5751853206C431A00FAE728 /* Url+Endpoints+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5751852206C431A00FAE728 /* Url+Endpoints+Constants.swift */; };
 		E5751855206D724300FAE728 /* RegisterUserInteractorFakeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5751854206D724300FAE728 /* RegisterUserInteractorFakeImpl.swift */; };
 		E5751858206D729D00FAE728 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5751857206D729D00FAE728 /* Typealias.swift */; };
 		E575185A206E7C2E00FAE728 /* RegisterUserInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5751859206E7C2D00FAE728 /* RegisterUserInteractorImpl.swift */; };
@@ -62,6 +68,12 @@
 		E533022A207EA2CD00B05A58 /* UploadImageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageInteractor.swift; sourceTree = "<group>"; };
 		E533022D207EA3AB00B05A58 /* UploadImageInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageInteractorImpl.swift; sourceTree = "<group>"; };
 		E533022F207EB0DD00B05A58 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		E5330232208163E000B05A58 /* LoginUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserInteractor.swift; sourceTree = "<group>"; };
+		E53302342082670D00B05A58 /* LoginUserInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserInteractorImpl.swift; sourceTree = "<group>"; };
+		E53302362082680700B05A58 /* LoginUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserRequest.swift; sourceTree = "<group>"; };
+		E53302382082706900B05A58 /* LoginUserJSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserJSONParser.swift; sourceTree = "<group>"; };
+		E533023D2082A14F00B05A58 /* WriteNSUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteNSUserDefaults.swift; sourceTree = "<group>"; };
+		E533023F2082ADD100B05A58 /* ReadNSUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadNSUserDefaults.swift; sourceTree = "<group>"; };
 		E5451C1F206586450006D23E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E5451C212065977A0006D23E /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
 		E5451C232066FA6E0006D23E /* DogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogTests.swift; sourceTree = "<group>"; };
@@ -69,7 +81,7 @@
 		E5451C2A206958220006D23E /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E5451C2C20696C730006D23E /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		E575184F206A938400FAE728 /* RegisterUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserInteractor.swift; sourceTree = "<group>"; };
-		E5751852206C431A00FAE728 /* Url+Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Url+Endpoints.swift"; sourceTree = "<group>"; };
+		E5751852206C431A00FAE728 /* Url+Endpoints+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Url+Endpoints+Constants.swift"; sourceTree = "<group>"; };
 		E5751854206D724300FAE728 /* RegisterUserInteractorFakeImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserInteractorFakeImpl.swift; sourceTree = "<group>"; };
 		E5751857206D729D00FAE728 /* Typealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
 		E5751859206E7C2D00FAE728 /* RegisterUserInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserInteractorImpl.swift; sourceTree = "<group>"; };
@@ -173,6 +185,33 @@
 			path = UploadImage;
 			sourceTree = "<group>";
 		};
+		E53302312081621400B05A58 /* LoginUser */ = {
+			isa = PBXGroup;
+			children = (
+				E5330232208163E000B05A58 /* LoginUserInteractor.swift */,
+				E53302342082670D00B05A58 /* LoginUserInteractorImpl.swift */,
+			);
+			path = LoginUser;
+			sourceTree = "<group>";
+		};
+		E533023B2082A0E700B05A58 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				E53302362082680700B05A58 /* LoginUserRequest.swift */,
+				E575185F206EEDA000FAE728 /* RegisterUserRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		E533023C2082A12000B05A58 /* NSUserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				E533023D2082A14F00B05A58 /* WriteNSUserDefaults.swift */,
+				E533023F2082ADD100B05A58 /* ReadNSUserDefaults.swift */,
+			);
+			path = NSUserDefaults;
+			sourceTree = "<group>";
+		};
 		E5451C1C206579FA0006D23E /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,8 +244,9 @@
 		E5451C2520682C580006D23E /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
-				E533022C207EA31F00B05A58 /* UploadImage */,
+				E53302312081621400B05A58 /* LoginUser */,
 				E5751861206EF27F00FAE728 /* RegisterUser */,
+				E533022C207EA31F00B05A58 /* UploadImage */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -214,7 +254,7 @@
 		E5751851206C42AF00FAE728 /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				E5751852206C431A00FAE728 /* Url+Endpoints.swift */,
+				E5751852206C431A00FAE728 /* Url+Endpoints+Constants.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -232,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				E575185C206EBB1600FAE728 /* RegisterUserJSONParser.swift */,
+				E53302382082706900B05A58 /* LoginUserJSONParser.swift */,
 			);
 			path = "JSON Parsers";
 			sourceTree = "<group>";
@@ -239,7 +280,8 @@
 		E575185E206EECEF00FAE728 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				E575185F206EEDA000FAE728 /* RegisterUserRequest.swift */,
+				E533023C2082A12000B05A58 /* NSUserDefaults */,
+				E533023B2082A0E700B05A58 /* Requests */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -403,7 +445,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5751853206C431A00FAE728 /* Url+Endpoints.swift in Sources */,
+				E5751853206C431A00FAE728 /* Url+Endpoints+Constants.swift in Sources */,
 				E533022E207EA3AB00B05A58 /* UploadImageInteractorImpl.swift in Sources */,
 				E5451C20206586450006D23E /* User.swift in Sources */,
 				E5451C2D20696C730006D23E /* UserProfileViewController.swift in Sources */,
@@ -412,15 +454,21 @@
 				5D14CB3120476F940076F8C3 /* Tindogs.xcdatamodeld in Sources */,
 				E575185D206EBB1600FAE728 /* RegisterUserJSONParser.swift in Sources */,
 				E5451C2B206958220006D23E /* RegisterViewController.swift in Sources */,
+				E53302392082706900B05A58 /* LoginUserJSONParser.swift in Sources */,
 				E5751855206D724300FAE728 /* RegisterUserInteractorFakeImpl.swift in Sources */,
 				E5751850206A938400FAE728 /* RegisterUserInteractor.swift in Sources */,
+				E53302372082680700B05A58 /* LoginUserRequest.swift in Sources */,
+				E5330233208163E000B05A58 /* LoginUserInteractor.swift in Sources */,
 				E5451C27206952F80006D23E /* LogInViewController.swift in Sources */,
+				E53302352082670D00B05A58 /* LoginUserInteractorImpl.swift in Sources */,
 				E575185A206E7C2E00FAE728 /* RegisterUserInteractorImpl.swift in Sources */,
 				E5451C222065977A0006D23E /* Dog.swift in Sources */,
 				E533022B207EA2CD00B05A58 /* UploadImageInteractor.swift in Sources */,
 				E5751858206D729D00FAE728 /* Typealias.swift in Sources */,
 				5D14CB2920476F940076F8C3 /* AppDelegate.swift in Sources */,
+				E533023E2082A14F00B05A58 /* WriteNSUserDefaults.swift in Sources */,
 				E5751863206FB95100FAE728 /* String+Image.swift in Sources */,
+				E53302402082ADD100B05A58 /* ReadNSUserDefaults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
