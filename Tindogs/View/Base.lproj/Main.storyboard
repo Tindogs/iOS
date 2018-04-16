@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="24c-nS-RDU">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -126,7 +127,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-140" y="-98"/>
+            <point key="canvasLocation" x="-291" y="-62"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="ZUC-8Q-Bfu">
@@ -347,9 +348,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XFm-73-kdc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="533.60000000000002" y="-97.601199400299862"/>
+            <point key="canvasLocation" x="480" y="-359"/>
         </scene>
-        <!--User Profile View Controller-->
+        <!--Perfil Usuario-->
         <scene sceneID="OPd-eJ-Qsu">
             <objects>
                 <viewController storyboardIdentifier="UserProfileViewController" id="qih-t0-5GR" customClass="UserProfileViewController" customModule="Tindogs" customModuleProvider="target" sceneMemberID="viewController">
@@ -357,27 +358,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="chP-9F-PtW">
-                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
-                                <items>
-                                    <navigationItem title="Perfil Usuario" id="Lm8-rl-vJ4">
-                                        <barButtonItem key="leftBarButtonItem" title="Desconectar" id="cx1-hV-RdD">
-                                            <connections>
-                                                <action selector="signOutButton:" destination="qih-t0-5GR" id="kPw-R3-Vdq"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Usuario" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Et-ad-3f0">
-                                <rect key="frame" x="20" y="224" width="374" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="userIcon" translatesAutoresizingMaskIntoConstraints="NO" id="KVf-S2-p62">
-                                <rect key="frame" x="119" y="88" width="175" height="128"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userIcon" translatesAutoresizingMaskIntoConstraints="NO" id="o8x-P0-GG1">
+                                <rect key="frame" x="139" y="88" width="136" height="128"/>
                                 <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="136" id="DHJ-qg-2PK"/>
+                                    <constraint firstAttribute="height" constant="128" id="xyl-OF-UfF"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -385,40 +372,109 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YNS-I5-9m4">
-                                <rect key="frame" x="16" y="64" width="99" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Dale que toma"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leu-vp-c3L">
+                                <rect key="frame" x="139" y="88" width="30" height="152"/>
                                 <connections>
-                                    <action selector="daleButton:" destination="qih-t0-5GR" eventType="touchUpInside" id="qq0-hU-wSB"/>
+                                    <action selector="showImagePickerButton:" destination="AJU-nd-tWo" eventType="touchUpInside" id="Km6-10-tEP"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Usuario" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Et-ad-3f0">
+                                <rect key="frame" x="142" y="248" width="130" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Y9w-Fi-Kfx">
+                                <rect key="frame" x="20" y="368" width="374" height="368"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qZX-x6-en2">
+                                    <size key="itemSize" width="374" height="73"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DogCell" id="Gs4-UI-Gt0" customClass="DogCell" customModule="Tindogs" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="73"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="73"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dog_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="4ED-kz-KBi">
+                                                    <rect key="frame" x="2" y="0.0" width="116" height="73"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WvV-Ee-PcJ">
+                                                    <rect key="frame" x="126" y="26" width="248" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <connections>
+                                            <outlet property="dogImageView" destination="4ED-kz-KBi" id="UdD-7d-BoD"/>
+                                            <outlet property="dogLabel" destination="WvV-Ee-PcJ" id="wV3-Mf-5PV"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="0Et-ad-3f0" firstAttribute="top" secondItem="KVf-S2-p62" secondAttribute="bottom" constant="8" symbolic="YES" id="5T0-zd-LCQ"/>
-                            <constraint firstItem="chP-9F-PtW" firstAttribute="centerX" secondItem="KVf-S2-p62" secondAttribute="centerX" id="77m-Q7-xwB"/>
-                            <constraint firstItem="KVf-S2-p62" firstAttribute="top" secondItem="chP-9F-PtW" secondAttribute="bottom" constant="24" id="BVS-Et-CCB"/>
-                            <constraint firstItem="0Et-ad-3f0" firstAttribute="leading" secondItem="GKG-RZ-PDc" secondAttribute="leadingMargin" id="ChX-UX-nIP"/>
-                            <constraint firstItem="chP-9F-PtW" firstAttribute="top" secondItem="8kq-qf-G9S" secondAttribute="top" id="KK6-Tv-Mo7"/>
-                            <constraint firstAttribute="trailing" secondItem="chP-9F-PtW" secondAttribute="trailing" id="KxD-ay-qBE"/>
-                            <constraint firstItem="KVf-S2-p62" firstAttribute="leading" secondItem="8kq-qf-G9S" secondAttribute="leading" constant="119" id="NCK-bP-3Yk"/>
-                            <constraint firstItem="8kq-qf-G9S" firstAttribute="bottom" secondItem="0Et-ad-3f0" secondAttribute="bottom" constant="422" id="NLQ-0l-Hde"/>
-                            <constraint firstItem="KVf-S2-p62" firstAttribute="centerX" secondItem="0Et-ad-3f0" secondAttribute="centerX" id="h0O-Fb-UmV"/>
-                            <constraint firstItem="chP-9F-PtW" firstAttribute="leading" secondItem="GKG-RZ-PDc" secondAttribute="leading" id="k3V-LK-hhl"/>
+                            <constraint firstItem="0Et-ad-3f0" firstAttribute="top" secondItem="o8x-P0-GG1" secondAttribute="bottom" id="94J-sl-SlS"/>
+                            <constraint firstItem="leu-vp-c3L" firstAttribute="top" secondItem="o8x-P0-GG1" secondAttribute="top" id="9Mi-iv-X9d"/>
+                            <constraint firstItem="o8x-P0-GG1" firstAttribute="top" secondItem="8kq-qf-G9S" secondAttribute="top" constant="24" id="Bo4-o1-z2u"/>
+                            <constraint firstItem="0Et-ad-3f0" firstAttribute="centerX" secondItem="8kq-qf-G9S" secondAttribute="centerX" id="C42-PV-mhw"/>
+                            <constraint firstItem="o8x-P0-GG1" firstAttribute="centerX" secondItem="8kq-qf-G9S" secondAttribute="centerX" id="HWK-JV-z9W"/>
+                            <constraint firstItem="Y9w-Fi-Kfx" firstAttribute="leading" secondItem="8kq-qf-G9S" secondAttribute="leading" constant="20" id="Lu9-1x-BU6"/>
+                            <constraint firstItem="leu-vp-c3L" firstAttribute="leading" secondItem="o8x-P0-GG1" secondAttribute="leading" id="Ygt-k3-uaw"/>
+                            <constraint firstItem="leu-vp-c3L" firstAttribute="bottom" secondItem="o8x-P0-GG1" secondAttribute="bottom" constant="24" id="aVl-H5-u1U"/>
+                            <constraint firstItem="Y9w-Fi-Kfx" firstAttribute="height" secondItem="GKG-RZ-PDc" secondAttribute="height" multiplier="0.5" id="gBe-vP-yWk"/>
+                            <constraint firstItem="Y9w-Fi-Kfx" firstAttribute="bottom" secondItem="8kq-qf-G9S" secondAttribute="bottom" id="hzS-pM-xWm"/>
+                            <constraint firstItem="8kq-qf-G9S" firstAttribute="trailing" secondItem="Y9w-Fi-Kfx" secondAttribute="trailing" constant="20" id="pgq-to-KXR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8kq-qf-G9S"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Perfil Usuario" id="Lm8-rl-vJ4">
+                        <barButtonItem key="leftBarButtonItem" title="Desconectar" id="cx1-hV-RdD">
+                            <connections>
+                                <action selector="signOutButton:" destination="qih-t0-5GR" id="kPw-R3-Vdq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="dogsCollectionView" destination="Y9w-Fi-Kfx" id="uss-ie-cV9"/>
                         <outlet property="userNameLabel" destination="0Et-ad-3f0" id="2VV-rZ-3sZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pNs-Ku-cxx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1212" y="-99"/>
+            <point key="canvasLocation" x="2121.739130434783" y="-134.5108695652174"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xiQ-Bg-ejD">
+            <objects>
+                <navigationController storyboardIdentifier="UserProfileNavigationViewController" automaticallyAdjustsScrollViewInsets="NO" id="24c-nS-RDU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="M6F-hT-L5W">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qih-t0-5GR" kind="relationship" relationship="rootViewController" id="cXn-fW-Lai"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MS0-G7-1uU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1211.5942028985507" y="-99.456521739130437"/>
         </scene>
     </scenes>
     <resources>
+        <image name="dog_placeholder" width="200" height="200"/>
         <image name="userIcon" width="512" height="512"/>
     </resources>
 </document>

@@ -31,12 +31,11 @@ class LoginUserInteractorImpl: LoginUserInteractor {
                 else {
                     self.loginVC.hideActivityIndicator(activityIndicator: self.loginVC.ActivityInd)
                     OperationQueue.main.addOperation {
-                        self.loginVC.showAlert(message: "Ups, tenemos un error \(httpResponse.statusCode), ese usuario o password son inválidos")
+                        self.loginVC.showAlert(message: "Ups, tenemos un error \(httpResponse.statusCode), comprueba usuario y password")
                     }
                     return
                 }
             }
-    
         }
         task.resume()
     }

@@ -3,11 +3,28 @@ import UIKit
 class UserProfileViewController: UIViewController {
 
     @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var dogsCollectionView: UICollectionView!
+    
+    var user: User?
+    var dogs: [Dog]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    let userProfileInteractor : UserProfileInteractor = UserProfileInteractorFakeImpl()
+        
+        userProfileInteractor.getUser(_id: "eresUnFistroPecador", token: "token", onSuccess: { (user: User) in
+            // OK MACKEY
+            self.user = user
+            self.dogs = user.dogs
+            
+            self.dogsCollectionView.delegate = self
+            self.dogsCollectionView.dataSource = self
+        }) { (error: Error) in
+            // KO MARAVILHAO
+        }
+        
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -16,23 +33,9 @@ class UserProfileViewController: UIViewController {
     }
     
     @IBAction func signOutButton(_ sender: Any) {
+        
         self.dismiss(animated: true, completion: nil)
-        
-        let defaults = UserDefaults.standard
-        
-//        print("-------------------BEFORE-------------------")
-//        print (defaults.string(forKey: CONSTANTS.userDefaults_id))
-//        print (defaults.string(forKey: CONSTANTS.userDefaultsToken))
-        
-        defaults.removeObject(forKey:CONSTANTS.userDefaults_id)
-        defaults.removeObject(forKey:CONSTANTS.userDefaultsToken)
-        
-//        print("-------------------AFTER-------------------")
-//        print (defaults.string(forKey: CONSTANTS.userDefaults_id))
-//        print (defaults.string(forKey: CONSTANTS.userDefaultsToken))
-    }
-    
-    @IBAction func daleButton(_ sender: Any) {
+        deleteNSUserDefaults()
     }
 
 

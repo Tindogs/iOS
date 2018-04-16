@@ -19,7 +19,3 @@ enum EndPoints: String {
     case findDogsFromUser       = "dogs/fromuser/"
     case addOrUpdateDogByUserId = "dogs/withuser/"
 }
-
-enum MyError: Error {
-    case found404(String)
-}

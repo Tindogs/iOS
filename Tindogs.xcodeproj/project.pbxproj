@@ -24,6 +24,11 @@
 		E53302392082706900B05A58 /* LoginUserJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53302382082706900B05A58 /* LoginUserJSONParser.swift */; };
 		E533023E2082A14F00B05A58 /* WriteNSUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533023D2082A14F00B05A58 /* WriteNSUserDefaults.swift */; };
 		E53302402082ADD100B05A58 /* ReadNSUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533023F2082ADD100B05A58 /* ReadNSUserDefaults.swift */; };
+		E533024220839FC200B05A58 /* DeleteNSUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533024120839FC200B05A58 /* DeleteNSUserDefaults.swift */; };
+		E53302442083EAEB00B05A58 /* UserProfileViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53302432083EAEB00B05A58 /* UserProfileViewController+CollectionView.swift */; };
+		E533024720840CB300B05A58 /* UserProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533024620840CB300B05A58 /* UserProfileInteractor.swift */; };
+		E533024920840D1600B05A58 /* UserProfileInteractorFakeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533024820840D1600B05A58 /* UserProfileInteractorFakeImpl.swift */; };
+		E533024B20841BED00B05A58 /* DogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533024A20841BED00B05A58 /* DogCell.swift */; };
 		E5451C20206586450006D23E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5451C1F206586450006D23E /* User.swift */; };
 		E5451C222065977A0006D23E /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5451C212065977A0006D23E /* Dog.swift */; };
 		E5451C242066FA6E0006D23E /* DogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5451C232066FA6E0006D23E /* DogTests.swift */; };
@@ -74,6 +79,11 @@
 		E53302382082706900B05A58 /* LoginUserJSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserJSONParser.swift; sourceTree = "<group>"; };
 		E533023D2082A14F00B05A58 /* WriteNSUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteNSUserDefaults.swift; sourceTree = "<group>"; };
 		E533023F2082ADD100B05A58 /* ReadNSUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadNSUserDefaults.swift; sourceTree = "<group>"; };
+		E533024120839FC200B05A58 /* DeleteNSUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteNSUserDefaults.swift; sourceTree = "<group>"; };
+		E53302432083EAEB00B05A58 /* UserProfileViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserProfileViewController+CollectionView.swift"; sourceTree = "<group>"; };
+		E533024620840CB300B05A58 /* UserProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileInteractor.swift; sourceTree = "<group>"; };
+		E533024820840D1600B05A58 /* UserProfileInteractorFakeImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileInteractorFakeImpl.swift; sourceTree = "<group>"; };
+		E533024A20841BED00B05A58 /* DogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogCell.swift; sourceTree = "<group>"; };
 		E5451C1F206586450006D23E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E5451C212065977A0006D23E /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
 		E5451C232066FA6E0006D23E /* DogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogTests.swift; sourceTree = "<group>"; };
@@ -208,8 +218,18 @@
 			children = (
 				E533023D2082A14F00B05A58 /* WriteNSUserDefaults.swift */,
 				E533023F2082ADD100B05A58 /* ReadNSUserDefaults.swift */,
+				E533024120839FC200B05A58 /* DeleteNSUserDefaults.swift */,
 			);
 			path = NSUserDefaults;
+			sourceTree = "<group>";
+		};
+		E533024520840C2900B05A58 /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				E533024620840CB300B05A58 /* UserProfileInteractor.swift */,
+				E533024820840D1600B05A58 /* UserProfileInteractorFakeImpl.swift */,
+			);
+			path = UserProfile;
 			sourceTree = "<group>";
 		};
 		E5451C1C206579FA0006D23E /* Model */ = {
@@ -226,6 +246,7 @@
 			children = (
 				5D14CB2C20476F940076F8C3 /* Main.storyboard */,
 				5D14CB3420476F940076F8C3 /* LaunchScreen.storyboard */,
+				E533024A20841BED00B05A58 /* DogCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -233,10 +254,11 @@
 		E5451C1E20657A070006D23E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E5451C2A206958220006D23E /* RegisterViewController.swift */,
 				E5451C26206952F80006D23E /* LogInViewController.swift */,
-				E5451C2C20696C730006D23E /* UserProfileViewController.swift */,
+				E5451C2A206958220006D23E /* RegisterViewController.swift */,
 				E5120BD0207CE708009EF7A8 /* RegisterViewController+imagePicker.swift */,
+				E5451C2C20696C730006D23E /* UserProfileViewController.swift */,
+				E53302432083EAEB00B05A58 /* UserProfileViewController+CollectionView.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -247,6 +269,7 @@
 				E53302312081621400B05A58 /* LoginUser */,
 				E5751861206EF27F00FAE728 /* RegisterUser */,
 				E533022C207EA31F00B05A58 /* UploadImage */,
+				E533024520840C2900B05A58 /* UserProfile */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -271,8 +294,8 @@
 		E575185B206EBAD100FAE728 /* JSON Parsers */ = {
 			isa = PBXGroup;
 			children = (
-				E575185C206EBB1600FAE728 /* RegisterUserJSONParser.swift */,
 				E53302382082706900B05A58 /* LoginUserJSONParser.swift */,
+				E575185C206EBB1600FAE728 /* RegisterUserJSONParser.swift */,
 			);
 			path = "JSON Parsers";
 			sourceTree = "<group>";
@@ -445,6 +468,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E533024220839FC200B05A58 /* DeleteNSUserDefaults.swift in Sources */,
+				E533024720840CB300B05A58 /* UserProfileInteractor.swift in Sources */,
 				E5751853206C431A00FAE728 /* Url+Endpoints+Constants.swift in Sources */,
 				E533022E207EA3AB00B05A58 /* UploadImageInteractorImpl.swift in Sources */,
 				E5451C20206586450006D23E /* User.swift in Sources */,
@@ -453,7 +478,10 @@
 				E5751860206EEDA000FAE728 /* RegisterUserRequest.swift in Sources */,
 				5D14CB3120476F940076F8C3 /* Tindogs.xcdatamodeld in Sources */,
 				E575185D206EBB1600FAE728 /* RegisterUserJSONParser.swift in Sources */,
+				E533024B20841BED00B05A58 /* DogCell.swift in Sources */,
+				E533024920840D1600B05A58 /* UserProfileInteractorFakeImpl.swift in Sources */,
 				E5451C2B206958220006D23E /* RegisterViewController.swift in Sources */,
+				E53302442083EAEB00B05A58 /* UserProfileViewController+CollectionView.swift in Sources */,
 				E53302392082706900B05A58 /* LoginUserJSONParser.swift in Sources */,
 				E5751855206D724300FAE728 /* RegisterUserInteractorFakeImpl.swift in Sources */,
 				E5751850206A938400FAE728 /* RegisterUserInteractor.swift in Sources */,

@@ -43,7 +43,7 @@ class LogInViewController: UIViewController {
                 self.showAlert(message: "Error guardando las preferencias, revisa el espacio libre")
             }
             
-            let userProfileVC = self.storyboard?.instantiateViewController(withIdentifier: "UserProfileViewController") as! UserProfileViewController
+            let userProfileVC = self.storyboard?.instantiateViewController(withIdentifier: "UserProfileNavigationViewController") as! UINavigationController
             
             self.present(userProfileVC, animated: true)
             
