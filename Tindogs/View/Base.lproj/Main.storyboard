@@ -421,17 +421,47 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalCentering" spacing="125" translatesAutoresizingMaskIntoConstraints="NO" id="Pm7-YS-rZf">
+                                <rect key="frame" x="73" y="286" width="294" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="okg-D8-Af0">
+                                        <rect key="frame" x="0.0" y="0.0" width="66" height="30"/>
+                                        <state key="normal" title="AJUSTES"/>
+                                        <connections>
+                                            <action selector="settingsButton:" destination="qih-t0-5GR" eventType="touchUpInside" id="jx0-kR-qmr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRG-lL-fsA">
+                                        <rect key="frame" x="191" y="0.0" width="103" height="30"/>
+                                        <state key="normal" title="EDITAR PERFIL"/>
+                                        <connections>
+                                            <action selector="editProfileButton:" destination="qih-t0-5GR" eventType="touchUpInside" id="Qsg-Ae-xSl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MIS MASCOTAS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxw-ly-u0y">
+                                <rect key="frame" x="20" y="347.66666666666669" width="381" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Pm7-YS-rZf" firstAttribute="top" secondItem="0Et-ad-3f0" secondAttribute="bottom" constant="20" id="8pR-2a-VvE"/>
                             <constraint firstItem="0Et-ad-3f0" firstAttribute="top" secondItem="o8x-P0-GG1" secondAttribute="bottom" id="94J-sl-SlS"/>
                             <constraint firstItem="leu-vp-c3L" firstAttribute="top" secondItem="o8x-P0-GG1" secondAttribute="top" id="9Mi-iv-X9d"/>
+                            <constraint firstItem="kxw-ly-u0y" firstAttribute="leading" secondItem="8kq-qf-G9S" secondAttribute="leading" constant="20" id="9xL-N9-xn2"/>
                             <constraint firstItem="o8x-P0-GG1" firstAttribute="top" secondItem="8kq-qf-G9S" secondAttribute="top" constant="24" id="Bo4-o1-z2u"/>
                             <constraint firstItem="0Et-ad-3f0" firstAttribute="centerX" secondItem="8kq-qf-G9S" secondAttribute="centerX" id="C42-PV-mhw"/>
+                            <constraint firstItem="kxw-ly-u0y" firstAttribute="bottom" secondItem="Y9w-Fi-Kfx" secondAttribute="top" id="CN9-4T-IwY"/>
+                            <constraint firstItem="Pm7-YS-rZf" firstAttribute="centerX" secondItem="8kq-qf-G9S" secondAttribute="centerX" id="DOB-Oj-6eE"/>
                             <constraint firstItem="o8x-P0-GG1" firstAttribute="centerX" secondItem="8kq-qf-G9S" secondAttribute="centerX" id="HWK-JV-z9W"/>
                             <constraint firstItem="Y9w-Fi-Kfx" firstAttribute="leading" secondItem="8kq-qf-G9S" secondAttribute="leading" constant="20" id="Lu9-1x-BU6"/>
                             <constraint firstItem="leu-vp-c3L" firstAttribute="leading" secondItem="o8x-P0-GG1" secondAttribute="leading" id="Ygt-k3-uaw"/>
                             <constraint firstItem="leu-vp-c3L" firstAttribute="bottom" secondItem="o8x-P0-GG1" secondAttribute="bottom" constant="24" id="aVl-H5-u1U"/>
+                            <constraint firstItem="8kq-qf-G9S" firstAttribute="trailing" secondItem="kxw-ly-u0y" secondAttribute="trailing" constant="13" id="f7w-m1-KB4"/>
                             <constraint firstItem="Y9w-Fi-Kfx" firstAttribute="height" secondItem="GKG-RZ-PDc" secondAttribute="height" multiplier="0.5" id="gBe-vP-yWk"/>
                             <constraint firstItem="Y9w-Fi-Kfx" firstAttribute="bottom" secondItem="8kq-qf-G9S" secondAttribute="bottom" id="hzS-pM-xWm"/>
                             <constraint firstItem="8kq-qf-G9S" firstAttribute="trailing" secondItem="Y9w-Fi-Kfx" secondAttribute="trailing" constant="20" id="pgq-to-KXR"/>
@@ -444,9 +474,15 @@
                                 <action selector="signOutButton:" destination="qih-t0-5GR" id="kPw-R3-Vdq"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Match" id="PJ7-Ke-gcW">
+                            <connections>
+                                <action selector="matchButton:" destination="qih-t0-5GR" id="6Rx-lg-3iT"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="dogsCollectionView" destination="Y9w-Fi-Kfx" id="uss-ie-cV9"/>
+                        <outlet property="photoImageView" destination="o8x-P0-GG1" id="jES-rH-wRn"/>
                         <outlet property="userNameLabel" destination="0Et-ad-3f0" id="2VV-rZ-3sZ"/>
                     </connections>
                 </viewController>

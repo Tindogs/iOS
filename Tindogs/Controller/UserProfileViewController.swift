@@ -4,6 +4,7 @@ class UserProfileViewController: UIViewController {
 
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var dogsCollectionView: UICollectionView!
+    @IBOutlet weak var photoImageView: UIImageView!
     
     var user: User?
     var dogs: [Dog]?
@@ -17,14 +18,14 @@ class UserProfileViewController: UIViewController {
             // OK MACKEY
             self.user = user
             self.dogs = user.dogs
+            self.userNameLabel.text = user.userName
+            user.photo?.loadImage(into: self.photoImageView)
             
             self.dogsCollectionView.delegate = self
             self.dogsCollectionView.dataSource = self
         }) { (error: Error) in
-            // KO MARAVILHAO
+            // KKO MARAVILHAO
         }
-        
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,5 +39,15 @@ class UserProfileViewController: UIViewController {
         deleteNSUserDefaults()
     }
 
-
+    @IBAction func matchButton(_ sender: Any) {
+        print("matchButton tapped")
+    }
+    
+    @IBAction func settingsButton(_ sender: Any) {
+        print("settingsButton tapped")
+    }
+    
+    @IBAction func editProfileButton(_ sender: Any) {
+        print("editProfileButton tapped")
+    }
 }
