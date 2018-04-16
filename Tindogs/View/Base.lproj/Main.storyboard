@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -384,29 +383,32 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Y9w-Fi-Kfx">
-                                <rect key="frame" x="20" y="368" width="374" height="368"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Y9w-Fi-Kfx">
+                                <rect key="frame" x="20" y="636" width="374" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qZX-x6-en2">
-                                    <size key="itemSize" width="374" height="73"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Nmr-Ew-T8K"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qZX-x6-en2">
+                                    <size key="itemSize" width="116" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DogCell" id="Gs4-UI-Gt0" customClass="DogCell" customModule="Tindogs" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="73"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="116" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="73"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="116" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dog_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="4ED-kz-KBi">
-                                                    <rect key="frame" x="2" y="0.0" width="116" height="73"/>
+                                                    <rect key="frame" x="0.0" y="27" width="116" height="73"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WvV-Ee-PcJ">
-                                                    <rect key="frame" x="126" y="26" width="248" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WvV-Ee-PcJ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="116" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -414,6 +416,7 @@
                                                 </label>
                                             </subviews>
                                         </view>
+                                        <size key="customSize" width="116" height="100"/>
                                         <connections>
                                             <outlet property="dogImageView" destination="4ED-kz-KBi" id="UdD-7d-BoD"/>
                                             <outlet property="dogLabel" destination="WvV-Ee-PcJ" id="wV3-Mf-5PV"/>
@@ -441,7 +444,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MIS MASCOTAS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxw-ly-u0y">
-                                <rect key="frame" x="20" y="347.66666666666669" width="381" height="20.333333333333314"/>
+                                <rect key="frame" x="20" y="615.66666666666663" width="381" height="20.333333333333371"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -462,7 +465,6 @@
                             <constraint firstItem="leu-vp-c3L" firstAttribute="leading" secondItem="o8x-P0-GG1" secondAttribute="leading" id="Ygt-k3-uaw"/>
                             <constraint firstItem="leu-vp-c3L" firstAttribute="bottom" secondItem="o8x-P0-GG1" secondAttribute="bottom" constant="24" id="aVl-H5-u1U"/>
                             <constraint firstItem="8kq-qf-G9S" firstAttribute="trailing" secondItem="kxw-ly-u0y" secondAttribute="trailing" constant="13" id="f7w-m1-KB4"/>
-                            <constraint firstItem="Y9w-Fi-Kfx" firstAttribute="height" secondItem="GKG-RZ-PDc" secondAttribute="height" multiplier="0.5" id="gBe-vP-yWk"/>
                             <constraint firstItem="Y9w-Fi-Kfx" firstAttribute="bottom" secondItem="8kq-qf-G9S" secondAttribute="bottom" id="hzS-pM-xWm"/>
                             <constraint firstItem="8kq-qf-G9S" firstAttribute="trailing" secondItem="Y9w-Fi-Kfx" secondAttribute="trailing" constant="20" id="pgq-to-KXR"/>
                         </constraints>
