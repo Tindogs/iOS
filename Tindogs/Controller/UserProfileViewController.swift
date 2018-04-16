@@ -50,4 +50,8 @@ class UserProfileViewController: UIViewController {
     @IBAction func editProfileButton(_ sender: Any) {
         print("editProfileButton tapped")
     }
+    
+    @IBAction func newDogButton(_ sender: Any) {
+        print("newDogButton tapped")
+    }
 }
