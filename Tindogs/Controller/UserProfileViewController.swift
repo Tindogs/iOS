@@ -34,7 +34,7 @@ class UserProfileViewController: UIViewController {
     }
     
     @IBAction func signOutButton(_ sender: Any) {
-        
+        // TODO HABRA QUE INSTANCIAR EL LOGINVC Y 
         self.dismiss(animated: true, completion: nil)
         deleteNSUserDefaults()
     }

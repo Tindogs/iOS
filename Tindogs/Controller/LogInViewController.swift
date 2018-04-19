@@ -10,6 +10,10 @@ class LogInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let defaults = UserDefaults.standard
+        if let _id = defaults.string(forKey: "_id"), let token = defaults.string(forKey: "token") {
+            
+        }
         // Do any additional setup after loading the view.
     }
 

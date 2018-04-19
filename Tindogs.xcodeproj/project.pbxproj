@@ -29,6 +29,10 @@
 		E533024720840CB300B05A58 /* UserProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533024620840CB300B05A58 /* UserProfileInteractor.swift */; };
 		E533024920840D1600B05A58 /* UserProfileInteractorFakeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533024820840D1600B05A58 /* UserProfileInteractorFakeImpl.swift */; };
 		E533024B20841BED00B05A58 /* DogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533024A20841BED00B05A58 /* DogCell.swift */; };
+		E53421B320880835004BD366 /* GetUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53421B220880835004BD366 /* GetUserInteractor.swift */; };
+		E53421B5208808C0004BD366 /* GetUserInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53421B4208808C0004BD366 /* GetUserInteractorImpl.swift */; };
+		E53421B7208809A4004BD366 /* GetUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53421B6208809A4004BD366 /* GetUserRequest.swift */; };
+		E53421B920880BB7004BD366 /* GetUserJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53421B820880BB7004BD366 /* GetUserJSONParser.swift */; };
 		E5451C20206586450006D23E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5451C1F206586450006D23E /* User.swift */; };
 		E5451C222065977A0006D23E /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5451C212065977A0006D23E /* Dog.swift */; };
 		E5451C242066FA6E0006D23E /* DogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5451C232066FA6E0006D23E /* DogTests.swift */; };
@@ -84,6 +88,10 @@
 		E533024620840CB300B05A58 /* UserProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileInteractor.swift; sourceTree = "<group>"; };
 		E533024820840D1600B05A58 /* UserProfileInteractorFakeImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileInteractorFakeImpl.swift; sourceTree = "<group>"; };
 		E533024A20841BED00B05A58 /* DogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogCell.swift; sourceTree = "<group>"; };
+		E53421B220880835004BD366 /* GetUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserInteractor.swift; sourceTree = "<group>"; };
+		E53421B4208808C0004BD366 /* GetUserInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserInteractorImpl.swift; sourceTree = "<group>"; };
+		E53421B6208809A4004BD366 /* GetUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserRequest.swift; sourceTree = "<group>"; };
+		E53421B820880BB7004BD366 /* GetUserJSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserJSONParser.swift; sourceTree = "<group>"; };
 		E5451C1F206586450006D23E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E5451C212065977A0006D23E /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
 		E5451C232066FA6E0006D23E /* DogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogTests.swift; sourceTree = "<group>"; };
@@ -209,6 +217,7 @@
 			children = (
 				E53302362082680700B05A58 /* LoginUserRequest.swift */,
 				E575185F206EEDA000FAE728 /* RegisterUserRequest.swift */,
+				E53421B6208809A4004BD366 /* GetUserRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -230,6 +239,15 @@
 				E533024820840D1600B05A58 /* UserProfileInteractorFakeImpl.swift */,
 			);
 			path = UserProfile;
+			sourceTree = "<group>";
+		};
+		E53421B1208807F8004BD366 /* GetUser */ = {
+			isa = PBXGroup;
+			children = (
+				E53421B220880835004BD366 /* GetUserInteractor.swift */,
+				E53421B4208808C0004BD366 /* GetUserInteractorImpl.swift */,
+			);
+			path = GetUser;
 			sourceTree = "<group>";
 		};
 		E5451C1C206579FA0006D23E /* Model */ = {
@@ -270,6 +288,7 @@
 				E5751861206EF27F00FAE728 /* RegisterUser */,
 				E533022C207EA31F00B05A58 /* UploadImage */,
 				E533024520840C2900B05A58 /* UserProfile */,
+				E53421B1208807F8004BD366 /* GetUser */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -296,6 +315,7 @@
 			children = (
 				E53302382082706900B05A58 /* LoginUserJSONParser.swift */,
 				E575185C206EBB1600FAE728 /* RegisterUserJSONParser.swift */,
+				E53421B820880BB7004BD366 /* GetUserJSONParser.swift */,
 			);
 			path = "JSON Parsers";
 			sourceTree = "<group>";
@@ -485,15 +505,19 @@
 				E53302392082706900B05A58 /* LoginUserJSONParser.swift in Sources */,
 				E5751855206D724300FAE728 /* RegisterUserInteractorFakeImpl.swift in Sources */,
 				E5751850206A938400FAE728 /* RegisterUserInteractor.swift in Sources */,
+				E53421B5208808C0004BD366 /* GetUserInteractorImpl.swift in Sources */,
 				E53302372082680700B05A58 /* LoginUserRequest.swift in Sources */,
 				E5330233208163E000B05A58 /* LoginUserInteractor.swift in Sources */,
 				E5451C27206952F80006D23E /* LogInViewController.swift in Sources */,
 				E53302352082670D00B05A58 /* LoginUserInteractorImpl.swift in Sources */,
 				E575185A206E7C2E00FAE728 /* RegisterUserInteractorImpl.swift in Sources */,
+				E53421B7208809A4004BD366 /* GetUserRequest.swift in Sources */,
+				E53421B320880835004BD366 /* GetUserInteractor.swift in Sources */,
 				E5451C222065977A0006D23E /* Dog.swift in Sources */,
 				E533022B207EA2CD00B05A58 /* UploadImageInteractor.swift in Sources */,
 				E5751858206D729D00FAE728 /* Typealias.swift in Sources */,
 				5D14CB2920476F940076F8C3 /* AppDelegate.swift in Sources */,
+				E53421B920880BB7004BD366 /* GetUserJSONParser.swift in Sources */,
 				E533023E2082A14F00B05A58 /* WriteNSUserDefaults.swift in Sources */,
 				E5751863206FB95100FAE728 /* String+Image.swift in Sources */,
 				E53302402082ADD100B05A58 /* ReadNSUserDefaults.swift in Sources */,

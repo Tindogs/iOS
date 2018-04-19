@@ -2,7 +2,7 @@
 import Foundation
 
 class UserProfileInteractorFakeImpl: UserProfileInteractor {
-    
+   
     func getUser(_id: String, token: String, onSuccess: @escaping (User) -> Void, onError: errorClosure) {
         
         let dog0 = Dog(_id: "5ad21fcd4058bd4d2f3307db", name: "Churri", age: 5, breed: "Chuchu callejerus", pureBreed: false, color: "Dark Brown", query: nil, likesFromOthers: [], description: "a nice little dog", photos: [])

@@ -389,7 +389,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Y9w-Fi-Kfx">
-                                <rect key="frame" x="20" y="536" width="374" height="100"/>
+                                <rect key="frame" x="20" y="476" width="374" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Nmr-Ew-T8K"/>
@@ -449,13 +449,13 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MIS MASCOTAS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxw-ly-u0y">
-                                <rect key="frame" x="20" y="495.66666666666669" width="381" height="20.333333333333314"/>
+                                <rect key="frame" x="20" y="405.66666666666669" width="381" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bja-9X-wQY">
-                                <rect key="frame" x="120" y="666" width="175" height="30"/>
+                                <rect key="frame" x="120" y="626" width="175" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="175" id="t5s-ry-eBD"/>
@@ -480,16 +480,16 @@
                             <constraint firstItem="kxw-ly-u0y" firstAttribute="leading" secondItem="8kq-qf-G9S" secondAttribute="leading" constant="20" id="9xL-N9-xn2"/>
                             <constraint firstItem="o8x-P0-GG1" firstAttribute="top" secondItem="8kq-qf-G9S" secondAttribute="top" constant="24" id="Bo4-o1-z2u"/>
                             <constraint firstItem="0Et-ad-3f0" firstAttribute="centerX" secondItem="8kq-qf-G9S" secondAttribute="centerX" id="C42-PV-mhw"/>
-                            <constraint firstItem="kxw-ly-u0y" firstAttribute="bottom" secondItem="Y9w-Fi-Kfx" secondAttribute="top" constant="-20" id="CN9-4T-IwY"/>
+                            <constraint firstItem="kxw-ly-u0y" firstAttribute="bottom" secondItem="Y9w-Fi-Kfx" secondAttribute="top" constant="-50" id="CN9-4T-IwY"/>
                             <constraint firstItem="Pm7-YS-rZf" firstAttribute="centerX" secondItem="8kq-qf-G9S" secondAttribute="centerX" id="DOB-Oj-6eE"/>
                             <constraint firstItem="Bja-9X-wQY" firstAttribute="centerX" secondItem="8kq-qf-G9S" secondAttribute="centerX" id="DfK-py-TUd"/>
                             <constraint firstItem="o8x-P0-GG1" firstAttribute="centerX" secondItem="8kq-qf-G9S" secondAttribute="centerX" id="HWK-JV-z9W"/>
                             <constraint firstItem="Y9w-Fi-Kfx" firstAttribute="leading" secondItem="8kq-qf-G9S" secondAttribute="leading" constant="20" id="Lu9-1x-BU6"/>
                             <constraint firstItem="leu-vp-c3L" firstAttribute="leading" secondItem="o8x-P0-GG1" secondAttribute="leading" id="Ygt-k3-uaw"/>
-                            <constraint firstItem="8kq-qf-G9S" firstAttribute="bottom" secondItem="Bja-9X-wQY" secondAttribute="bottom" constant="40" id="aLq-VA-tpN"/>
+                            <constraint firstItem="8kq-qf-G9S" firstAttribute="bottom" secondItem="Bja-9X-wQY" secondAttribute="bottom" constant="80" id="aLq-VA-tpN"/>
                             <constraint firstItem="leu-vp-c3L" firstAttribute="bottom" secondItem="o8x-P0-GG1" secondAttribute="bottom" constant="24" id="aVl-H5-u1U"/>
                             <constraint firstItem="8kq-qf-G9S" firstAttribute="trailing" secondItem="kxw-ly-u0y" secondAttribute="trailing" constant="13" id="f7w-m1-KB4"/>
-                            <constraint firstItem="Y9w-Fi-Kfx" firstAttribute="bottom" secondItem="8kq-qf-G9S" secondAttribute="bottom" constant="-100" id="hzS-pM-xWm"/>
+                            <constraint firstItem="Y9w-Fi-Kfx" firstAttribute="bottom" secondItem="8kq-qf-G9S" secondAttribute="bottom" constant="-160" id="hzS-pM-xWm"/>
                             <constraint firstItem="8kq-qf-G9S" firstAttribute="trailing" secondItem="Y9w-Fi-Kfx" secondAttribute="trailing" constant="20" id="pgq-to-KXR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8kq-qf-G9S"/>

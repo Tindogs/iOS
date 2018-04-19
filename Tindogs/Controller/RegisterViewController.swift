@@ -55,7 +55,7 @@ class RegisterViewController: UIViewController {
         view.addSubview(ActivityInd)
         
         let registerUserInteractor: RegisterUserInteractor = RegisterUserInteractorImpl()
-        var user = User(firstName: self.firstNameTextField.text!, lastName: self.lastNameTextField.text!, email: self.emailTextField.text!, userName: self.userNameTextField.text!, password: self.passwordTextField.text!, photo: "")
+        let user = User(firstName: self.firstNameTextField.text!, lastName: self.lastNameTextField.text!, email: self.emailTextField.text!, userName: self.userNameTextField.text!, password: self.passwordTextField.text!, photo: "")
         
         // Check if there is an image selected
         if let image = pickedImage, let name = photoName {
@@ -67,7 +67,7 @@ class RegisterViewController: UIViewController {
                 user.photo = url
                 registerUserInteractor.execute(user: user, onSuccess: { (user: User) in
                     self.hideActivityIndicator(activityIndicator: ActivityInd)
-                    self.showAlertAndDismissVC(message: "Hola \(user.firstName), te has registrado correctamente")
+                    self.showAlertDismissVCAndNavigateToUserProfile(message: "Hola \(user.firstName), te has registrado correctamente")
                     self.user = user
                 }) { (error: Error) in
                     self.hideActivityIndicator(activityIndicator: ActivityInd)
@@ -83,7 +83,7 @@ class RegisterViewController: UIViewController {
             // if there's no image selected register user without photo
             registerUserInteractor.execute(user: user, onSuccess: { (user: User) in
                 self.hideActivityIndicator(activityIndicator: ActivityInd)
-                self.showAlertAndDismissVC(message: "Hola \(user.firstName), te has registrado correctamente")
+                self.showAlertDismissVCAndNavigateToUserProfile(message: "Hola \(user.firstName), te has registrado correctamente")
                 self.user = user
             }) { (error: Error) in
                 self.hideActivityIndicator(activityIndicator: ActivityInd)
@@ -113,9 +113,21 @@ class RegisterViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    func showAlertAndDismissVC(message: String) {
+    func showAlertDismissVCAndNavigateToUserProfile(message: String) {
         let alert = UIAlertController(title: "Guau Guau!", message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Vale", style: .destructive, handler: { (action) -> Void in
+            // Destination VC
+            let userProfileNavVC = self.storyboard?.instantiateViewController(withIdentifier: "UserProfileNavigationViewController") as! UINavigationController
+            
+            // Reference to the nav's topVC to inyect the user property
+            let userProfileVC = userProfileNavVC.topViewController as! UserProfileViewController
+            userProfileVC.user = self.user
+            
+            // Set the rootvc to the destination vc with the appdelegate object
+            let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+            appDelegate.window?.rootViewController = userProfileNavVC
+            
+            // Dismiss current VC
             self.dismiss(animated: true, completion: nil)
         })
         
