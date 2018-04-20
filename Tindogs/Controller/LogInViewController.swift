@@ -9,10 +9,36 @@ class LogInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         let defaults = UserDefaults.standard
+        // there's a stored userid and token so we will navigate to the userprofile VC
         if let _id = defaults.string(forKey: "_id"), let token = defaults.string(forKey: "token") {
+            self.showActivityIndicator()
+            let getUserInteractor: GetUserInteractor = GetUserInteractorImpl()
             
+            getUserInteractor.execute(userId: _id, token: token, onSuccess: { (user: User) in
+                
+                self.hideActivityIndicator(activityIndicator: self.ActivityInd)
+                
+                // Destination VC
+                let userProfileNavVC = self.storyboard?.instantiateViewController(withIdentifier: "UserProfileNavigationViewController") as! UINavigationController
+                
+                // Reference to the nav's topVC to inyect the user property
+                let userProfileVC = userProfileNavVC.topViewController as! UserProfileViewController
+                userProfileVC.user = user
+                
+                // Set the rootvc to the destination vc with the appdelegate object
+                let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+                appDelegate.window?.rootViewController = userProfileNavVC
+                
+                // Dismiss current VC
+                self.dismiss(animated: true, completion: nil)
+                
+            }, onError: { (error: Error) in
+                self.hideActivityIndicator(activityIndicator: self.ActivityInd)
+                self.showAlert(message: error.localizedDescription )
+            })
         }
         // Do any additional setup after loading the view.
     }
@@ -30,13 +56,6 @@ class LogInViewController: UIViewController {
             showAlert(message: "Rellena todos los campos por favor")
             return
         }
-        
-        // Show Activity Indicator
-        
-        ActivityInd.center = view.center
-        ActivityInd.hidesWhenStopped = false
-        ActivityInd.startAnimating()
-        view.addSubview(ActivityInd)
         
         let loginUserInteractor: LoginUserInteractor = LoginUserInteractorImpl(loginVC: self)
         
@@ -56,7 +75,7 @@ class LogInViewController: UIViewController {
             
         }) { (error: Error) in
             self.hideActivityIndicator(activityIndicator: self.ActivityInd)
-            self.showAlert(message: error as! String)
+            self.showAlert(message: error.localizedDescription)
         }
     }
     
@@ -70,6 +89,14 @@ class LogInViewController: UIViewController {
         
         self.present(registerVC, animated: true )
     }
+    
+    func showActivityIndicator() {
+        ActivityInd.center = view.center
+        ActivityInd.hidesWhenStopped = false
+        ActivityInd.startAnimating()
+        self.view.addSubview(ActivityInd)
+    }
+    
     
     func hideActivityIndicator(activityIndicator : UIActivityIndicatorView) {
         

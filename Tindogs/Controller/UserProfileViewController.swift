@@ -34,9 +34,18 @@ class UserProfileViewController: UIViewController {
     }
     
     @IBAction func signOutButton(_ sender: Any) {
-        // TODO HABRA QUE INSTANCIAR EL LOGINVC Y 
-        self.dismiss(animated: true, completion: nil)
+ 
         deleteNSUserDefaults()
+        
+        // Destination VC
+        let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LogInViewController") as! LogInViewController
+       
+        // Set the rootvc to the destination vc with the appdelegate object
+        let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+        appDelegate.window?.rootViewController = loginVC
+        
+        self.dismiss(animated: true, completion: nil)
+
     }
 
     @IBAction func matchButton(_ sender: Any) {

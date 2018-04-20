@@ -7,16 +7,7 @@ func getUserRequest(userId: String, token: String) -> URLRequest {
     var request = URLRequest (url:url!)
     
     request.httpMethod = Method.GET.rawValue
-    request.addValue("application/json", forHTTPHeaderField: "content-type")
-    request.addValue("application/json", forHTTPHeaderField: "Accept")
-    
-    let dictionary = ["token": token]
-    
-    do {
-        request.httpBody = try JSONSerialization.data(withJSONObject: dictionary, options: .prettyPrinted)
-    } catch {
-        print("💩 Error serializing dictionary")
-    }
+    request.addValue(token, forHTTPHeaderField: "token")
     
     return request
 }
