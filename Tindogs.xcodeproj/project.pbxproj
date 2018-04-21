@@ -26,8 +26,6 @@
 		E53302402082ADD100B05A58 /* ReadNSUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533023F2082ADD100B05A58 /* ReadNSUserDefaults.swift */; };
 		E533024220839FC200B05A58 /* DeleteNSUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533024120839FC200B05A58 /* DeleteNSUserDefaults.swift */; };
 		E53302442083EAEB00B05A58 /* UserProfileViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53302432083EAEB00B05A58 /* UserProfileViewController+CollectionView.swift */; };
-		E533024720840CB300B05A58 /* UserProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533024620840CB300B05A58 /* UserProfileInteractor.swift */; };
-		E533024920840D1600B05A58 /* UserProfileInteractorFakeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533024820840D1600B05A58 /* UserProfileInteractorFakeImpl.swift */; };
 		E533024B20841BED00B05A58 /* DogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533024A20841BED00B05A58 /* DogCell.swift */; };
 		E53421B320880835004BD366 /* GetUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53421B220880835004BD366 /* GetUserInteractor.swift */; };
 		E53421B5208808C0004BD366 /* GetUserInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53421B4208808C0004BD366 /* GetUserInteractorImpl.swift */; };
@@ -47,7 +45,6 @@
 		E575185D206EBB1600FAE728 /* RegisterUserJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E575185C206EBB1600FAE728 /* RegisterUserJSONParser.swift */; };
 		E5751860206EEDA000FAE728 /* RegisterUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E575185F206EEDA000FAE728 /* RegisterUserRequest.swift */; };
 		E5751863206FB95100FAE728 /* String+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5751862206FB95100FAE728 /* String+Image.swift */; };
-		E583C269208AB38E00591A61 /* UserProfileInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E583C268208AB38E00591A61 /* UserProfileInteractorImpl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,8 +83,6 @@
 		E533023F2082ADD100B05A58 /* ReadNSUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadNSUserDefaults.swift; sourceTree = "<group>"; };
 		E533024120839FC200B05A58 /* DeleteNSUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteNSUserDefaults.swift; sourceTree = "<group>"; };
 		E53302432083EAEB00B05A58 /* UserProfileViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserProfileViewController+CollectionView.swift"; sourceTree = "<group>"; };
-		E533024620840CB300B05A58 /* UserProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileInteractor.swift; sourceTree = "<group>"; };
-		E533024820840D1600B05A58 /* UserProfileInteractorFakeImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileInteractorFakeImpl.swift; sourceTree = "<group>"; };
 		E533024A20841BED00B05A58 /* DogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogCell.swift; sourceTree = "<group>"; };
 		E53421B220880835004BD366 /* GetUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserInteractor.swift; sourceTree = "<group>"; };
 		E53421B4208808C0004BD366 /* GetUserInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserInteractorImpl.swift; sourceTree = "<group>"; };
@@ -107,7 +102,6 @@
 		E575185C206EBB1600FAE728 /* RegisterUserJSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserJSONParser.swift; sourceTree = "<group>"; };
 		E575185F206EEDA000FAE728 /* RegisterUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserRequest.swift; sourceTree = "<group>"; };
 		E5751862206FB95100FAE728 /* String+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Image.swift"; sourceTree = "<group>"; };
-		E583C268208AB38E00591A61 /* UserProfileInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileInteractorImpl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,16 +228,6 @@
 			path = NSUserDefaults;
 			sourceTree = "<group>";
 		};
-		E533024520840C2900B05A58 /* UserProfile */ = {
-			isa = PBXGroup;
-			children = (
-				E533024620840CB300B05A58 /* UserProfileInteractor.swift */,
-				E533024820840D1600B05A58 /* UserProfileInteractorFakeImpl.swift */,
-				E583C268208AB38E00591A61 /* UserProfileInteractorImpl.swift */,
-			);
-			path = UserProfile;
-			sourceTree = "<group>";
-		};
 		E53421B1208807F8004BD366 /* GetUser */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,7 +274,6 @@
 				E53302312081621400B05A58 /* LoginUser */,
 				E5751861206EF27F00FAE728 /* RegisterUser */,
 				E533022C207EA31F00B05A58 /* UploadImage */,
-				E533024520840C2900B05A58 /* UserProfile */,
 				E53421B1208807F8004BD366 /* GetUser */,
 			);
 			path = Interactors;
@@ -492,8 +475,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E533024220839FC200B05A58 /* DeleteNSUserDefaults.swift in Sources */,
-				E583C269208AB38E00591A61 /* UserProfileInteractorImpl.swift in Sources */,
-				E533024720840CB300B05A58 /* UserProfileInteractor.swift in Sources */,
 				E5751853206C431A00FAE728 /* Url+Endpoints+Constants.swift in Sources */,
 				E533022E207EA3AB00B05A58 /* UploadImageInteractorImpl.swift in Sources */,
 				E5451C20206586450006D23E /* User.swift in Sources */,
@@ -503,7 +484,6 @@
 				5D14CB3120476F940076F8C3 /* Tindogs.xcdatamodeld in Sources */,
 				E575185D206EBB1600FAE728 /* RegisterUserJSONParser.swift in Sources */,
 				E533024B20841BED00B05A58 /* DogCell.swift in Sources */,
-				E533024920840D1600B05A58 /* UserProfileInteractorFakeImpl.swift in Sources */,
 				E5451C2B206958220006D23E /* RegisterViewController.swift in Sources */,
 				E53302442083EAEB00B05A58 /* UserProfileViewController+CollectionView.swift in Sources */,
 				E53302392082706900B05A58 /* LoginUserJSONParser.swift in Sources */,

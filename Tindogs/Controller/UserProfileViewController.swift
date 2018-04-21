@@ -18,21 +18,6 @@ class UserProfileViewController: UIViewController {
 
         self.dogsCollectionView.delegate = self
         self.dogsCollectionView.dataSource = self
-        
-//        let userProfileInteractor : UserProfileInteractor = UserProfileInteractorImpl()
-//
-//        userProfileInteractor.getUser(user: user!, onSuccess: { (user: User) in
-//            // OK MACKEY
-//            self.user = user
-//            self.dogs = user.dogs
-//            self.userNameLabel.text = user.userName
-//            user.photo?.loadImage(into: self.photoImageView)
-//
-//            self.dogsCollectionView.delegate = self
-//            self.dogsCollectionView.dataSource = self
-//        }) { (error: Error) in
-//            // KKO MARAVILHAO
-//        }
     }
 
     override func didReceiveMemoryWarning() {

@@ -4,32 +4,39 @@ import Foundation
 func loginUserParseData (data: Data) -> (user:User, token: String) {
     
     var user: User?
+    var dogs = [Dog]()
     var token : String?
     
     do {
-        let json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as? NSDictionary
-        
-        if let parseJson = json {
-            if ((json?.value(forKey: "success") as! Bool) == true) {
-                
-                // TODO : EL TOKEN HABRA QUE GUARDARLO EN EL KEYCHAIN/NS USER DEFAULTS
-                if let jsontoken = json?.value(forKey: "token") as! String! {
-                    token = jsontoken
-                    let result = parseJson.object(forKey: "result") as! NSDictionary
+        if let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
+            let jsontoken = json["token"] as? String,
+            let result = json["result"] as? [String: Any] {
+            token = jsontoken
+            let _id         = result["_id"] as! String?
+            let first_name  = result["first_name"] as! String
+            let last_name   = result["last_name"] as! String
+            let email       = result["email"] as! String
+            let username    = result["username"] as! String
+            let password    = result["password"] as! String
+            let coordinates = result["coordinates"] as! [Double]?
+            let photo       = result["photo"] as! String?
+            if let dogsDict = result["dogs"] as? [[String: Any]] {
+                for dog in dogsDict {
+                    let _id             = dog["_id"] as! String?
+                    let name            = dog["name"] as! String
+                    let age             = dog["age"] as! Int?
+                    let breed           = dog["breed"] as! String?
+                    let pureBreed       = dog["purebreed"] as! Bool?
+                    let color           = dog["color"] as! String?
+                    let query           = dog["query"] as! Query?
+                    let likesFromOthers = dog["likes_from_others"] as! [LikesFromOthers]?
+                    let description     = dog["description"] as! String?
+                    let photos          = dog["photos"] as! [String]?
                     
-                    // TODO : MAPEO A OBJETOS, CUANTO TENGAMOS COREDATA
-                    let _id         = result.value(forKey: "_id") as! String
-                    let first_name  = result.value(forKey: "first_name") as! String
-                    let last_name   = result.value(forKey: "last_name") as! String
-                    let email       = result.value(forKey: "email") as! String
-                    let username    = result.value(forKey: "username") as! String
-                    let password    = result.value(forKey: "password") as! String
-                    let photo       = result.value(forKey: "photo") as! String
-                    let coordinates = result.value(forKey: "coordinates") as! [Double]
-                    let dogs        = result.value(forKey: "dogs") as! [Dog]
-                    
-                    user = User(_id: _id, firstName: first_name, lastName: last_name, email: email, userName: username, password: password, coordinates: coordinates, photo: photo, dogs: dogs)
+                    dogs.append(Dog(_id: _id, name: name, age: age, breed: breed, pureBreed: pureBreed, color: color, query: query, likesFromOthers: likesFromOthers, description: description, photos: photos))
                 }
+                
+                user = User(_id: _id, firstName: first_name, lastName: last_name, email: email, userName: username, password: password, coordinates: coordinates, photo: photo, dogs: dogs)
             }
         }
     } catch {
