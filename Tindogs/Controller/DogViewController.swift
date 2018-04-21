@@ -6,6 +6,7 @@ class DogViewController: UIViewController {
     var dog: Dog?
     var pickedImage : UIImage?
     var photoName : String?
+    let rowHeight : CGFloat = 20.0
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var ageTextField: UITextField!
@@ -18,7 +19,9 @@ class DogViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        self.breedPicker.delegate = self
+        self.breedPicker.dataSource = self
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -33,6 +36,8 @@ class DogViewController: UIViewController {
     }
     
     @IBAction func saveButton(_ sender: Any) {
+        
+        
     }
     
     @IBAction func cancelButton(_ sender: Any) {

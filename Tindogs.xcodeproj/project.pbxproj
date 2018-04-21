@@ -47,6 +47,8 @@
 		E5751863206FB95100FAE728 /* String+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5751862206FB95100FAE728 /* String+Image.swift */; };
 		E5E52401208BB909008DEB01 /* DogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E52400208BB909008DEB01 /* DogViewController.swift */; };
 		E5E52403208BCB0B008DEB01 /* DogViewController+imagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E52402208BCB0B008DEB01 /* DogViewController+imagePicker.swift */; };
+		E5E52405208BD570008DEB01 /* DogViewController+PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E52404208BD570008DEB01 /* DogViewController+PickerView.swift */; };
+		E5E52407208BD656008DEB01 /* Breeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E52406208BD656008DEB01 /* Breeds.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +108,8 @@
 		E5751862206FB95100FAE728 /* String+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Image.swift"; sourceTree = "<group>"; };
 		E5E52400208BB909008DEB01 /* DogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogViewController.swift; sourceTree = "<group>"; };
 		E5E52402208BCB0B008DEB01 /* DogViewController+imagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DogViewController+imagePicker.swift"; sourceTree = "<group>"; };
+		E5E52404208BD570008DEB01 /* DogViewController+PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DogViewController+PickerView.swift"; sourceTree = "<group>"; };
+		E5E52406208BD656008DEB01 /* Breeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breeds.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +250,7 @@
 			children = (
 				E5451C1F206586450006D23E /* User.swift */,
 				E5451C212065977A0006D23E /* Dog.swift */,
+				E5E52406208BD656008DEB01 /* Breeds.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 				E53302432083EAEB00B05A58 /* UserProfileViewController+CollectionView.swift */,
 				E5E52400208BB909008DEB01 /* DogViewController.swift */,
 				E5E52402208BCB0B008DEB01 /* DogViewController+imagePicker.swift */,
+				E5E52404208BD570008DEB01 /* DogViewController+PickerView.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -480,6 +486,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5E52407208BD656008DEB01 /* Breeds.swift in Sources */,
+				E5E52405208BD570008DEB01 /* DogViewController+PickerView.swift in Sources */,
 				E533024220839FC200B05A58 /* DeleteNSUserDefaults.swift in Sources */,
 				E5751853206C431A00FAE728 /* Url+Endpoints+Constants.swift in Sources */,
 				E533022E207EA3AB00B05A58 /* UploadImageInteractorImpl.swift in Sources */,
