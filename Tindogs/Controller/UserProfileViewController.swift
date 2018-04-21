@@ -52,6 +52,8 @@ class UserProfileViewController: UIViewController {
     }
     
     @IBAction func newDogButton(_ sender: Any) {
-        print("newDogButton tapped")
+        let dogVC = self.storyboard?.instantiateViewController(withIdentifier: "DogViewController") as! DogViewController
+        
+        self.present(dogVC, animated: true )
     }
 }
