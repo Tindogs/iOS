@@ -71,12 +71,12 @@ class RegisterViewController: UIViewController {
                     self.user = user
                 }) { (error: Error) in
                     self.hideActivityIndicator(activityIndicator: ActivityInd)
-                    self.showAlert(message: error as! String)
+                    self.showAlert(message: error.localizedDescription)
                 }
                 
             }, onError: { (error) in
                 print("💩 error uploading image")
-                self.showAlert(message: "Error durante el proceso de registro -profile photo upl err-" + (error as! String))
+                self.showAlert(message: "Error durante el proceso de registro -profile photo upl err-" + (error.localizedDescription))
             })
         } else {
             
@@ -87,7 +87,7 @@ class RegisterViewController: UIViewController {
                 self.user = user
             }) { (error: Error) in
                 self.hideActivityIndicator(activityIndicator: ActivityInd)
-                self.showAlert(message: error as! String)
+                self.showAlert(message: error.localizedDescription)
             }
         }
     }
