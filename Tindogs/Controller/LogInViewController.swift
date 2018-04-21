@@ -66,9 +66,19 @@ class LogInViewController: UIViewController {
                 self.showAlert(message: "Error guardando las preferencias, revisa el espacio libre")
             }
             
-            let userProfileVC = self.storyboard?.instantiateViewController(withIdentifier: "UserProfileNavigationViewController") as! UINavigationController
+            // Destination VC
+            let userProfileNavVC = self.storyboard?.instantiateViewController(withIdentifier: "UserProfileNavigationViewController") as! UINavigationController
             
-            self.present(userProfileVC, animated: true)
+            // Reference to the nav's topVC to inyect the user property
+            let userProfileVC = userProfileNavVC.topViewController as! UserProfileViewController
+            userProfileVC.user = user
+            
+            // Set the rootvc to the destination vc with the appdelegate object
+            let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+            appDelegate.window?.rootViewController = userProfileNavVC
+            
+            // Dismiss current VC
+            self.dismiss(animated: true, completion: nil)
             
             self.userNameTextField.text = ""
             self.passwordTextField.text = ""

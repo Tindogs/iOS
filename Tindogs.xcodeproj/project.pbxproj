@@ -47,6 +47,7 @@
 		E575185D206EBB1600FAE728 /* RegisterUserJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E575185C206EBB1600FAE728 /* RegisterUserJSONParser.swift */; };
 		E5751860206EEDA000FAE728 /* RegisterUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E575185F206EEDA000FAE728 /* RegisterUserRequest.swift */; };
 		E5751863206FB95100FAE728 /* String+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5751862206FB95100FAE728 /* String+Image.swift */; };
+		E583C269208AB38E00591A61 /* UserProfileInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E583C268208AB38E00591A61 /* UserProfileInteractorImpl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		E575185C206EBB1600FAE728 /* RegisterUserJSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserJSONParser.swift; sourceTree = "<group>"; };
 		E575185F206EEDA000FAE728 /* RegisterUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserRequest.swift; sourceTree = "<group>"; };
 		E5751862206FB95100FAE728 /* String+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Image.swift"; sourceTree = "<group>"; };
+		E583C268208AB38E00591A61 /* UserProfileInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileInteractorImpl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +239,7 @@
 			children = (
 				E533024620840CB300B05A58 /* UserProfileInteractor.swift */,
 				E533024820840D1600B05A58 /* UserProfileInteractorFakeImpl.swift */,
+				E583C268208AB38E00591A61 /* UserProfileInteractorImpl.swift */,
 			);
 			path = UserProfile;
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E533024220839FC200B05A58 /* DeleteNSUserDefaults.swift in Sources */,
+				E583C269208AB38E00591A61 /* UserProfileInteractorImpl.swift in Sources */,
 				E533024720840CB300B05A58 /* UserProfileInteractor.swift in Sources */,
 				E5751853206C431A00FAE728 /* Url+Endpoints+Constants.swift in Sources */,
 				E533022E207EA3AB00B05A58 /* UploadImageInteractorImpl.swift in Sources */,

@@ -11,21 +11,28 @@ class UserProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    let userProfileInteractor : UserProfileInteractor = UserProfileInteractorFakeImpl()
         
-        userProfileInteractor.getUser(_id: "eresUnFistroPecador", token: "token", onSuccess: { (user: User) in
-            // OK MACKEY
-            self.user = user
-            self.dogs = user.dogs
-            self.userNameLabel.text = user.userName
-            user.photo?.loadImage(into: self.photoImageView)
-            
-            self.dogsCollectionView.delegate = self
-            self.dogsCollectionView.dataSource = self
-        }) { (error: Error) in
-            // KKO MARAVILHAO
-        }
+        self.dogs = user?.dogs
+        self.userNameLabel.text = user?.userName
+        user?.photo?.loadImage(into: self.photoImageView)
+
+        self.dogsCollectionView.delegate = self
+        self.dogsCollectionView.dataSource = self
+        
+//        let userProfileInteractor : UserProfileInteractor = UserProfileInteractorImpl()
+//
+//        userProfileInteractor.getUser(user: user!, onSuccess: { (user: User) in
+//            // OK MACKEY
+//            self.user = user
+//            self.dogs = user.dogs
+//            self.userNameLabel.text = user.userName
+//            user.photo?.loadImage(into: self.photoImageView)
+//
+//            self.dogsCollectionView.delegate = self
+//            self.dogsCollectionView.dataSource = self
+//        }) { (error: Error) in
+//            // KKO MARAVILHAO
+//        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,7 +52,6 @@ class UserProfileViewController: UIViewController {
         appDelegate.window?.rootViewController = loginVC
         
         self.dismiss(animated: true, completion: nil)
-
     }
 
     @IBAction func matchButton(_ sender: Any) {

@@ -7,7 +7,7 @@ func getUserRequest(userId: String, token: String) -> URLRequest {
     var request = URLRequest (url:url!)
     
     request.httpMethod = Method.GET.rawValue
-    request.addValue(token, forHTTPHeaderField: "token")
+    request.addValue(token, forHTTPHeaderField: CONSTANTS.userDefaultsToken)
     
     return request
 }
