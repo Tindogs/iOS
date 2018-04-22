@@ -2,12 +2,13 @@ import UIKit
 
 class UserProfileViewController: UIViewController {
 
+    var user: User?
+    var dogs: [Dog]?
+    var token: String?
+    
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var dogsCollectionView: UICollectionView!
     @IBOutlet weak var photoImageView: UIImageView!
-    
-    var user: User?
-    var dogs: [Dog]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +23,10 @@ class UserProfileViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.dogsCollectionView.reloadData()
     }
     
     @IBAction func signOutButton(_ sender: Any) {
@@ -53,6 +57,10 @@ class UserProfileViewController: UIViewController {
     
     @IBAction func newDogButton(_ sender: Any) {
         let dogVC = self.storyboard?.instantiateViewController(withIdentifier: "DogViewController") as! DogViewController
+        
+        dogVC.userId = self.user?._id
+        dogVC.token  = self.token
+        dogVC.transitionType = DogVCTransitionType.newDog
         
         self.present(dogVC, animated: true )
     }

@@ -2,14 +2,13 @@ import UIKit
 
 class LogInViewController: UIViewController {
     
+    let ActivityInd = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+    
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
 
-    let ActivityInd = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         let defaults = UserDefaults.standard
         // there's a stored userid and token so we will navigate to the userprofile VC
@@ -18,15 +17,15 @@ class LogInViewController: UIViewController {
             let getUserInteractor: GetUserInteractor = GetUserInteractorImpl()
             
             getUserInteractor.execute(userId: _id, token: token, onSuccess: { (user: User) in
-                
                 self.hideActivityIndicator(activityIndicator: self.ActivityInd)
                 
                 // Destination VC
                 let userProfileNavVC = self.storyboard?.instantiateViewController(withIdentifier: "UserProfileNavigationViewController") as! UINavigationController
                 
-                // Reference to the nav's topVC to inyect the user property
+                // Reference to the nav's topVC to inyect the properties
                 let userProfileVC = userProfileNavVC.topViewController as! UserProfileViewController
                 userProfileVC.user = user
+                userProfileVC.token = token
                 
                 // Set the rootvc to the destination vc with the appdelegate object
                 let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
@@ -40,16 +39,9 @@ class LogInViewController: UIViewController {
                 self.showAlert(message: error.localizedDescription )
             })
         }
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func loginButton(_ sender: Any) {
-        
         // check if there are empty fields
         if
             (userNameTextField.text?.isEmpty)! || (passwordTextField.text?.isEmpty)! {
@@ -69,9 +61,10 @@ class LogInViewController: UIViewController {
             // Destination VC
             let userProfileNavVC = self.storyboard?.instantiateViewController(withIdentifier: "UserProfileNavigationViewController") as! UINavigationController
             
-            // Reference to the nav's topVC to inyect the user property
+            // Reference to the nav's topVC to inyect the properties
             let userProfileVC = userProfileNavVC.topViewController as! UserProfileViewController
             userProfileVC.user = user
+            userProfileVC.token = token
             
             // Set the rootvc to the destination vc with the appdelegate object
             let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
@@ -106,7 +99,6 @@ class LogInViewController: UIViewController {
         ActivityInd.startAnimating()
         self.view.addSubview(ActivityInd)
     }
-    
     
     func hideActivityIndicator(activityIndicator : UIActivityIndicatorView) {
         

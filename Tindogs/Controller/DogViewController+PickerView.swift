@@ -33,7 +33,7 @@ extension DogViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.dog?.breed = BREEDS.values[row]
+        self.pickedBreed = BREEDS.values[row]
     }
 
 }

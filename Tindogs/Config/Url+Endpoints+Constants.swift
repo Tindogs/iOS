@@ -6,6 +6,11 @@ struct CONSTANTS {
     static let userDefaultsToken: String = "token"
 }
 
+enum DogVCTransitionType  {
+    case updateDog
+    case newDog
+}
+
 enum Method: String {
     case GET  = "GET"
     case PUT  = "PUT"
@@ -17,5 +22,5 @@ enum EndPoints: String {
     case registerUser           = "users/register/"
     case authenticate           = "users/authenticate"
     case findDogsFromUser       = "dogs/fromuser/"
-    case addOrUpdateDogByUserId = "dogs/withuser/"
+    case addDogByUserId         = "users/XXX/dogs"
 }

@@ -49,6 +49,10 @@
 		E5E52403208BCB0B008DEB01 /* DogViewController+imagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E52402208BCB0B008DEB01 /* DogViewController+imagePicker.swift */; };
 		E5E52405208BD570008DEB01 /* DogViewController+PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E52404208BD570008DEB01 /* DogViewController+PickerView.swift */; };
 		E5E52407208BD656008DEB01 /* Breeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E52406208BD656008DEB01 /* Breeds.swift */; };
+		E5E5240A208CB1CC008DEB01 /* RegisterDogInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E52409208CB1CC008DEB01 /* RegisterDogInteractor.swift */; };
+		E5E5240C208CB2A8008DEB01 /* RegisterDogInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E5240B208CB2A8008DEB01 /* RegisterDogInteractorImpl.swift */; };
+		E5E5240E208CB346008DEB01 /* RegisterDogRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E5240D208CB346008DEB01 /* RegisterDogRequest.swift */; };
+		E5E52410208CC857008DEB01 /* RegisterDogJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E5240F208CC857008DEB01 /* RegisterDogJSONParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +114,10 @@
 		E5E52402208BCB0B008DEB01 /* DogViewController+imagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DogViewController+imagePicker.swift"; sourceTree = "<group>"; };
 		E5E52404208BD570008DEB01 /* DogViewController+PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DogViewController+PickerView.swift"; sourceTree = "<group>"; };
 		E5E52406208BD656008DEB01 /* Breeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breeds.swift; sourceTree = "<group>"; };
+		E5E52409208CB1CC008DEB01 /* RegisterDogInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDogInteractor.swift; sourceTree = "<group>"; };
+		E5E5240B208CB2A8008DEB01 /* RegisterDogInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDogInteractorImpl.swift; sourceTree = "<group>"; };
+		E5E5240D208CB346008DEB01 /* RegisterDogRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDogRequest.swift; sourceTree = "<group>"; };
+		E5E5240F208CC857008DEB01 /* RegisterDogJSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDogJSONParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +230,7 @@
 				E53302362082680700B05A58 /* LoginUserRequest.swift */,
 				E575185F206EEDA000FAE728 /* RegisterUserRequest.swift */,
 				E53421B6208809A4004BD366 /* GetUserRequest.swift */,
+				E5E5240D208CB346008DEB01 /* RegisterDogRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -287,6 +296,7 @@
 				E5751861206EF27F00FAE728 /* RegisterUser */,
 				E533022C207EA31F00B05A58 /* UploadImage */,
 				E53421B1208807F8004BD366 /* GetUser */,
+				E5E52408208CAE55008DEB01 /* Dogs */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -314,6 +324,7 @@
 				E53302382082706900B05A58 /* LoginUserJSONParser.swift */,
 				E575185C206EBB1600FAE728 /* RegisterUserJSONParser.swift */,
 				E53421B820880BB7004BD366 /* GetUserJSONParser.swift */,
+				E5E5240F208CC857008DEB01 /* RegisterDogJSONParser.swift */,
 			);
 			path = "JSON Parsers";
 			sourceTree = "<group>";
@@ -335,6 +346,15 @@
 				E5751859206E7C2D00FAE728 /* RegisterUserInteractorImpl.swift */,
 			);
 			path = RegisterUser;
+			sourceTree = "<group>";
+		};
+		E5E52408208CAE55008DEB01 /* Dogs */ = {
+			isa = PBXGroup;
+			children = (
+				E5E52409208CB1CC008DEB01 /* RegisterDogInteractor.swift */,
+				E5E5240B208CB2A8008DEB01 /* RegisterDogInteractorImpl.swift */,
+			);
+			path = Dogs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -486,9 +506,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5E5240C208CB2A8008DEB01 /* RegisterDogInteractorImpl.swift in Sources */,
 				E5E52407208BD656008DEB01 /* Breeds.swift in Sources */,
 				E5E52405208BD570008DEB01 /* DogViewController+PickerView.swift in Sources */,
 				E533024220839FC200B05A58 /* DeleteNSUserDefaults.swift in Sources */,
+				E5E52410208CC857008DEB01 /* RegisterDogJSONParser.swift in Sources */,
 				E5751853206C431A00FAE728 /* Url+Endpoints+Constants.swift in Sources */,
 				E533022E207EA3AB00B05A58 /* UploadImageInteractorImpl.swift in Sources */,
 				E5451C20206586450006D23E /* User.swift in Sources */,
@@ -506,7 +528,9 @@
 				E5751850206A938400FAE728 /* RegisterUserInteractor.swift in Sources */,
 				E53421B5208808C0004BD366 /* GetUserInteractorImpl.swift in Sources */,
 				E53302372082680700B05A58 /* LoginUserRequest.swift in Sources */,
+				E5E5240A208CB1CC008DEB01 /* RegisterDogInteractor.swift in Sources */,
 				E5330233208163E000B05A58 /* LoginUserInteractor.swift in Sources */,
+				E5E5240E208CB346008DEB01 /* RegisterDogRequest.swift in Sources */,
 				E5451C27206952F80006D23E /* LogInViewController.swift in Sources */,
 				E53302352082670D00B05A58 /* LoginUserInteractorImpl.swift in Sources */,
 				E575185A206E7C2E00FAE728 /* RegisterUserInteractorImpl.swift in Sources */,

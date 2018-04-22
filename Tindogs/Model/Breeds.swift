@@ -3,7 +3,8 @@ import Foundation
 
 struct BREEDS {
     static let values =
-    ["Affenpinscher",
+    ["",
+    "Affenpinscher",
     "Afghan Hound",
     "Afghan Shepherd",
     "Aidi",
@@ -124,7 +125,6 @@ struct BREEDS {
     "Cão de Castro Laboreiro",
     "Cão de Gado Transmontano",
     "Cão Fila de São Miguel",
-    "Carolina Dog",
     "Carpathian Shepherd Dog",
     "Catahoula Leopard Dog",
     "Catalan Sheepdog",
@@ -309,7 +309,7 @@ struct BREEDS {
     "Miniature Schnauzer",
     "Miniature Shar Pei",
     "Mioritic",
-    " Molossus of Epirus",
+    "Molossus of Epirus",
     "Montenegrin Mountain Hound",
     "Moscow Watchdog",
     "Mountain Cur",
@@ -376,7 +376,6 @@ struct BREEDS {
     "Pungsan Dog",
     "Pyrenean Mastiff",
     "Pyrenean Shepherd",
-    "{{Anchor",
     "Rajapalayam",
     "Rampur Greyhound",
     "Ratonero Bodeguero Andaluz",

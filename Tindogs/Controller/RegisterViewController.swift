@@ -5,6 +5,7 @@ class RegisterViewController: UIViewController {
     var user: User?
     var pickedImage : UIImage?
     var photoName : String?
+    let ActivityInd = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
@@ -17,14 +18,8 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     @IBAction func showImagePickerButton(_ sender: Any) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
@@ -47,12 +42,7 @@ class RegisterViewController: UIViewController {
         }
         
         // Show Activity Indicator
-        let ActivityInd = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
-        
-        ActivityInd.center = view.center
-        ActivityInd.hidesWhenStopped = false
-        ActivityInd.startAnimating()
-        view.addSubview(ActivityInd)
+        self.showActivityIndicator()
         
         let registerUserInteractor: RegisterUserInteractor = RegisterUserInteractorImpl()
         let user = User(firstName: self.firstNameTextField.text!, lastName: self.lastNameTextField.text!, email: self.emailTextField.text!, userName: self.userNameTextField.text!, password: self.passwordTextField.text!, photo: "")
@@ -66,11 +56,11 @@ class RegisterViewController: UIViewController {
                 // If success Register user
                 user.photo = url
                 registerUserInteractor.execute(user: user, onSuccess: { (user: User) in
-                    self.hideActivityIndicator(activityIndicator: ActivityInd)
+                    self.hideActivityIndicator(activityIndicator: self.ActivityInd)
                     self.showAlertDismissVCAndNavigateToUserProfile(message: "Hola \(user.firstName), te has registrado correctamente")
                     self.user = user
                 }) { (error: Error) in
-                    self.hideActivityIndicator(activityIndicator: ActivityInd)
+                    self.hideActivityIndicator(activityIndicator: self.ActivityInd)
                     self.showAlert(message: error.localizedDescription)
                 }
                 
@@ -82,11 +72,11 @@ class RegisterViewController: UIViewController {
             
             // if there's no image selected register user without photo
             registerUserInteractor.execute(user: user, onSuccess: { (user: User) in
-                self.hideActivityIndicator(activityIndicator: ActivityInd)
+                self.hideActivityIndicator(activityIndicator: self.ActivityInd)
                 self.showAlertDismissVCAndNavigateToUserProfile(message: "Hola \(user.firstName), te has registrado correctamente")
                 self.user = user
             }) { (error: Error) in
-                self.hideActivityIndicator(activityIndicator: ActivityInd)
+                self.hideActivityIndicator(activityIndicator: self.ActivityInd)
                 self.showAlert(message: error.localizedDescription)
             }
         }
@@ -96,6 +86,12 @@ class RegisterViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    func showActivityIndicator() {
+        ActivityInd.center = view.center
+        ActivityInd.hidesWhenStopped = false
+        ActivityInd.startAnimating()
+        self.view.addSubview(ActivityInd)
+    }
     
     func hideActivityIndicator(activityIndicator : UIActivityIndicatorView) {
         

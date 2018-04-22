@@ -4,9 +4,16 @@ class DogViewController: UIViewController {
     
     var user: User?
     var dog: Dog?
+    var token: String?
+    var userId: String?
+    var dogId: String?
+    var transitionType: DogVCTransitionType?
+    
+    var pickedBreed: String?
     var pickedImage : UIImage?
     var photoName : String?
     let rowHeight : CGFloat = 20.0
+    let ActivityInd = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var ageTextField: UITextField!
@@ -21,13 +28,13 @@ class DogViewController: UIViewController {
         
         self.breedPicker.delegate = self
         self.breedPicker.dataSource = self
-
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     @IBAction func showImagePickerButton(_ sender: Any) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
@@ -36,12 +43,48 @@ class DogViewController: UIViewController {
     }
     
     @IBAction func saveButton(_ sender: Any) {
+        // check if there are empty fields
+        if
+            (nameTextField.text?.isEmpty)! || (ageTextField.text?.isEmpty)! || (pickedBreed == nil) || (pickedBreed == "") || (colorTextField.text?.isEmpty)! || (descriptionTextField.text?.isEmpty)!{
+            showAlert(message: "Rellena todos los campos por favor")
+            return
+        }
         
+        // Show Activity Indicator
+        self.showActivityIndicator()
+
+        let registerDogInteractor: RegisterDogInteractor = RegisterDogInteractorImpl()
+        let dog = Dog(name: self.nameTextField.text!, age: Int(self.ageTextField.text!)!, breed: self.pickedBreed!, pureBreed: self.purebreedSwitch.isOn, color: self.colorTextField.text!, description: self.descriptionTextField.text!, photos:[])
         
+        switch transitionType! {
+        case DogVCTransitionType.newDog: // AÑADIR PERRETE
+            if let image = pickedImage, let name = photoName {
+                print("there's an image")
+            } else {
+                registerDogInteractor.execute(userid: self.userId!, token: self.token!, dog: dog, onSuccess: { (user: User) in
+                    self.hideActivityIndicator(activityIndicator: self.ActivityInd)
+                    self.showAlertAndDismissVC(message: "El perrete \(dog.name), se ha registrado correctamente")
+                    self.user = user
+                }, onError: { (error: Error) in
+                    self.hideActivityIndicator(activityIndicator: self.ActivityInd)
+                    self.showAlert(message: error.localizedDescription)
+                    
+                })
+            }
+        case DogVCTransitionType.updateDog: // ACTUALIZAR PERRETE
+            print (transitionType!)
+        }
     }
     
     @IBAction func cancelButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func showActivityIndicator() {
+        ActivityInd.center = view.center
+        ActivityInd.hidesWhenStopped = false
+        ActivityInd.startAnimating()
+        self.view.addSubview(ActivityInd)
     }
     
     func hideActivityIndicator(activityIndicator : UIActivityIndicatorView) {
@@ -63,6 +106,17 @@ class DogViewController: UIViewController {
     func showAlertAndDismissVC(message: String) {
         let alert = UIAlertController(title: "Guau Guau!", message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Vale", style: .destructive, handler: { (action) -> Void in
+            // Destination VC
+            let userProfileNavVC = self.storyboard?.instantiateViewController(withIdentifier: "UserProfileNavigationViewController") as! UINavigationController
+
+            // Reference to the nav's topVC to inyect the user property
+            let userProfileVC = userProfileNavVC.topViewController as! UserProfileViewController
+            userProfileVC.user = self.user
+            userProfileVC.token = self.token
+            
+            // Set the rootvc to the destination vc with the appdelegate object
+            let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+            appDelegate.window?.rootViewController = userProfileNavVC
             
             // Dismiss current VC
             self.dismiss(animated: true, completion: nil)
