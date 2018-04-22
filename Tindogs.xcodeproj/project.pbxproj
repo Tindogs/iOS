@@ -14,6 +14,16 @@
 		5D14CB3620476F940076F8C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D14CB3420476F940076F8C3 /* LaunchScreen.storyboard */; };
 		5D14CB4120476F950076F8C3 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D14CB4020476F950076F8C3 /* UserTests.swift */; };
 		771EEA0B6BC644A67D0347D0 /* Pods_Tindogs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DE4725202055AFAE2C069C /* Pods_Tindogs.framework */; };
+		DF0924DC20838DC700F766B8 /* DogDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0924DB20838DC700F766B8 /* DogDecodable.swift */; };
+		DF0924DE20838E1900F766B8 /* UserDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0924DD20838E1900F766B8 /* UserDecodable.swift */; };
+		DF0924E02083998600F766B8 /* MatchDogsLikeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0924DF2083998600F766B8 /* MatchDogsLikeInteractor.swift */; };
+		DF0924E2208399BD00F766B8 /* MatchDogsLikeInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0924E1208399BD00F766B8 /* MatchDogsLikeInteractorImpl.swift */; };
+		DF13A332208C7404000F9103 /* LikeFromOtherDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF13A331208C7404000F9103 /* LikeFromOtherDecodable.swift */; };
+		DF5953A420834BBB001F1BB7 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5953A320834BBB001F1BB7 /* MatchViewController.swift */; };
+		DF5953A6208353EA001F1BB7 /* MatchDogsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5953A5208353EA001F1BB7 /* MatchDogsRequest.swift */; };
+		DF5953A920835BC1001F1BB7 /* MatchDogsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5953A820835BC1001F1BB7 /* MatchDogsInteractor.swift */; };
+		DF5953AB20835C5B001F1BB7 /* MatchDogsInteractorImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5953AA20835C5B001F1BB7 /* MatchDogsInteractorImp.swift */; };
+		DF5953AD20835DEC001F1BB7 /* MatchDogsInteractorFakeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5953AC20835DEC001F1BB7 /* MatchDogsInteractorFakeImpl.swift */; };
 		E5120BD1207CE708009EF7A8 /* RegisterViewController+imagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5120BD0207CE708009EF7A8 /* RegisterViewController+imagePicker.swift */; };
 		E533022B207EA2CD00B05A58 /* UploadImageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533022A207EA2CD00B05A58 /* UploadImageInteractor.swift */; };
 		E533022E207EA3AB00B05A58 /* UploadImageInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533022D207EA3AB00B05A58 /* UploadImageInteractorImpl.swift */; };
@@ -58,6 +68,16 @@
 		6E82028454B5C2E661D942BE /* Pods-Tindogs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tindogs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tindogs/Pods-Tindogs.debug.xcconfig"; sourceTree = "<group>"; };
 		7BC467F0984D31D198245EE5 /* Pods-Tindogs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tindogs.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tindogs/Pods-Tindogs.release.xcconfig"; sourceTree = "<group>"; };
 		B4DE4725202055AFAE2C069C /* Pods_Tindogs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tindogs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF0924DB20838DC700F766B8 /* DogDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogDecodable.swift; sourceTree = "<group>"; };
+		DF0924DD20838E1900F766B8 /* UserDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDecodable.swift; sourceTree = "<group>"; };
+		DF0924DF2083998600F766B8 /* MatchDogsLikeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDogsLikeInteractor.swift; sourceTree = "<group>"; };
+		DF0924E1208399BD00F766B8 /* MatchDogsLikeInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDogsLikeInteractorImpl.swift; sourceTree = "<group>"; };
+		DF13A331208C7404000F9103 /* LikeFromOtherDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeFromOtherDecodable.swift; sourceTree = "<group>"; };
+		DF5953A320834BBB001F1BB7 /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
+		DF5953A5208353EA001F1BB7 /* MatchDogsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDogsRequest.swift; sourceTree = "<group>"; };
+		DF5953A820835BC1001F1BB7 /* MatchDogsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDogsInteractor.swift; sourceTree = "<group>"; };
+		DF5953AA20835C5B001F1BB7 /* MatchDogsInteractorImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDogsInteractorImp.swift; sourceTree = "<group>"; };
+		DF5953AC20835DEC001F1BB7 /* MatchDogsInteractorFakeImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDogsInteractorFakeImpl.swift; sourceTree = "<group>"; };
 		E5120BD0207CE708009EF7A8 /* RegisterViewController+imagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegisterViewController+imagePicker.swift"; sourceTree = "<group>"; };
 		E533022A207EA2CD00B05A58 /* UploadImageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageInteractor.swift; sourceTree = "<group>"; };
 		E533022D207EA3AB00B05A58 /* UploadImageInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageInteractorImpl.swift; sourceTree = "<group>"; };
@@ -164,6 +184,18 @@
 			path = TindogsTests;
 			sourceTree = "<group>";
 		};
+		DF5953A720835B9B001F1BB7 /* MatchDogs */ = {
+			isa = PBXGroup;
+			children = (
+				DF5953A820835BC1001F1BB7 /* MatchDogsInteractor.swift */,
+				DF5953AC20835DEC001F1BB7 /* MatchDogsInteractorFakeImpl.swift */,
+				DF5953AA20835C5B001F1BB7 /* MatchDogsInteractorImp.swift */,
+				DF0924DF2083998600F766B8 /* MatchDogsLikeInteractor.swift */,
+				DF0924E1208399BD00F766B8 /* MatchDogsLikeInteractorImpl.swift */,
+			);
+			path = MatchDogs;
+			sourceTree = "<group>";
+		};
 		E533022C207EA31F00B05A58 /* UploadImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +210,9 @@
 			children = (
 				E5451C1F206586450006D23E /* User.swift */,
 				E5451C212065977A0006D23E /* Dog.swift */,
+				DF0924DB20838DC700F766B8 /* DogDecodable.swift */,
+				DF0924DD20838E1900F766B8 /* UserDecodable.swift */,
+				DF13A331208C7404000F9103 /* LikeFromOtherDecodable.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -198,6 +233,7 @@
 				E5451C26206952F80006D23E /* LogInViewController.swift */,
 				E5451C2C20696C730006D23E /* UserProfileViewController.swift */,
 				E5120BD0207CE708009EF7A8 /* RegisterViewController+imagePicker.swift */,
+				DF5953A320834BBB001F1BB7 /* MatchViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -205,6 +241,7 @@
 		E5451C2520682C580006D23E /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
+				DF5953A720835B9B001F1BB7 /* MatchDogs */,
 				E533022C207EA31F00B05A58 /* UploadImage */,
 				E5751861206EF27F00FAE728 /* RegisterUser */,
 			);
@@ -240,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				E575185F206EEDA000FAE728 /* RegisterUserRequest.swift */,
+				DF5953A5208353EA001F1BB7 /* MatchDogsRequest.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -405,19 +443,29 @@
 			files = (
 				E5751853206C431A00FAE728 /* Url+Endpoints.swift in Sources */,
 				E533022E207EA3AB00B05A58 /* UploadImageInteractorImpl.swift in Sources */,
+				DF0924DC20838DC700F766B8 /* DogDecodable.swift in Sources */,
+				DF0924E2208399BD00F766B8 /* MatchDogsLikeInteractorImpl.swift in Sources */,
 				E5451C20206586450006D23E /* User.swift in Sources */,
+				DF13A332208C7404000F9103 /* LikeFromOtherDecodable.swift in Sources */,
 				E5451C2D20696C730006D23E /* UserProfileViewController.swift in Sources */,
 				E5120BD1207CE708009EF7A8 /* RegisterViewController+imagePicker.swift in Sources */,
+				DF0924E02083998600F766B8 /* MatchDogsLikeInteractor.swift in Sources */,
 				E5751860206EEDA000FAE728 /* RegisterUserRequest.swift in Sources */,
 				5D14CB3120476F940076F8C3 /* Tindogs.xcdatamodeld in Sources */,
 				E575185D206EBB1600FAE728 /* RegisterUserJSONParser.swift in Sources */,
 				E5451C2B206958220006D23E /* RegisterViewController.swift in Sources */,
+				DF5953AD20835DEC001F1BB7 /* MatchDogsInteractorFakeImpl.swift in Sources */,
 				E5751855206D724300FAE728 /* RegisterUserInteractorFakeImpl.swift in Sources */,
 				E5751850206A938400FAE728 /* RegisterUserInteractor.swift in Sources */,
 				E5451C27206952F80006D23E /* LogInViewController.swift in Sources */,
+				DF5953A6208353EA001F1BB7 /* MatchDogsRequest.swift in Sources */,
 				E575185A206E7C2E00FAE728 /* RegisterUserInteractorImpl.swift in Sources */,
 				E5451C222065977A0006D23E /* Dog.swift in Sources */,
 				E533022B207EA2CD00B05A58 /* UploadImageInteractor.swift in Sources */,
+				DF0924DE20838E1900F766B8 /* UserDecodable.swift in Sources */,
+				DF5953AB20835C5B001F1BB7 /* MatchDogsInteractorImp.swift in Sources */,
+				DF5953A920835BC1001F1BB7 /* MatchDogsInteractor.swift in Sources */,
+				DF5953A420834BBB001F1BB7 /* MatchViewController.swift in Sources */,
 				E5751858206D729D00FAE728 /* Typealias.swift in Sources */,
 				5D14CB2920476F940076F8C3 /* AppDelegate.swift in Sources */,
 				E5751863206FB95100FAE728 /* String+Image.swift in Sources */,
