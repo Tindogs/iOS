@@ -17,7 +17,6 @@
 		E5120BD1207CE708009EF7A8 /* RegisterViewController+imagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5120BD0207CE708009EF7A8 /* RegisterViewController+imagePicker.swift */; };
 		E533022B207EA2CD00B05A58 /* UploadImageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533022A207EA2CD00B05A58 /* UploadImageInteractor.swift */; };
 		E533022E207EA3AB00B05A58 /* UploadImageInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533022D207EA3AB00B05A58 /* UploadImageInteractorImpl.swift */; };
-		E5330230207EB0DD00B05A58 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E533022F207EB0DD00B05A58 /* GoogleService-Info.plist */; };
 		E5330233208163E000B05A58 /* LoginUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5330232208163E000B05A58 /* LoginUserInteractor.swift */; };
 		E53302352082670D00B05A58 /* LoginUserInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53302342082670D00B05A58 /* LoginUserInteractorImpl.swift */; };
 		E53302372082680700B05A58 /* LoginUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53302362082680700B05A58 /* LoginUserRequest.swift */; };
@@ -53,6 +52,7 @@
 		E5E5240C208CB2A8008DEB01 /* RegisterDogInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E5240B208CB2A8008DEB01 /* RegisterDogInteractorImpl.swift */; };
 		E5E5240E208CB346008DEB01 /* RegisterDogRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E5240D208CB346008DEB01 /* RegisterDogRequest.swift */; };
 		E5E52410208CC857008DEB01 /* RegisterDogJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E5240F208CC857008DEB01 /* RegisterDogJSONParser.swift */; };
+		E5E52412208CFE60008DEB01 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5E52411208CFE60008DEB01 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,7 +82,6 @@
 		E5120BD0207CE708009EF7A8 /* RegisterViewController+imagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegisterViewController+imagePicker.swift"; sourceTree = "<group>"; };
 		E533022A207EA2CD00B05A58 /* UploadImageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageInteractor.swift; sourceTree = "<group>"; };
 		E533022D207EA3AB00B05A58 /* UploadImageInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageInteractorImpl.swift; sourceTree = "<group>"; };
-		E533022F207EB0DD00B05A58 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E5330232208163E000B05A58 /* LoginUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserInteractor.swift; sourceTree = "<group>"; };
 		E53302342082670D00B05A58 /* LoginUserInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserInteractorImpl.swift; sourceTree = "<group>"; };
 		E53302362082680700B05A58 /* LoginUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserRequest.swift; sourceTree = "<group>"; };
@@ -118,6 +117,7 @@
 		E5E5240B208CB2A8008DEB01 /* RegisterDogInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDogInteractorImpl.swift; sourceTree = "<group>"; };
 		E5E5240D208CB346008DEB01 /* RegisterDogRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDogRequest.swift; sourceTree = "<group>"; };
 		E5E5240F208CC857008DEB01 /* RegisterDogJSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDogJSONParser.swift; sourceTree = "<group>"; };
+		E5E52411208CFE60008DEB01 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,8 +189,8 @@
 				E5751856206D728700FAE728 /* Utils */,
 				E5751851206C42AF00FAE728 /* Config */,
 				5D14CB3220476F940076F8C3 /* Assets.xcassets */,
+				E5E52411208CFE60008DEB01 /* GoogleService-Info.plist */,
 				5D14CB3720476F940076F8C3 /* Info.plist */,
-				E533022F207EB0DD00B05A58 /* GoogleService-Info.plist */,
 				5D14CB2F20476F940076F8C3 /* Tindogs.xcdatamodeld */,
 			);
 			path = Tindogs;
@@ -443,7 +443,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D14CB3620476F940076F8C3 /* LaunchScreen.storyboard in Resources */,
-				E5330230207EB0DD00B05A58 /* GoogleService-Info.plist in Resources */,
+				E5E52412208CFE60008DEB01 /* GoogleService-Info.plist in Resources */,
 				5D14CB3320476F940076F8C3 /* Assets.xcassets in Resources */,
 				5D14CB2E20476F940076F8C3 /* Main.storyboard in Resources */,
 			);

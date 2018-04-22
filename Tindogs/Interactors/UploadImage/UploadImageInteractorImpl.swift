@@ -7,7 +7,7 @@ class UploadImageInteractorImpl : UploadImageInteractor {
    
     func save(name: String, image: UIImage, onSuccess: @escaping (String) -> Void, onError: errorClosure?) {
         
-        let imageReference = Storage.storage().reference().child("images/").child(name)
+        let imageReference = Storage.storage().reference().child("/images").child(name)
         
         if let imageData = UIImageJPEGRepresentation(image, 0.4) {
             

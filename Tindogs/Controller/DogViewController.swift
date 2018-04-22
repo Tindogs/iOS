@@ -57,18 +57,33 @@ class DogViewController: UIViewController {
         let dog = Dog(name: self.nameTextField.text!, age: Int(self.ageTextField.text!)!, breed: self.pickedBreed!, pureBreed: self.purebreedSwitch.isOn, color: self.colorTextField.text!, description: self.descriptionTextField.text!, photos:[])
         
         switch transitionType! {
-        case DogVCTransitionType.newDog: // AÑADIR PERRETE
+        case DogVCTransitionType.newDog:
+             // AÑADIR PERRETE CON FOTO
             if let image = pickedImage, let name = photoName {
-                print("there's an image")
+                let uploadImageInteractor: UploadImageInteractor = UploadImageInteractorImpl()
+                uploadImageInteractor.save(name: name, image: image, onSuccess: { (url) in
+                    dog.photos?.append(url)
+                    registerDogInteractor.execute(userid: self.userId!, token: self.token!, dog: dog, onSuccess: { (user: User) in
+                        self.hideActivityIndicator(activityIndicator: self.ActivityInd)
+                        self.showAlertDismissVCAndNavigateToUserProfile(message: "\(dog.name) registrado correctamente")
+                        self.user = user
+                    }, onError: { (error: Error) in
+                        self.hideActivityIndicator(activityIndicator: self.ActivityInd)
+                        self.showAlert(message: error.localizedDescription)
+                    })
+                }, onError: { (error) in
+                    print("💩 error uploading image")
+                    self.showAlert(message: "Error durante el proceso de registro -dog photo upl err-" + (error.localizedDescription))
+                })                
             } else {
+                 // AÑADIR PERRETE SIN FOTO
                 registerDogInteractor.execute(userid: self.userId!, token: self.token!, dog: dog, onSuccess: { (user: User) in
                     self.hideActivityIndicator(activityIndicator: self.ActivityInd)
-                    self.showAlertAndDismissVC(message: "El perrete \(dog.name), se ha registrado correctamente")
+                    self.showAlertDismissVCAndNavigateToUserProfile(message: "\(dog.name) registrado correctamente")
                     self.user = user
                 }, onError: { (error: Error) in
                     self.hideActivityIndicator(activityIndicator: self.ActivityInd)
                     self.showAlert(message: error.localizedDescription)
-                    
                 })
             }
         case DogVCTransitionType.updateDog: // ACTUALIZAR PERRETE
@@ -103,7 +118,7 @@ class DogViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    func showAlertAndDismissVC(message: String) {
+    func showAlertDismissVCAndNavigateToUserProfile(message: String) {
         let alert = UIAlertController(title: "Guau Guau!", message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Vale", style: .destructive, handler: { (action) -> Void in
             // Destination VC

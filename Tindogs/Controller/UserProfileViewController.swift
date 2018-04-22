@@ -26,7 +26,7 @@ class UserProfileViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.dogsCollectionView.reloadData()
+        //self.dogsCollectionView.reloadData()
     }
     
     @IBAction func signOutButton(_ sender: Any) {

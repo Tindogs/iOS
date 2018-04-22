@@ -10,7 +10,8 @@ class DogCell: UICollectionViewCell {
     func refresh(dog: Dog) {
         self.dog = dog
         self.dogLabel.text = dog.name
-        // TODO Image View
-        
+        if dog.photos?.isEmpty == false {
+            dog.photos![0].loadImage(into: self.dogImageView)
+        }
     }
 }

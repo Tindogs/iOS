@@ -4,6 +4,7 @@ import Foundation
 func registerDogParseData (data: Data) -> User {
     var user: User?
     var dogs = [Dog]()
+    var photos = [String]()
     
     do {
         if let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
@@ -27,7 +28,11 @@ func registerDogParseData (data: Data) -> User {
                     let query           = dog["query"] as! Query?
                     let likesFromOthers = dog["likes_from_others"] as! [LikesFromOthers]?
                     let description     = dog["description"] as! String?
-                    let photos          = dog["photos"] as! [String]?
+                    if let photosArr   = dog["photos"] as? [String]{
+                        for i in photosArr {
+                            photos.append(i)
+                        }
+                    }
                     
                     dogs.append(Dog(_id: _id, name: name, age: age, breed: breed, pureBreed: pureBreed, color: color, query: query, likesFromOthers: likesFromOthers, description: description, photos: photos))
                 }
