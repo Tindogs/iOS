@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>335491525511-hvrm86i50f8ob0fqnsars3j9amngamh8.apps.googleusercontent.com</string>
+	<string>607001700745-65691u88213k5n9ara0gvsnfmvj535vh.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.335491525511-hvrm86i50f8ob0fqnsars3j9amngamh8</string>
+	<string>com.googleusercontent.apps.607001700745-65691u88213k5n9ara0gvsnfmvj535vh</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCi60q9xvrbhffIr0-1BNWl-7AIyGEvU6M</string>
+	<string>AIzaSyDI5moEZGSElpxmc66MRVKIpkgFromY4fo</string>
 	<key>GCM_SENDER_ID</key>
-	<string>335491525511</string>
+	<string>607001700745</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.appvengers.testFirebase</string>
+	<string>com.appvengers.Tindogs</string>
 	<key>PROJECT_ID</key>
-	<string>test-26620</string>
+	<string>tindogsbackend</string>
 	<key>STORAGE_BUCKET</key>
-	<string>test-26620.appspot.com</string>
+	<string>tindogsbackend.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:335491525511:ios:f4c276b9be4f66f1</string>
+	<string>1:607001700745:ios:e24da88289557011</string>
 	<key>DATABASE_URL</key>
-	<string>https://test-26620.firebaseio.com</string>
+	<string>https://tindogsbackend.firebaseio.com</string>
 </dict>
 </plist>

@@ -1,25 +1,40 @@
 import UIKit
 
-class RegisterViewController: UIViewController {
+class DogViewController: UIViewController {
     
     var user: User?
+    var dog: Dog?
+    var token: String?
+    var userId: String?
+    var dogId: String?
+    var transitionType: DogVCTransitionType?
+    
+    var pickedBreed: String?
     var pickedImage : UIImage?
     var photoName : String?
+    let rowHeight : CGFloat = 20.0
     let ActivityInd = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     
-    @IBOutlet weak var firstNameTextField: UITextField!
-    @IBOutlet weak var lastNameTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var userNameTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var repeatPasswordTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var ageTextField: UITextField!
+    @IBOutlet weak var purebreedSwitch: UISwitch!
+    @IBOutlet weak var breedPicker: UIPickerView!
+    @IBOutlet weak var colorTextField: UITextField!
+    @IBOutlet weak var descriptionTextField: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.breedPicker.delegate = self
+        self.breedPicker.dataSource = self
     }
-
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
     @IBAction func showImagePickerButton(_ sender: Any) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
@@ -30,55 +45,49 @@ class RegisterViewController: UIViewController {
     @IBAction func saveButton(_ sender: Any) {
         // check if there are empty fields
         if
-            (firstNameTextField.text?.isEmpty)! || (lastNameTextField.text?.isEmpty)! || (emailTextField.text?.isEmpty)! || (userNameTextField.text?.isEmpty)! || (passwordTextField.text?.isEmpty)! || (repeatPasswordTextField.text?.isEmpty)! {
+            (nameTextField.text?.isEmpty)! || (ageTextField.text?.isEmpty)! || (pickedBreed == nil) || (pickedBreed == "") || (colorTextField.text?.isEmpty)! || (descriptionTextField.text?.isEmpty)!{
             showAlert(message: "Rellena todos los campos por favor")
-            return
-        }
-        
-        // check if both passwords match
-        if ((passwordTextField.text?.elementsEqual(repeatPasswordTextField.text!))! != true) {
-            showAlert(message: "Las contraseñas no coinciden")
             return
         }
         
         // Show Activity Indicator
         self.showActivityIndicator()
+
+        let registerDogInteractor: RegisterDogInteractor = RegisterDogInteractorImpl()
+        let dog = Dog(name: self.nameTextField.text!, age: Int(self.ageTextField.text!)!, breed: self.pickedBreed!, pureBreed: self.purebreedSwitch.isOn, color: self.colorTextField.text!, description: self.descriptionTextField.text!, photos:[])
         
-        let registerUserInteractor: RegisterUserInteractor = RegisterUserInteractorImpl()
-        let user = User(firstName: self.firstNameTextField.text!, lastName: self.lastNameTextField.text!, email: self.emailTextField.text!, userName: self.userNameTextField.text!, password: self.passwordTextField.text!, photo: "")
-        
-        // Check if there is an image selected
-        if let image = pickedImage, let name = photoName {
-            // So upload image
-            let uploadImageInteractor: UploadImageInteractor = UploadImageInteractorImpl()
-            uploadImageInteractor.save(name: name, image: image, onSuccess: { (url) in
-                
-                // If success Register user
-                user.photo = url
-                registerUserInteractor.execute(user: user, onSuccess: { (user: User) in
+        switch transitionType! {
+        case DogVCTransitionType.newDog:
+             // AÑADIR PERRETE CON FOTO
+            if let image = pickedImage, let name = photoName {
+                let uploadImageInteractor: UploadImageInteractor = UploadImageInteractorImpl()
+                uploadImageInteractor.save(name: name, image: image, onSuccess: { (url) in
+                    dog.photos?.append(url)
+                    registerDogInteractor.execute(userid: self.userId!, token: self.token!, dog: dog, onSuccess: { (user: User) in
+                        self.hideActivityIndicator(activityIndicator: self.ActivityInd)
+                        self.showAlertDismissVCAndNavigateToUserProfile(message: "\(dog.name) registrado correctamente")
+                        self.user = user
+                    }, onError: { (error: Error) in
+                        self.hideActivityIndicator(activityIndicator: self.ActivityInd)
+                        self.showAlert(message: error.localizedDescription)
+                    })
+                }, onError: { (error) in
+                    print("💩 error uploading image")
+                    self.showAlert(message: "Error durante el proceso de registro -dog photo upl err-" + (error.localizedDescription))
+                })                
+            } else {
+                 // AÑADIR PERRETE SIN FOTO
+                registerDogInteractor.execute(userid: self.userId!, token: self.token!, dog: dog, onSuccess: { (user: User) in
                     self.hideActivityIndicator(activityIndicator: self.ActivityInd)
-                    self.showAlertDismissVCAndNavigateToUserProfile(message: "Hola \(user.firstName), te has registrado correctamente")
+                    self.showAlertDismissVCAndNavigateToUserProfile(message: "\(dog.name) registrado correctamente")
                     self.user = user
-                }) { (error: Error) in
+                }, onError: { (error: Error) in
                     self.hideActivityIndicator(activityIndicator: self.ActivityInd)
                     self.showAlert(message: error.localizedDescription)
-                }
-                
-            }, onError: { (error) in
-                print("💩 error uploading image")
-                self.showAlert(message: "Error durante el proceso de registro -profile photo upl err-" + (error.localizedDescription))
-            })
-        } else {
-            
-            // if there's no image selected register user without photo
-            registerUserInteractor.execute(user: user, onSuccess: { (user: User) in
-                self.hideActivityIndicator(activityIndicator: self.ActivityInd)
-                self.showAlertDismissVCAndNavigateToUserProfile(message: "Hola \(user.firstName), te has registrado correctamente")
-                self.user = user
-            }) { (error: Error) in
-                self.hideActivityIndicator(activityIndicator: self.ActivityInd)
-                self.showAlert(message: error.localizedDescription)
+                })
             }
+        case DogVCTransitionType.updateDog: // ACTUALIZAR PERRETE
+            print (transitionType!)
         }
     }
     
@@ -114,10 +123,11 @@ class RegisterViewController: UIViewController {
         let okAction = UIAlertAction(title: "Vale", style: .destructive, handler: { (action) -> Void in
             // Destination VC
             let userProfileNavVC = self.storyboard?.instantiateViewController(withIdentifier: "UserProfileNavigationViewController") as! UINavigationController
-            
+
             // Reference to the nav's topVC to inyect the user property
             let userProfileVC = userProfileNavVC.topViewController as! UserProfileViewController
             userProfileVC.user = self.user
+            userProfileVC.token = self.token
             
             // Set the rootvc to the destination vc with the appdelegate object
             let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
@@ -130,5 +140,4 @@ class RegisterViewController: UIViewController {
         alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
     }
-
 }

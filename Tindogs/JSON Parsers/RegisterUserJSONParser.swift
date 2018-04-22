@@ -10,11 +10,8 @@ func registerUserParseData (data: Data) -> User {
         if let parseJson = json {
             if ((json?.value(forKey: "success") as! Bool) == true) {
                 
-                // TODO : EL TOKEN HABRA QUE GUARDARLO EN EL KEYCHAIN/NS USER DEFAULTS
-                let token = json?.value(forKey: "token") as! String
                 let result = parseJson.object(forKey: "result") as! NSDictionary
                 
-                // TODO : MAPEO A OBJETOS, CUANTO TENGAMOS COREDATA
                 let _id         = result.value(forKey: "_id") as! String
                 let first_name  = result.value(forKey: "first_name") as! String
                 let last_name   = result.value(forKey: "last_name") as! String

@@ -28,6 +28,10 @@ final class Dog {
     convenience init(name: String){
         self.init(_id: "", name: name, age: nil, breed: "", pureBreed: nil, color: "", query: nil, likesFromOthers: [], description: "", photos: [])
     }
+    
+    convenience init(name: String, age: Int, breed: String, pureBreed: Bool, color: String, description: String, photos: [String]){
+        self.init(_id: "", name: name, age: age, breed: breed, pureBreed: pureBreed, color: color, query: nil, likesFromOthers: [], description: description, photos: photos)
+    }
 }
 
 final class Query {
