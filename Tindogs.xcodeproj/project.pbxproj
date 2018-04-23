@@ -54,6 +54,7 @@
 		E575185D206EBB1600FAE728 /* RegisterUserJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E575185C206EBB1600FAE728 /* RegisterUserJSONParser.swift */; };
 		E5751863206FB95100FAE728 /* String+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5751862206FB95100FAE728 /* String+Image.swift */; };
 		E5CFBAFE208D313B007614CA /* RegisterUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CFBAFD208D313A007614CA /* RegisterUserRequest.swift */; };
+		E5CFBB02208E6330007614CA /* DogQueryPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CFBB01208E6330007614CA /* DogQueryPreferencesViewController.swift */; };
 		E5E52401208BB909008DEB01 /* DogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E52400208BB909008DEB01 /* DogViewController.swift */; };
 		E5E52403208BCB0B008DEB01 /* DogViewController+imagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E52402208BCB0B008DEB01 /* DogViewController+imagePicker.swift */; };
 		E5E52405208BD570008DEB01 /* DogViewController+PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E52404208BD570008DEB01 /* DogViewController+PickerView.swift */; };
@@ -129,6 +130,7 @@
 		E575185C206EBB1600FAE728 /* RegisterUserJSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserJSONParser.swift; sourceTree = "<group>"; };
 		E5751862206FB95100FAE728 /* String+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Image.swift"; sourceTree = "<group>"; };
 		E5CFBAFD208D313A007614CA /* RegisterUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterUserRequest.swift; sourceTree = "<group>"; };
+		E5CFBB01208E6330007614CA /* DogQueryPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogQueryPreferencesViewController.swift; sourceTree = "<group>"; };
 		E5E52400208BB909008DEB01 /* DogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogViewController.swift; sourceTree = "<group>"; };
 		E5E52402208BCB0B008DEB01 /* DogViewController+imagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DogViewController+imagePicker.swift"; sourceTree = "<group>"; };
 		E5E52404208BD570008DEB01 /* DogViewController+PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DogViewController+PickerView.swift"; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 				E5E52400208BB909008DEB01 /* DogViewController.swift */,
 				E5E52402208BCB0B008DEB01 /* DogViewController+imagePicker.swift */,
 				E5E52404208BD570008DEB01 /* DogViewController+PickerView.swift */,
+				E5CFBB01208E6330007614CA /* DogQueryPreferencesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -551,6 +554,7 @@
 				E5E52410208CC857008DEB01 /* RegisterDogJSONParser.swift in Sources */,
 				E5751853206C431A00FAE728 /* Url+Endpoints+Constants.swift in Sources */,
 				E533022E207EA3AB00B05A58 /* UploadImageInteractorImpl.swift in Sources */,
+				E5CFBB02208E6330007614CA /* DogQueryPreferencesViewController.swift in Sources */,
 				DF0924DC20838DC700F766B8 /* DogDecodable.swift in Sources */,
 				DF0924E2208399BD00F766B8 /* MatchDogsLikeInteractorImpl.swift in Sources */,
 				E5451C20206586450006D23E /* User.swift in Sources */,

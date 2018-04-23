@@ -13,6 +13,9 @@ class MatchViewController: UIViewController {
     @IBOutlet weak var randomMatchDogImage: UIImageView!
     
     var user: User?
+    var dog: Dog?
+    var token: String?
+    
     var index: Int = 1
     var dogs: DogDecodable?
     

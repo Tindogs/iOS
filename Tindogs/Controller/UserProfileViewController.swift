@@ -42,10 +42,6 @@ class UserProfileViewController: UIViewController {
         
         self.dismiss(animated: true, completion: nil)
     }
-
-    @IBAction func matchButton(_ sender: Any) {
-        print("matchButton tapped")
-    }
     
     @IBAction func settingsButton(_ sender: Any) {
         print("settingsButton tapped")
@@ -63,5 +59,16 @@ class UserProfileViewController: UIViewController {
         dogVC.transitionType = DogVCTransitionType.newDog
         
         self.present(dogVC, animated: true )
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDogQueryVCSegue" {
+            let vc = segue.destination as! DogQueryPreferencesViewController
+            let indexPath = self.dogsCollectionView.indexPathsForSelectedItems![0]
+            vc.user = self.user
+            vc.dog = self.dogs?[indexPath.row]
+            vc.token = self.token
+            
+        }
     }
 }
