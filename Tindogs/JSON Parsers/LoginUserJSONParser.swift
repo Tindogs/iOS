@@ -36,7 +36,6 @@ func loginUserParseData (data: Data) -> (user:User, token: String) {
                         let breed        = queryDict["breed"] as! String
                         let reproductive = queryDict["reproductive"] as! Bool
                         let max_kms      = queryDict["max_kms"] as! Int
-                        
                         query = Query(age: age, maxKms: max_kms, reproductive: reproductive, breed: breed)
                     }
                     if let likesFromOthersArr = dog["likes_from_others"] as? [[String: String]]{
@@ -44,9 +43,7 @@ func loginUserParseData (data: Data) -> (user:User, token: String) {
                             let dogLikeId   = like["dog_like_id"] as String?
                             let dogName     = like["dog_name"] as String?
                             let ownerId     = like["owner_id"] as String?
-                            let ownerName   = like["owner_name"] as String?
-                            
-                            likesFromOthers.append(LikesFromOthers(dogLikeId: dogLikeId!, dogName: dogName!, ownerId: ownerId!, ownerName: ownerName!))
+                            likesFromOthers.append(LikesFromOthers(dogLikeId: dogLikeId!, dogName: dogName!, ownerId: ownerId!))
                         }
                     }
                     let description     = dog["description"] as! String?
@@ -55,11 +52,13 @@ func loginUserParseData (data: Data) -> (user:User, token: String) {
                             photos.append(i)
                         }
                     }
-                    
                     dogs.append(Dog(_id: _id, name: name, age: age, breed: breed, pureBreed: pureBreed, color: color, query: query, likesFromOthers: likesFromOthers, description: description, photos: photos))
+                    query = nil
+                    likesFromOthers = [LikesFromOthers]()
+                    photos = [String]()
                 }
-                
                 user = User(_id: _id, firstName: first_name, lastName: last_name, email: email, userName: username, password: password, coordinates: coordinates, photo: photo, dogs: dogs)
+                dogs = [Dog]()
             }
         }
     } catch {
