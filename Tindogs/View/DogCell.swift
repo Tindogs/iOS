@@ -12,7 +12,6 @@ class DogCell: UICollectionViewCell {
         self.dogLabel.text = dog.name
         if dog.photos?.isEmpty == false {
             dog.photos![0].loadImage(into: self.dogImageView)
-            print(dog.photos![0])
         }
     }
 }

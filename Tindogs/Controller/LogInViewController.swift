@@ -83,7 +83,7 @@ class LogInViewController: UIViewController {
     }
     
     @IBAction func forgotPasswordButton(_ sender: Any) {
-        print("forgotPasswor tapped")
+        print("forgotPassword tapped")
     }
     
     @IBAction func registerButton(_ sender: Any) {
