@@ -35,15 +35,13 @@ final class Dog {
 }
 
 final class Query {
-    let ageFrom: Double
-    let ageTo: Double
-    let maxKms: Double
+    let age: Int
+    let maxKms: Int
     let reproductive: Bool
     let breed: String
     
-    init(ageFrom: Double, ageTo: Double, maxKms: Double, reproductive: Bool, breed: String){
-        self.ageFrom = ageFrom
-        self.ageTo = ageTo
+    init(age: Int, maxKms: Int, reproductive: Bool, breed: String){
+        self.age = age
         self.maxKms = maxKms
         self.reproductive = reproductive
         self.breed = breed

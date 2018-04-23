@@ -18,9 +18,9 @@ class MatchViewController: UIViewController {
     
     // User data
     
-    var userTemp = "5ad31151d4cdfa0504ccdd79"
-    var dogIdTemp = "5acba449aa64ce3986f0948f"
-    var tokenTemp = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YWQzMTE1MWQ0Y2RmYTA1MDRjY2RkNzkiLCJpYXQiOjE1MjQzODE3MzksImV4cCI6MTUyNDQ2ODEzOX0.PnTMfjXv1Qd7szI4lhM1bCU5bhGBTuhyNklzLB-R8a8"
+    var userTemp = "5ad31151d4cdfa0504ccdd79" // El id dueño del perro que pincho
+    var dogIdTemp = "5acba449aa64ce3986f0948f" // el id del perro que pincho
+    var tokenTemp =                             "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YWQzMTE1MWQ0Y2RmYTA1MDRjY2RkNzkiLCJpYXQiOjE1MjQzODE3MzksImV4cCI6MTUyNDQ2ODEzOX0.PnTMfjXv1Qd7szI4lhM1bCU5bhGBTuhyNklzLB-R8a8"
     
     override func viewDidLoad() {
         super.viewDidLoad()
