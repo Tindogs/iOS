@@ -68,7 +68,7 @@ class UserProfileViewController: UIViewController {
             vc.user = self.user
             vc.dog = self.dogs?[indexPath.row]
             vc.token = self.token
-            
+            vc.title = self.dogs?[indexPath.row].name
         }
     }
 }

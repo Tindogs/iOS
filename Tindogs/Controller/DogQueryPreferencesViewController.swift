@@ -6,13 +6,13 @@ class DogQueryPreferencesViewController: UIViewController {
     var user: User?
     var dog: Dog?
     var token: String?
-//    var query: Query?
+    var query: Query?
     
     var pickedBreed: String?
     let rowHeight : CGFloat = 20.0
+    let ActivityInd = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     
     @IBOutlet weak var photoImageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var ageTextField: UITextField!
     @IBOutlet weak var maxKmsTextField: UITextField!
     @IBOutlet weak var reproductiveSwitch: UISwitch!
@@ -31,7 +31,6 @@ class DogQueryPreferencesViewController: UIViewController {
         if self.dog?.photos?.isEmpty == false {
             self.dog?.photos?[0].loadImage(into: self.photoImageView)
         }
-        self.nameLabel.text = dog?.name
         
         if let query: Query = dog?.query {
             self.ageTextField.text = String(query.age)
@@ -55,7 +54,36 @@ class DogQueryPreferencesViewController: UIViewController {
             return
         }
         
+        query = Query(age: Int(self.ageTextField.text!)!, maxKms: Int(self.maxKmsTextField.text!)!, reproductive: self.reproductiveSwitch.isOn, breed: self.pickedBreed!)
+        self.dog?.query = query
+        
+        self.showActivityIndicator()
+        let updateDogInteractor: UpdateDogInteractor = UpdateDogInteractorImpl()
+        updateDogInteractor.execute(userid: (self.user?._id)!, token: self.token!, dog: self.dog!, onSuccess: { (user: User) in
+            self.hideActivityIndicator(activityIndicator: self.ActivityInd)
+            self.showAlert(message: "Las preferencias de \(self.dog?.name ?? "tu perrete") se han guardado correctamente!")
+        }) { (error: Error) in
+            self.hideActivityIndicator(activityIndicator: self.ActivityInd)
+            self.showAlert(message: error.localizedDescription )
+        }
+        
+        
         editModeOff()
+    }
+    
+    func showActivityIndicator() {
+        ActivityInd.center = view.center
+        ActivityInd.hidesWhenStopped = false
+        ActivityInd.startAnimating()
+        self.view.addSubview(ActivityInd)
+    }
+    
+    func hideActivityIndicator(activityIndicator : UIActivityIndicatorView) {
+        
+        OperationQueue.main.addOperation {
+            activityIndicator.stopAnimating()
+            activityIndicator.removeFromSuperview()
+        }
     }
     
     func editModeOff() {
