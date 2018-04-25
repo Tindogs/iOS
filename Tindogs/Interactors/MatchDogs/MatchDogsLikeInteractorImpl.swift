@@ -9,7 +9,7 @@
 import Foundation
 
 class MatchDogsLikeInteractorImpl: MatchDogsLikeInteractor {
-    func execute(userId: String, dogId: String, token: String, otherDogId: String, like: Bool, onSuccess: @escaping () -> Void, onError: errorClosure) {
+    func execute(userId: String, dogId: String, token: String, otherDogId: String, like: Bool, onSuccess: @escaping (LikeDecodable) -> Void, onError: errorClosure) {
         
         let request: URLRequest = MatchDogsLikeRequest(userId: userId, dogId: dogId, token: token, otherDogId: otherDogId, like: like)
         
@@ -23,6 +23,9 @@ class MatchDogsLikeInteractorImpl: MatchDogsLikeInteractor {
                             let json = try? JSONSerialization.jsonObject(with: data, options: [])
                             
                             print(json ?? "Nothing")
+                            
+                            let likes = try JSONDecoder().decode(LikeDecodable.self, from: data)
+                            onSuccess(likes)
                         }
                     }catch{
                         print("error: \(String(describing: error))")

@@ -23,6 +23,8 @@ class ShowMatchesInteractorImpl: ShowMatchesInteractor {
                             let json = try? JSONSerialization.jsonObject(with: data, options: [])
                             
                             print(json ?? "Nothing")
+                            let matches = try JSONDecoder().decode(MatchesDecodable.self, from: data)
+                            onSuccess(matches)
                         }
                     }catch{
                         print("error: \(String(describing: error))")

@@ -24,6 +24,9 @@
 		DF0DADE3208FC0330044E65F /* ShowMatchesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0DADE2208FC0330044E65F /* ShowMatchesRequest.swift */; };
 		DF0DADE5208FC2D90044E65F /* MatchesDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0DADE4208FC2D90044E65F /* MatchesDecodable.swift */; };
 		DF13A332208C7404000F9103 /* LikeFromOtherDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF13A331208C7404000F9103 /* LikeFromOtherDecodable.swift */; };
+		DF4218F72091142F00C38A57 /* MatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4218F62091142F00C38A57 /* MatchCell.swift */; };
+		DF4218F9209122A500C38A57 /* LikeDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4218F8209122A500C38A57 /* LikeDecodable.swift */; };
+		DF4218FB2091288200C38A57 /* MatchedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4218FA2091288200C38A57 /* MatchedViewController.swift */; };
 		DF5953A420834BBB001F1BB7 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5953A320834BBB001F1BB7 /* MatchViewController.swift */; };
 		DF5953A6208353EA001F1BB7 /* MatchDogsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5953A5208353EA001F1BB7 /* MatchDogsRequest.swift */; };
 		DF5953A920835BC1001F1BB7 /* MatchDogsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5953A820835BC1001F1BB7 /* MatchDogsInteractor.swift */; };
@@ -111,6 +114,9 @@
 		DF0DADE2208FC0330044E65F /* ShowMatchesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMatchesRequest.swift; sourceTree = "<group>"; };
 		DF0DADE4208FC2D90044E65F /* MatchesDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesDecodable.swift; sourceTree = "<group>"; };
 		DF13A331208C7404000F9103 /* LikeFromOtherDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeFromOtherDecodable.swift; sourceTree = "<group>"; };
+		DF4218F62091142F00C38A57 /* MatchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCell.swift; sourceTree = "<group>"; };
+		DF4218F8209122A500C38A57 /* LikeDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeDecodable.swift; sourceTree = "<group>"; };
+		DF4218FA2091288200C38A57 /* MatchedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedViewController.swift; sourceTree = "<group>"; };
 		DF5953A320834BBB001F1BB7 /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
 		DF5953A5208353EA001F1BB7 /* MatchDogsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDogsRequest.swift; sourceTree = "<group>"; };
 		DF5953A820835BC1001F1BB7 /* MatchDogsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDogsInteractor.swift; sourceTree = "<group>"; };
@@ -332,6 +338,7 @@
 				DF13A331208C7404000F9103 /* LikeFromOtherDecodable.swift */,
 				E5E52406208BD656008DEB01 /* Breeds.swift */,
 				DF0DADE4208FC2D90044E65F /* MatchesDecodable.swift */,
+				DF4218F8209122A500C38A57 /* LikeDecodable.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -342,6 +349,7 @@
 				5D14CB2C20476F940076F8C3 /* Main.storyboard */,
 				5D14CB3420476F940076F8C3 /* LaunchScreen.storyboard */,
 				E533024A20841BED00B05A58 /* DogCell.swift */,
+				DF4218F62091142F00C38A57 /* MatchCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -362,6 +370,7 @@
 				E5CFBB03208E7A11007614CA /* DogQueryPreferencesViewController+PickerView.swift */,
 				E5CFBB05208E7ACA007614CA /* DogQueryPreferencesViewController+CollectionView.swift */,
 				DF0DADDB208FBD720044E65F /* ShowMatchesViewController.swift */,
+				DF4218FA2091288200C38A57 /* MatchedViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -631,8 +640,10 @@
 				E53302352082670D00B05A58 /* LoginUserInteractorImpl.swift in Sources */,
 				E575185A206E7C2E00FAE728 /* RegisterUserInteractorImpl.swift in Sources */,
 				E5E52403208BCB0B008DEB01 /* DogViewController+imagePicker.swift in Sources */,
+				DF4218FB2091288200C38A57 /* MatchedViewController.swift in Sources */,
 				E53421B7208809A4004BD366 /* GetUserRequest.swift in Sources */,
 				E53421B320880835004BD366 /* GetUserInteractor.swift in Sources */,
+				DF4218F72091142F00C38A57 /* MatchCell.swift in Sources */,
 				E5451C222065977A0006D23E /* Dog.swift in Sources */,
 				E5CFBB08208EA870007614CA /* UpdateDogInteractor.swift in Sources */,
 				E533022B207EA2CD00B05A58 /* UploadImageInteractor.swift in Sources */,
@@ -644,6 +655,7 @@
 				E5751858206D729D00FAE728 /* Typealias.swift in Sources */,
 				5D14CB2920476F940076F8C3 /* AppDelegate.swift in Sources */,
 				E53421B920880BB7004BD366 /* GetUserJSONParser.swift in Sources */,
+				DF4218F9209122A500C38A57 /* LikeDecodable.swift in Sources */,
 				E5CFBB06208E7ACA007614CA /* DogQueryPreferencesViewController+CollectionView.swift in Sources */,
 				E533023E2082A14F00B05A58 /* WriteNSUserDefaults.swift in Sources */,
 				E5751863206FB95100FAE728 /* String+Image.swift in Sources */,

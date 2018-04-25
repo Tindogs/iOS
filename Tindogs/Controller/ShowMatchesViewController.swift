@@ -14,10 +14,6 @@ class ShowMatchesViewController: UIViewController {
     var dog: Dog?
     var token: String?
     
-    let userTemp = "5ad31151d4cdfa0504ccdd79"
-    let dogIdTemp = "5acba449aa64ce3986f0948f"
-    let tokenTemp = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YWQzMTE1MWQ0Y2RmYTA1MDRjY2RkNzkiLCJpYXQiOjE1MjQ1OTUxMjAsImV4cCI6MTUyNzE4NzEyMH0.ASgkKloYHOXnKf3UcMoxY168vSTykBJ2pZaTNQIipNE"
-    
     var matches: MatchesDecodable?
     
     override func viewDidLoad() {
@@ -25,7 +21,7 @@ class ShowMatchesViewController: UIViewController {
         
         let showMatchesInteractor: ShowMatchesInteractor = ShowMatchesInteractorImpl()
         
-        showMatchesInteractor.execute(userId: userTemp, dogId: dogIdTemp, token: tokenTemp, onSuccess: { matches in
+        showMatchesInteractor.execute(userId: (user?._id)!, dogId: (dog?._id)!, token: token!, onSuccess: { matches in
             self.matches = matches
             
             print("Matches \(matches)")

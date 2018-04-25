@@ -117,8 +117,15 @@ class MatchViewController: UIViewController {
                      token: token!,
                      otherDogId: otherDogId,
                      like: like,
-                     onSuccess: {
-                        print("succes")
+                     onSuccess: { likes in
+                        print("succes match: \(likes.result.match)")
+                        
+//                        if (true) {
+                        if (likes.result.match) {
+                            let matchedVC = self.storyboard?.instantiateViewController(withIdentifier: "MatchedViewController") as! MatchedViewController
+                            
+                            self.present(matchedVC, animated: true )
+                        }
                     }) { (error: Error) in
                         print("error \(error)")
                     }

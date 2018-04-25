@@ -21,7 +21,7 @@ class MatchDogsInteractorImpl: MatchDogsInteractor {
                         if let data = data {
                             let json = try? JSONSerialization.jsonObject(with: data, options: [])
                             
-                            print(json ?? "Nothing")
+//                            print(json ?? "Nothing")
                             let dogs = try JSONDecoder().decode(DogDecodable.self, from: data)
                             onSuccess(dogs)
                         }

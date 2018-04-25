@@ -10,6 +10,6 @@ import Foundation
 
 protocol MatchDogsLikeInteractor {
     func execute(userId: String, dogId: String, token: String, otherDogId: String, like: Bool,
-                 onSuccess: @escaping () -> Void,
+                 onSuccess: @escaping (LikeDecodable) -> Void,
                  onError: errorClosure)
 }

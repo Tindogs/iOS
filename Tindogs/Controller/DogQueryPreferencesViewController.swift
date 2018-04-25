@@ -7,6 +7,7 @@ class DogQueryPreferencesViewController: UIViewController {
     var dog: Dog?
     var token: String?
     var query: Query?
+    var matches: MatchesDecodable?
     
     var pickedBreed: String?
     let rowHeight : CGFloat = 20.0
@@ -20,11 +21,17 @@ class DogQueryPreferencesViewController: UIViewController {
     @IBOutlet weak var matchesCollectionView: UICollectionView!
     @IBOutlet weak var saveButton: UIButton!
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.matchesCollectionView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.breedPicker.delegate = self
         self.breedPicker.dataSource = self
+        self.matchesCollectionView.delegate = self
+        self.matchesCollectionView.dataSource = self
         
         editModeOff()
 
@@ -40,7 +47,16 @@ class DogQueryPreferencesViewController: UIViewController {
             pickedBreed = query.breed
             self.breedPicker.selectRow(index, inComponent: 0, animated: false)
         }
-
+        
+        let showMatchesInteractor: ShowMatchesInteractor = ShowMatchesInteractorImpl()
+        
+        showMatchesInteractor.execute(userId: (user?._id)!, dogId: (dog?._id)!, token: token!, onSuccess: { matches in
+                self.matches = matches
+                self.matchesCollectionView.reloadData()
+                print("Matches \(matches)")
+        }) { (error: Error) in
+            print("Error \(error)")
+        }
     }
     
     @IBAction func editButton(_ sender: Any) {
@@ -134,7 +150,7 @@ class DogQueryPreferencesViewController: UIViewController {
             vc.token = self.token
         }
         if segue.identifier == "showDogMatchesVCSegue" {
-            let vc = segue.destination as! MatchViewController
+            let vc = segue.destination as! ShowMatchesViewController
             vc.user  = self.user
             vc.dog   = self.dog
             vc.token = self.token
