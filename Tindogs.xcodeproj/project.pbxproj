@@ -33,6 +33,9 @@
 		DF5953AB20835C5B001F1BB7 /* MatchDogsInteractorImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5953AA20835C5B001F1BB7 /* MatchDogsInteractorImp.swift */; };
 		DF5953AD20835DEC001F1BB7 /* MatchDogsInteractorFakeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5953AC20835DEC001F1BB7 /* MatchDogsInteractorFakeImpl.swift */; };
 		E5120BD1207CE708009EF7A8 /* RegisterViewController+imagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5120BD0207CE708009EF7A8 /* RegisterViewController+imagePicker.swift */; };
+		E5163B112091366F00719F5F /* UpdateLocationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5163B102091366F00719F5F /* UpdateLocationInteractor.swift */; };
+		E5163B132091370B00719F5F /* UpdateLocationInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5163B122091370B00719F5F /* UpdateLocationInteractorImpl.swift */; };
+		E5163B1520913A2700719F5F /* UpdateLocationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5163B1420913A2700719F5F /* UpdateLocationRequest.swift */; };
 		E51D396B208EAC6D00FF246B /* UpdateDogRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51D396A208EAC6D00FF246B /* UpdateDogRequest.swift */; };
 		E51D396D208EB3D700FF246B /* UpdateDogJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51D396C208EB3D700FF246B /* UpdateDogJSONParser.swift */; };
 		E533022B207EA2CD00B05A58 /* UploadImageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533022A207EA2CD00B05A58 /* UploadImageInteractor.swift */; };
@@ -123,6 +126,9 @@
 		DF5953AA20835C5B001F1BB7 /* MatchDogsInteractorImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDogsInteractorImp.swift; sourceTree = "<group>"; };
 		DF5953AC20835DEC001F1BB7 /* MatchDogsInteractorFakeImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDogsInteractorFakeImpl.swift; sourceTree = "<group>"; };
 		E5120BD0207CE708009EF7A8 /* RegisterViewController+imagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegisterViewController+imagePicker.swift"; sourceTree = "<group>"; };
+		E5163B102091366F00719F5F /* UpdateLocationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLocationInteractor.swift; sourceTree = "<group>"; };
+		E5163B122091370B00719F5F /* UpdateLocationInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLocationInteractorImpl.swift; sourceTree = "<group>"; };
+		E5163B1420913A2700719F5F /* UpdateLocationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLocationRequest.swift; sourceTree = "<group>"; };
 		E51D396A208EAC6D00FF246B /* UpdateDogRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDogRequest.swift; sourceTree = "<group>"; };
 		E51D396C208EB3D700FF246B /* UpdateDogJSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDogJSONParser.swift; sourceTree = "<group>"; };
 		E533022A207EA2CD00B05A58 /* UploadImageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageInteractor.swift; sourceTree = "<group>"; };
@@ -277,6 +283,15 @@
 			path = MatchDogs;
 			sourceTree = "<group>";
 		};
+		E5163B0F2091362D00719F5F /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				E5163B102091366F00719F5F /* UpdateLocationInteractor.swift */,
+				E5163B122091370B00719F5F /* UpdateLocationInteractorImpl.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
 		E533022C207EA31F00B05A58 /* UploadImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,6 +320,7 @@
 				DF5953A5208353EA001F1BB7 /* MatchDogsRequest.swift */,
 				E51D396A208EAC6D00FF246B /* UpdateDogRequest.swift */,
 				DF0DADE2208FC0330044E65F /* ShowMatchesRequest.swift */,
+				E5163B1420913A2700719F5F /* UpdateLocationRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -385,6 +401,7 @@
 				E533022C207EA31F00B05A58 /* UploadImage */,
 				E53421B1208807F8004BD366 /* GetUser */,
 				E5E52408208CAE55008DEB01 /* Dogs */,
+				E5163B0F2091362D00719F5F /* Location */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -601,6 +618,7 @@
 				E5E5240C208CB2A8008DEB01 /* RegisterDogInteractorImpl.swift in Sources */,
 				E5E52407208BD656008DEB01 /* Breeds.swift in Sources */,
 				E5E52405208BD570008DEB01 /* DogViewController+PickerView.swift in Sources */,
+				E5163B132091370B00719F5F /* UpdateLocationInteractorImpl.swift in Sources */,
 				E533024220839FC200B05A58 /* DeleteNSUserDefaults.swift in Sources */,
 				E5E52410208CC857008DEB01 /* RegisterDogJSONParser.swift in Sources */,
 				E5751853206C431A00FAE728 /* Url+Endpoints+Constants.swift in Sources */,
@@ -626,6 +644,7 @@
 				E5E52401208BB909008DEB01 /* DogViewController.swift in Sources */,
 				E53302442083EAEB00B05A58 /* UserProfileViewController+CollectionView.swift in Sources */,
 				E53302392082706900B05A58 /* LoginUserJSONParser.swift in Sources */,
+				E5163B1520913A2700719F5F /* UpdateLocationRequest.swift in Sources */,
 				E5751855206D724300FAE728 /* RegisterUserInteractorFakeImpl.swift in Sources */,
 				E5751850206A938400FAE728 /* RegisterUserInteractor.swift in Sources */,
 				E53421B5208808C0004BD366 /* GetUserInteractorImpl.swift in Sources */,
@@ -635,6 +654,7 @@
 				E5330233208163E000B05A58 /* LoginUserInteractor.swift in Sources */,
 				E5E5240E208CB346008DEB01 /* RegisterDogRequest.swift in Sources */,
 				DF0DADDC208FBD720044E65F /* ShowMatchesViewController.swift in Sources */,
+				E5163B112091366F00719F5F /* UpdateLocationInteractor.swift in Sources */,
 				E5451C27206952F80006D23E /* LogInViewController.swift in Sources */,
 				DF5953A6208353EA001F1BB7 /* MatchDogsRequest.swift in Sources */,
 				E53302352082670D00B05A58 /* LoginUserInteractorImpl.swift in Sources */,

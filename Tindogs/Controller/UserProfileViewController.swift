@@ -1,10 +1,12 @@
 import UIKit
+import CoreLocation
 
-class UserProfileViewController: UIViewController {
+class UserProfileViewController: UIViewController, CLLocationManagerDelegate {
 
     var user: User?
     var dogs: [Dog]?
     var token: String?
+    let locationManager = CLLocationManager()
     
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var dogsCollectionView: UICollectionView!
@@ -19,6 +21,13 @@ class UserProfileViewController: UIViewController {
 
         self.dogsCollectionView.delegate = self
         self.dogsCollectionView.dataSource = self
+        
+        self.locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            self.locationManager.delegate = self
+            self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            self.locationManager.startUpdatingLocation()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -70,5 +79,24 @@ class UserProfileViewController: UIViewController {
             vc.token = self.token
             vc.title = self.dogs?[indexPath.row].name
         }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        self.locationManager.stopUpdatingLocation()
+        
+        let updateLocationInteractor: UpdateLocationInteractor = UpdateLocationInteractorImpl()
+        
+        updateLocationInteractor.execute(userid: (self.user?._id)!, token: self.token!, coordinates: [locValue.longitude, locValue.latitude]) { (error: Error) in
+            self.showAlert(message: error.localizedDescription)
+        }
+    }
+    
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: "Guau Guau! Grrr..", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Vale", style: .destructive, handler: { (action) -> Void in })
+        
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
     }
 }

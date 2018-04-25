@@ -1,7 +1,7 @@
 
 import Foundation
 
-func updateDogParseData (data: Data) -> User {
+func updateUserOrDogParseData (data: Data) -> User {
     var user: User?
     var dogs = [Dog]()
     var query: Query?

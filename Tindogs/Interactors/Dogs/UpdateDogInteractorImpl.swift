@@ -10,7 +10,7 @@ class UpdateDogInteractorImpl: UpdateDogInteractor{
             
             OperationQueue.main.addOperation{
                 if error == nil {
-                    let user: User? = updateDogParseData(data: data!)
+                    let user: User? = updateUserOrDogParseData(data: data!)
                     onSuccess(user!)
                 } else {
                     if let onError = onError{
