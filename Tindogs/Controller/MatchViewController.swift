@@ -126,11 +126,14 @@ class MatchViewController: UIViewController {
                         print("succes match: \(likes.result?.match)")
                         
 //                        if (true) {
-                        if (like && (likes.result?.match)!) {
-                            let matchedVC = self.storyboard?.instantiateViewController(withIdentifier: "MatchedViewController") as! MatchedViewController
-                            
-                            self.present(matchedVC, animated: true )
+                        if (likes.result?.match) != nil {
+                            if (like && (likes.result?.match)!) {
+                                let matchedVC = self.storyboard?.instantiateViewController(withIdentifier: "MatchedViewController") as! MatchedViewController
+                                
+                                self.present(matchedVC, animated: true )
+                            }
                         }
+                        
                     }) { (error: Error) in
                         print("error \(error)")
                     }
