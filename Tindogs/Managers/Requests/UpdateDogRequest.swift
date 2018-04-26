@@ -14,14 +14,6 @@ func UpdateDogRequest(userid: String, token: String, dog: Dog) -> URLRequest{
     var dictionary = [String:Any]()
     if dog.query != nil {
         dictionary = [
-                           "name": dog.name,
-                            "age": dog.age!,
-                          "breed": dog.breed!,
-                      "purebreed": dog.pureBreed!,
-                          "color": dog.color!,
-                    "description": dog.description!,
-              "likes_from_others": dog.likesFromOthers!,
-                         "photos": dog.photos!,
                        "queryage": dog.query!.age,
                     "querymaxkms": dog.query!.maxKms,
               "queryreproductive": dog.query!.reproductive,

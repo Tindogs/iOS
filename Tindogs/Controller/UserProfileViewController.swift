@@ -94,7 +94,10 @@ class UserProfileViewController: UIViewController, CLLocationManagerDelegate {
         
         let updateLocationInteractor: UpdateLocationInteractor = UpdateLocationInteractorImpl()
         
-        updateLocationInteractor.execute(userid: (self.user?._id)!, token: self.token!, coordinates: [locValue.longitude, locValue.latitude]) { (error: Error) in
+        //updateLocationInteractor.execute(userid: (self.user?._id)!, token: self.token!, coordinates: [locValue.longitude, locValue.latitude]) { (error: Error) in
+        //Hardcodeamos lat y long para la demo, el código correcto es el de arriba.
+        updateLocationInteractor.execute(userid: (self.user?._id)!, token: self.token!, coordinates: [37.017943700000004, -4.557057299999999])
+            { (error: Error) in
             self.showAlert(message: error.localizedDescription)
         }
     }

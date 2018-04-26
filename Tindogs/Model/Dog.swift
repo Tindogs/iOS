@@ -51,18 +51,12 @@ final class Query {
 final class LikesFromOthers {
     let dogLikeId: String
     let dogName: String
-    let ownerId: String?
-    let ownerName: String
+    let ownerId: String
     
-    init(dogLikeId: String, dogName: String, ownerId: String, ownerName: String){
+    init(dogLikeId: String, dogName: String, ownerId: String){
         self.dogLikeId = dogLikeId
         self.dogName = dogName
         self.ownerId = ownerId
-        self.ownerName = ownerName
-    }
-    
-    convenience init(dogLikeId: String, dogName: String, ownerId: String){
-        self.init(dogLikeId: dogLikeId, dogName: dogName, ownerId: ownerId, ownerName: "" )
     }
     
 }
