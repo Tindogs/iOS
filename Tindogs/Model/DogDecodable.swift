@@ -12,7 +12,7 @@ struct DogDecodable: Decodable {
     struct DogResponse: Decodable {
         let _id: String
         let name: String?
-        let age: Int?
+        let age: Double?
         let purebreed: Bool?
         let likes_from_others: [LikeFromOtherDecodable]
         let description: String?

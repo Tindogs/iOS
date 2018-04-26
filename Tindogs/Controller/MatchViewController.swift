@@ -35,11 +35,12 @@ class MatchViewController: UIViewController {
         matchDogsInteractor.execute(userId: (user?._id)!, dogId: (dog?._id)!, token: token!,
         onSuccess: { dogs in
             self.dogs = dogs
-            print("Dogs \(dogs.result[Int(self.randomNumber())].photos[0])")
+//            print("Dogs \(dogs.result[Int(self.randomNumber())].photos[0])")
             self.changeDogImage()
             
             self.hideActivityIndicator(activityIndicator: activityInd)
         }) { (error: Error) in
+            print("Error: \(error)")
             self.hideActivityIndicator(activityIndicator: activityInd)
             self.showAlert(message: error as! String)
         }
@@ -121,7 +122,7 @@ class MatchViewController: UIViewController {
                         print("succes match: \(likes.result.match)")
                         
 //                        if (true) {
-                        if (likes.result.match) {
+                        if (like && likes.result.match) {
                             let matchedVC = self.storyboard?.instantiateViewController(withIdentifier: "MatchedViewController") as! MatchedViewController
                             
                             self.present(matchedVC, animated: true )
@@ -133,7 +134,12 @@ class MatchViewController: UIViewController {
     
     func randomNumber() -> Int {
         print("self.dogs?.result.count: \(String(describing: self.dogs?.result.count))")
-        return Int(arc4random_uniform(UInt32((self.dogs?.result.count)!-1)))
+        
+        if ((self.dogs?.result.count)!>0) {
+            return Int(arc4random_uniform(UInt32((self.dogs?.result.count)!-1)))
+        }else {
+            return 0
+        }
     }
 }
 
