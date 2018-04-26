@@ -1,5 +1,6 @@
 
 import UIKit
+import Kingfisher
 
 class DogQueryPreferencesViewController: UIViewController {
         
@@ -35,9 +36,13 @@ class DogQueryPreferencesViewController: UIViewController {
         
         editModeOff()
 
+//        if self.dog?.photos?.isEmpty == false {
+//            self.dog?.photos?[0].loadImage(into: self.photoImageView)
+//        }
         if self.dog?.photos?.isEmpty == false {
-            self.dog?.photos?[0].loadImage(into: self.photoImageView)
+            self.photoImageView.kf.setImage(with: URL(string: (dog?.photos?[0])!))
         }
+        
         
         if let query: Query = dog?.query {
             self.ageTextField.text = String(query.age)

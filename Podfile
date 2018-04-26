@@ -8,6 +8,7 @@ target 'Tindogs' do
   # Pods for Tindogs
   pod 'Firebase/Core'
   pod 'Firebase/Storage'
+  pod 'Kingfisher', '~> 4.0'
 
 
 end

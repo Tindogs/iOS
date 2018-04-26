@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MatchCell: UICollectionViewCell {
     var dog: Dog?
@@ -18,7 +19,8 @@ class MatchCell: UICollectionViewCell {
         self.dog = dog
         self.dogLabel.text = dog.name
         if dog.photos?.isEmpty == false {
-            dog.photos![0].loadImage(into: self.dogImageView)
+            //dog.photos![0].loadImage(into: self.dogImageView)
+            self.dogImageView.kf.setImage(with: URL(string: dog.photos![0]))
         }
     }
 }
