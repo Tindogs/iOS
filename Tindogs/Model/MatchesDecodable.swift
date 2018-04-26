@@ -11,7 +11,8 @@ import Foundation
 struct MatchesDecodable: Decodable {
     struct MatchesResponse: Decodable {
         let id_dog_matched: String
-        let name_dog_matched: String
+        let id_user_dog_matched: String?
+        let name_dog_matched: String?
         let img_dog_matched: String
     }
     

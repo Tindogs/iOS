@@ -17,7 +17,7 @@ class MatchViewController: UIViewController {
     var dog: Dog?
     var token: String?
     
-    var index: Int = 1
+    var index: Int = 0
     var dogs: DogDecodable?
     
     override func viewDidLoad() {
@@ -93,13 +93,15 @@ class MatchViewController: UIViewController {
     }
     
     func changeDogImage(){
-        index=Int(self.randomNumber())
+//        index=Int(self.randomNumber())
+        index+=1
         print("Random Image \(index)")
         
         if ((self.dogs?.result.count)! > 0 && (self.dogs?.result[index].photos.count)!>0) {
             if let url = URL(string: (self.dogs?.result[index].photos[0])!) {
                 self.randomMatchDogImage.contentMode = .scaleAspectFit
                 self.downloadImage(url: url)
+                self.dogNameLabel.text = self.dogs?.result[index].name
             }
         }else{
             print("No Image")
@@ -121,10 +123,10 @@ class MatchViewController: UIViewController {
                      otherDogId: otherDogId,
                      like: like,
                      onSuccess: { likes in
-                        print("succes match: \(likes.result.match)")
+                        print("succes match: \(likes.result?.match)")
                         
 //                        if (true) {
-                        if (like && likes.result.match) {
+                        if (like && (likes.result?.match)!) {
                             let matchedVC = self.storyboard?.instantiateViewController(withIdentifier: "MatchedViewController") as! MatchedViewController
                             
                             self.present(matchedVC, animated: true )

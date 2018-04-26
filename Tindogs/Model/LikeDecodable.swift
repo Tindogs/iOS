@@ -13,6 +13,6 @@ struct LikeDecodable: Decodable {
         let match: Bool
     }
     
-    let result: LikeResponse
+    let result: LikeResponse?
     let success: Bool
 }

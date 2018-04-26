@@ -14,7 +14,7 @@ class MatchDogsInteractorFakeImpl: MatchDogsInteractor {
 //        let dogs: [DogDecodable] = getDogArray()
         
         OperationQueue.main.addOperation {
-            onSuccess(DogDecodable(result: [DogDecodable.DogResponse(_id: "", name: "", age: 0, purebreed: false, likes_from_others: [], description: "", photos: [])], succes: true))
+            onSuccess(DogDecodable(result: [DogDecodable.DogResponse(_id: "", name: "", age: 0, purebreed: false, likes_from_others: [], description: "", photos: [], breed: "", color: "")], succes: true))
         }
     }
     

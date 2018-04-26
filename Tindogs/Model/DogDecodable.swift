@@ -17,6 +17,8 @@ struct DogDecodable: Decodable {
         let likes_from_others: [LikeFromOtherDecodable]
         let description: String?
         let photos: [String]
+        let breed: String?
+        let color: String?
     }
     
     let result: [DogResponse]

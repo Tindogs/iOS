@@ -156,8 +156,11 @@ class DogQueryPreferencesViewController: UIViewController {
         }
         if segue.identifier == "showDogMatchesVCSegue" {
             let vc = segue.destination as! ShowMatchesViewController
-            vc.user  = self.user
-            vc.dog   = self.dog
+            
+            let indexPath = self.matchesCollectionView.indexPathsForSelectedItems![0]
+            
+            vc.idDogMatched = self.matches?.result[indexPath.row].id_dog_matched
+            vc.idUserDogMatched = self.matches?.result[indexPath.row].id_user_dog_matched
             vc.token = self.token
         }
     }
