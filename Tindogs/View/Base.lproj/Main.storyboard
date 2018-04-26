@@ -963,44 +963,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E5V-cM-tk0">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E5V-cM-tk0">
                                 <rect key="frame" x="0.0" y="20" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Match" id="L6p-rk-X8R"/>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPL-hL-VAL">
-                                <rect key="frame" x="225" y="464" width="87" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPL-hL-VAL">
+                                <rect key="frame" x="225" y="520" width="87" height="30"/>
                                 <state key="normal" title="No me gusta"/>
                                 <connections>
                                     <action selector="dontLikeButton:" destination="6Xs-1K-Tga" eventType="touchUpInside" id="qFR-eL-30z"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kq-zM-yi9">
-                                <rect key="frame" x="81" y="464" width="64" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kq-zM-yi9">
+                                <rect key="frame" x="81" y="520" width="64" height="30"/>
                                 <state key="normal" title="Me gusta"/>
                                 <connections>
                                     <action selector="likeButton:" destination="6Xs-1K-Tga" eventType="touchUpInside" id="R1K-Ie-j6F"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iDm-m3-m4t">
-                                <rect key="frame" x="36" y="64" width="343" height="343"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iDm-m3-m4t">
+                                <rect key="frame" x="36" y="121" width="342" height="343"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="343" id="53t-cK-f5M"/>
+                                </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gzl-UC-1zV">
+                                <rect key="frame" x="20" y="485.66666666666669" width="374" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="miX-lx-x7l" firstAttribute="bottom" secondItem="5kq-zM-yi9" secondAttribute="bottom" constant="186" id="0Uy-He-vls"/>
+                            <constraint firstItem="Gzl-UC-1zV" firstAttribute="leading" secondItem="MOx-cc-UeW" secondAttribute="leadingMargin" id="194-Dw-5aB"/>
+                            <constraint firstItem="iDm-m3-m4t" firstAttribute="centerX" secondItem="MOx-cc-UeW" secondAttribute="centerX" id="1gI-06-59k"/>
+                            <constraint firstItem="5kq-zM-yi9" firstAttribute="leading" secondItem="miX-lx-x7l" secondAttribute="leading" constant="81" id="2cO-Bn-y24"/>
+                            <constraint firstItem="iDm-m3-m4t" firstAttribute="centerX" secondItem="E5V-cM-tk0" secondAttribute="centerX" id="7aQ-9j-w2r"/>
+                            <constraint firstItem="5kq-zM-yi9" firstAttribute="baseline" secondItem="dPL-hL-VAL" secondAttribute="baseline" id="8NG-dJ-DKG"/>
+                            <constraint firstItem="5kq-zM-yi9" firstAttribute="top" secondItem="iDm-m3-m4t" secondAttribute="bottom" constant="56" id="GoQ-nt-Psx"/>
+                            <constraint firstItem="dPL-hL-VAL" firstAttribute="leading" secondItem="5kq-zM-yi9" secondAttribute="trailing" constant="80" id="KDJ-Qj-kZr"/>
+                            <constraint firstItem="iDm-m3-m4t" firstAttribute="top" secondItem="E5V-cM-tk0" secondAttribute="bottom" constant="57" id="LUR-W9-9aQ"/>
+                            <constraint firstItem="dPL-hL-VAL" firstAttribute="top" secondItem="Gzl-UC-1zV" secondAttribute="bottom" constant="14" id="Sch-0D-F4p"/>
+                            <constraint firstItem="E5V-cM-tk0" firstAttribute="leading" secondItem="MOx-cc-UeW" secondAttribute="leading" id="bLC-rN-gbz"/>
+                            <constraint firstItem="Gzl-UC-1zV" firstAttribute="centerX" secondItem="iDm-m3-m4t" secondAttribute="centerX" id="d3z-fs-9if"/>
+                            <constraint firstItem="iDm-m3-m4t" firstAttribute="leading" secondItem="miX-lx-x7l" secondAttribute="leading" constant="36" id="iP6-cc-8zk"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="miX-lx-x7l"/>
                     </view>
                     <connections>
+                        <outlet property="dogNameLabel" destination="Gzl-UC-1zV" id="41I-cK-Ulv"/>
                         <outlet property="randomMatchDogImage" destination="iDm-m3-m4t" id="a5c-Ok-hms"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bjT-Xe-Qz9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3910" y="-99"/>
+            <point key="canvasLocation" x="3908.6956521739135" y="-99.456521739130437"/>
         </scene>
         <!--Show Matches View Controller-->
         <scene sceneID="kIB-3A-vpb">

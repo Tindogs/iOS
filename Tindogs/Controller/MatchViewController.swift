@@ -11,6 +11,7 @@ import UIKit
 class MatchViewController: UIViewController {
     
     @IBOutlet weak var randomMatchDogImage: UIImageView!
+    @IBOutlet weak var dogNameLabel: UILabel!
     
     var user: User?
     var dog: Dog?
@@ -37,6 +38,7 @@ class MatchViewController: UIViewController {
             self.dogs = dogs
 //            print("Dogs \(dogs.result[Int(self.randomNumber())].photos[0])")
             self.changeDogImage()
+            
             
             self.hideActivityIndicator(activityIndicator: activityInd)
         }) { (error: Error) in
