@@ -21,6 +21,9 @@ DerivedData/
 !default.perspectivev3
 xcuserdata/
 
+#firebase
+GoogleService-Info.plist
+
 ## Other
 *.moved-aside
 *.xccheckout
