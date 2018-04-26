@@ -1,15 +1,17 @@
 import Foundation
 
-func registerUserParseData (data: Data) -> User {
+func registerUserParseData (data: Data) -> (user:User, token: String) {
     
     var user: User?
+    var token : String?
     
     do {
         let json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as? NSDictionary
         
         if let parseJson = json {
             if ((json?.value(forKey: "success") as! Bool) == true) {
-                
+                let jsonToken = json?.value(forKey: "token") as! String
+                token = jsonToken
                 let result = parseJson.object(forKey: "result") as! NSDictionary
                 
                 let _id         = result.value(forKey: "_id") as! String
@@ -26,5 +28,5 @@ func registerUserParseData (data: Data) -> User {
     } catch {
         print("💩 Error parsing RegisterUserJSONParser")
     }
-    return user!
+    return (user!, token!)
 }

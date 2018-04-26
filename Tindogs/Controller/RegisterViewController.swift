@@ -3,9 +3,11 @@ import UIKit
 class RegisterViewController: UIViewController {
     
     var user: User?
+    var token: String?
     var pickedImage : UIImage?
     var photoName : String?
     let ActivityInd = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+    let defaults = UserDefaults.standard
     
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
@@ -14,7 +16,6 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var repeatPasswordTextField: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,10 +56,14 @@ class RegisterViewController: UIViewController {
                 
                 // If success Register user
                 user.photo = url
-                registerUserInteractor.execute(user: user, onSuccess: { (user: User) in
+                registerUserInteractor.execute(user: user, onSuccess: { (user: User, token: String) in
+                    if writeNSUserDefaults(_id: user._id!, token: token) != true {
+                        self.showAlert(message: "Error guardando las preferencias, revisa el espacio libre")
+                    }
                     self.hideActivityIndicator(activityIndicator: self.ActivityInd)
                     self.showAlertDismissVCAndNavigateToUserProfile(message: "Hola \(user.firstName), te has registrado correctamente")
                     self.user = user
+                    self.token = token
                 }) { (error: Error) in
                     self.hideActivityIndicator(activityIndicator: self.ActivityInd)
                     self.showAlert(message: error.localizedDescription)
@@ -71,10 +76,14 @@ class RegisterViewController: UIViewController {
         } else {
             
             // if there's no image selected register user without photo
-            registerUserInteractor.execute(user: user, onSuccess: { (user: User) in
+            registerUserInteractor.execute(user: user, onSuccess: { (user: User, token: String) in
+                if writeNSUserDefaults(_id: user._id!, token: token) != true {
+                    self.showAlert(message: "Error guardando las preferencias, revisa el espacio libre")
+                }
                 self.hideActivityIndicator(activityIndicator: self.ActivityInd)
                 self.showAlertDismissVCAndNavigateToUserProfile(message: "Hola \(user.firstName), te has registrado correctamente")
                 self.user = user
+                self.token = token
             }) { (error: Error) in
                 self.hideActivityIndicator(activityIndicator: self.ActivityInd)
                 self.showAlert(message: error.localizedDescription)
@@ -115,9 +124,10 @@ class RegisterViewController: UIViewController {
             // Destination VC
             let userProfileNavVC = self.storyboard?.instantiateViewController(withIdentifier: "UserProfileNavigationViewController") as! UINavigationController
             
-            // Reference to the nav's topVC to inyect the user property
+            // Reference to the nav's topVC to inyect properties
             let userProfileVC = userProfileNavVC.topViewController as! UserProfileViewController
             userProfileVC.user = self.user
+            userProfileVC.token = self.token
             
             // Set the rootvc to the destination vc with the appdelegate object
             let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
