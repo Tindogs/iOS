@@ -83,13 +83,13 @@ class MatchViewController: UIViewController {
     }
     
     @IBAction func likeButton(_ sender: Any) {
-        self.changeDogImage()
         self.doLikeDislike(like: true)
+        self.changeDogImage()
     }
     
     @IBAction func dontLikeButton(_ sender: Any) {
-        self.changeDogImage()
         self.doLikeDislike(like: false)
+        self.changeDogImage()
     }
     
     func changeDogImage(){
@@ -105,6 +105,8 @@ class MatchViewController: UIViewController {
             }
         }else{
             print("No Image")
+            self.randomMatchDogImage.image = #imageLiteral(resourceName: "dog_placeholder")
+            self.dogNameLabel.text = self.dogs?.result[index].name
         }
     }
     

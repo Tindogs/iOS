@@ -23,11 +23,25 @@ class DogQueryPreferencesViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     
     override func viewWillAppear(_ animated: Bool) {
-        self.matchesCollectionView.reloadData()
+        let showMatchesInteractor: ShowMatchesInteractor = ShowMatchesInteractorImpl()
+        
+        showMatchesInteractor.execute(userId: (user?._id)!, dogId: (dog?._id)!, token: token!, onSuccess: { matches in
+            self.matches = matches
+            self.matchesCollectionView.reloadData()
+            print("Matches \(matches)")
+        }) { (error: Error) in
+            print("Error \(error)")
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(DogQueryPreferencesViewController.dismissKeyboard))
+        
+        tap.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tap)
         
         self.breedPicker.delegate = self
         self.breedPicker.dataSource = self
@@ -53,15 +67,7 @@ class DogQueryPreferencesViewController: UIViewController {
             self.breedPicker.selectRow(index, inComponent: 0, animated: false)
         }
         
-        let showMatchesInteractor: ShowMatchesInteractor = ShowMatchesInteractorImpl()
-        
-        showMatchesInteractor.execute(userId: (user?._id)!, dogId: (dog?._id)!, token: token!, onSuccess: { matches in
-                self.matches = matches
-                self.matchesCollectionView.reloadData()
-                print("Matches \(matches)")
-        }) { (error: Error) in
-            print("Error \(error)")
-        }
+
     }
     
     @IBAction func editButton(_ sender: Any) {
@@ -163,5 +169,9 @@ class DogQueryPreferencesViewController: UIViewController {
             vc.idUserDogMatched = self.matches?.result[indexPath.row].id_user_dog_matched
             vc.token = self.token
         }
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
