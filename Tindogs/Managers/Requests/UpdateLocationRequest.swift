@@ -1,11 +1,3 @@
-//
-//  UpdateLocationRequest.swift
-//  Tindogs
-//
-//  Created by Fabio Gomez on 26/4/18.
-//  Copyright © 2018 Appvengers. All rights reserved.
-//
-
 
 import Foundation
 

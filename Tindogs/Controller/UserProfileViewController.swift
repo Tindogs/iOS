@@ -86,6 +86,12 @@ class UserProfileViewController: UIViewController, CLLocationManagerDelegate {
             vc.token = self.token
             vc.title = self.dogs?[indexPath.row].name
         }
+        
+        if segue.identifier == "showUpdateUserVCSegue" {
+            let vc = segue.destination as! UpdateUserViewController
+            vc.user = self.user
+            vc.token = self.token
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

@@ -29,6 +29,11 @@ class DogQueryPreferencesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(DogQueryPreferencesViewController.dismissKeyboard))
+        
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+        
         self.breedPicker.delegate = self
         self.breedPicker.dataSource = self
         self.matchesCollectionView.delegate = self
@@ -163,5 +168,9 @@ class DogQueryPreferencesViewController: UIViewController {
             vc.idUserDogMatched = self.matches?.result[indexPath.row].id_user_dog_matched
             vc.token = self.token
         }
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }

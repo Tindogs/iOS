@@ -69,6 +69,12 @@
 		E575185A206E7C2E00FAE728 /* RegisterUserInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5751859206E7C2D00FAE728 /* RegisterUserInteractorImpl.swift */; };
 		E575185D206EBB1600FAE728 /* RegisterUserJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E575185C206EBB1600FAE728 /* RegisterUserJSONParser.swift */; };
 		E5751863206FB95100FAE728 /* String+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5751862206FB95100FAE728 /* String+Image.swift */; };
+		E58B0C7C2093148300CF1D01 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E58B0C7B2093148300CF1D01 /* GoogleService-Info.plist */; };
+		E58B0C7E2093331D00CF1D01 /* UpdateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58B0C7D2093331D00CF1D01 /* UpdateUserViewController.swift */; };
+		E58B0C802093355300CF1D01 /* UpdateUserViewController+imagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58B0C7F2093355300CF1D01 /* UpdateUserViewController+imagePicker.swift */; };
+		E58B0C832093362800CF1D01 /* UpdateUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58B0C822093362800CF1D01 /* UpdateUserInteractor.swift */; };
+		E58B0C852093363A00CF1D01 /* UpdateUserInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58B0C842093363A00CF1D01 /* UpdateUserInteractorImpl.swift */; };
+		E58B0C87209338E300CF1D01 /* UpdateUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58B0C86209338E300CF1D01 /* UpdateUserRequest.swift */; };
 		E5CFBAFE208D313B007614CA /* RegisterUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CFBAFD208D313A007614CA /* RegisterUserRequest.swift */; };
 		E5CFBB02208E6330007614CA /* DogQueryPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CFBB01208E6330007614CA /* DogQueryPreferencesViewController.swift */; };
 		E5CFBB04208E7A11007614CA /* DogQueryPreferencesViewController+PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CFBB03208E7A11007614CA /* DogQueryPreferencesViewController+PickerView.swift */; };
@@ -83,7 +89,6 @@
 		E5E5240C208CB2A8008DEB01 /* RegisterDogInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E5240B208CB2A8008DEB01 /* RegisterDogInteractorImpl.swift */; };
 		E5E5240E208CB346008DEB01 /* RegisterDogRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E5240D208CB346008DEB01 /* RegisterDogRequest.swift */; };
 		E5E52410208CC857008DEB01 /* RegisterDogJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E5240F208CC857008DEB01 /* RegisterDogJSONParser.swift */; };
-		E5E52412208CFE60008DEB01 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5E52411208CFE60008DEB01 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,6 +170,12 @@
 		E5751859206E7C2D00FAE728 /* RegisterUserInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserInteractorImpl.swift; sourceTree = "<group>"; };
 		E575185C206EBB1600FAE728 /* RegisterUserJSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserJSONParser.swift; sourceTree = "<group>"; };
 		E5751862206FB95100FAE728 /* String+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Image.swift"; sourceTree = "<group>"; };
+		E58B0C7B2093148300CF1D01 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		E58B0C7D2093331D00CF1D01 /* UpdateUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserViewController.swift; sourceTree = "<group>"; };
+		E58B0C7F2093355300CF1D01 /* UpdateUserViewController+imagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UpdateUserViewController+imagePicker.swift"; sourceTree = "<group>"; };
+		E58B0C822093362800CF1D01 /* UpdateUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserInteractor.swift; sourceTree = "<group>"; };
+		E58B0C842093363A00CF1D01 /* UpdateUserInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserInteractorImpl.swift; sourceTree = "<group>"; };
+		E58B0C86209338E300CF1D01 /* UpdateUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserRequest.swift; sourceTree = "<group>"; };
 		E5CFBAFD208D313A007614CA /* RegisterUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterUserRequest.swift; sourceTree = "<group>"; };
 		E5CFBB01208E6330007614CA /* DogQueryPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogQueryPreferencesViewController.swift; sourceTree = "<group>"; };
 		E5CFBB03208E7A11007614CA /* DogQueryPreferencesViewController+PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DogQueryPreferencesViewController+PickerView.swift"; sourceTree = "<group>"; };
@@ -179,7 +190,6 @@
 		E5E5240B208CB2A8008DEB01 /* RegisterDogInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDogInteractorImpl.swift; sourceTree = "<group>"; };
 		E5E5240D208CB346008DEB01 /* RegisterDogRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDogRequest.swift; sourceTree = "<group>"; };
 		E5E5240F208CC857008DEB01 /* RegisterDogJSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDogJSONParser.swift; sourceTree = "<group>"; };
-		E5E52411208CFE60008DEB01 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,7 +261,7 @@
 				E5751856206D728700FAE728 /* Utils */,
 				E5751851206C42AF00FAE728 /* Config */,
 				5D14CB3220476F940076F8C3 /* Assets.xcassets */,
-				E5E52411208CFE60008DEB01 /* GoogleService-Info.plist */,
+				E58B0C7B2093148300CF1D01 /* GoogleService-Info.plist */,
 				5D14CB3720476F940076F8C3 /* Info.plist */,
 				5D14CB2F20476F940076F8C3 /* Tindogs.xcdatamodeld */,
 			);
@@ -337,6 +347,7 @@
 				DF0DADE2208FC0330044E65F /* ShowMatchesRequest.swift */,
 				E5163B1420913A2700719F5F /* UpdateLocationRequest.swift */,
 				DF61F84C2092860B0018A56F /* LikeDogRequest.swift */,
+				E58B0C86209338E300CF1D01 /* UpdateUserRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -403,6 +414,8 @@
 				E5CFBB05208E7ACA007614CA /* DogQueryPreferencesViewController+CollectionView.swift */,
 				DF0DADDB208FBD720044E65F /* ShowMatchesViewController.swift */,
 				DF4218FA2091288200C38A57 /* MatchedViewController.swift */,
+				E58B0C7D2093331D00CF1D01 /* UpdateUserViewController.swift */,
+				E58B0C7F2093355300CF1D01 /* UpdateUserViewController+imagePicker.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -415,6 +428,7 @@
 				DF5953A720835B9B001F1BB7 /* MatchDogs */,
 				E53302312081621400B05A58 /* LoginUser */,
 				E5751861206EF27F00FAE728 /* RegisterUser */,
+				E58B0C812093360900CF1D01 /* UpdateUser */,
 				E533022C207EA31F00B05A58 /* UploadImage */,
 				E53421B1208807F8004BD366 /* GetUser */,
 				E5E52408208CAE55008DEB01 /* Dogs */,
@@ -469,6 +483,15 @@
 				E5751859206E7C2D00FAE728 /* RegisterUserInteractorImpl.swift */,
 			);
 			path = RegisterUser;
+			sourceTree = "<group>";
+		};
+		E58B0C812093360900CF1D01 /* UpdateUser */ = {
+			isa = PBXGroup;
+			children = (
+				E58B0C822093362800CF1D01 /* UpdateUserInteractor.swift */,
+				E58B0C842093363A00CF1D01 /* UpdateUserInteractorImpl.swift */,
+			);
+			path = UpdateUser;
 			sourceTree = "<group>";
 		};
 		E5E52408208CAE55008DEB01 /* Dogs */ = {
@@ -568,7 +591,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D14CB3620476F940076F8C3 /* LaunchScreen.storyboard in Resources */,
-				E5E52412208CFE60008DEB01 /* GoogleService-Info.plist in Resources */,
+				E58B0C7C2093148300CF1D01 /* GoogleService-Info.plist in Resources */,
 				5D14CB3320476F940076F8C3 /* Assets.xcassets in Resources */,
 				5D14CB2E20476F940076F8C3 /* Main.storyboard in Resources */,
 			);
@@ -644,6 +667,7 @@
 				E51D396B208EAC6D00FF246B /* UpdateDogRequest.swift in Sources */,
 				E533022E207EA3AB00B05A58 /* UploadImageInteractorImpl.swift in Sources */,
 				E5CFBB02208E6330007614CA /* DogQueryPreferencesViewController.swift in Sources */,
+				E58B0C832093362800CF1D01 /* UpdateUserInteractor.swift in Sources */,
 				DF0924DC20838DC700F766B8 /* DogDecodable.swift in Sources */,
 				DF0924E2208399BD00F766B8 /* MatchDogsLikeInteractorImpl.swift in Sources */,
 				E5451C20206586450006D23E /* User.swift in Sources */,
@@ -652,6 +676,7 @@
 				E5451C2D20696C730006D23E /* UserProfileViewController.swift in Sources */,
 				E51D396D208EB3D700FF246B /* UpdateDogJSONParser.swift in Sources */,
 				DF61F85220928A290018A56F /* MatchedDetailInteractorImpl.swift in Sources */,
+				E58B0C852093363A00CF1D01 /* UpdateUserInteractorImpl.swift in Sources */,
 				E5120BD1207CE708009EF7A8 /* RegisterViewController+imagePicker.swift in Sources */,
 				DF0924E02083998600F766B8 /* MatchDogsLikeInteractor.swift in Sources */,
 				DF0DADDF208FBF3D0044E65F /* ShowMatchesInteractor.swift in Sources */,
@@ -664,6 +689,7 @@
 				E5E52401208BB909008DEB01 /* DogViewController.swift in Sources */,
 				E53302442083EAEB00B05A58 /* UserProfileViewController+CollectionView.swift in Sources */,
 				E53302392082706900B05A58 /* LoginUserJSONParser.swift in Sources */,
+				E58B0C7E2093331D00CF1D01 /* UpdateUserViewController.swift in Sources */,
 				E5163B1520913A2700719F5F /* UpdateLocationRequest.swift in Sources */,
 				DF61F850209289CB0018A56F /* MatchedDetailInteractor.swift in Sources */,
 				E5751855206D724300FAE728 /* RegisterUserInteractorFakeImpl.swift in Sources */,
@@ -682,11 +708,13 @@
 				E575185A206E7C2E00FAE728 /* RegisterUserInteractorImpl.swift in Sources */,
 				E5E52403208BCB0B008DEB01 /* DogViewController+imagePicker.swift in Sources */,
 				DF4218FB2091288200C38A57 /* MatchedViewController.swift in Sources */,
+				E58B0C802093355300CF1D01 /* UpdateUserViewController+imagePicker.swift in Sources */,
 				E53421B7208809A4004BD366 /* GetUserRequest.swift in Sources */,
 				E53421B320880835004BD366 /* GetUserInteractor.swift in Sources */,
 				DF4218F72091142F00C38A57 /* MatchCell.swift in Sources */,
 				E5451C222065977A0006D23E /* Dog.swift in Sources */,
 				E5CFBB08208EA870007614CA /* UpdateDogInteractor.swift in Sources */,
+				E58B0C87209338E300CF1D01 /* UpdateUserRequest.swift in Sources */,
 				E533022B207EA2CD00B05A58 /* UploadImageInteractor.swift in Sources */,
 				DF0924DE20838E1900F766B8 /* UserDecodable.swift in Sources */,
 				DF5953AB20835C5B001F1BB7 /* MatchDogsInteractorImp.swift in Sources */,

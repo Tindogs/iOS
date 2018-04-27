@@ -19,17 +19,6 @@ func UpdateDogRequest(userid: String, token: String, dog: Dog) -> URLRequest{
               "queryreproductive": dog.query!.reproductive,
                      "querybreed": dog.query!.breed
             ]
-    } else {
-        dictionary = [
-            "name": dog.name,
-            "age": dog.age!,
-            "breed": dog.breed!,
-            "purebreed": dog.pureBreed!,
-            "color": dog.color!,
-            "description": dog.description!,
-            "likes_from_others": dog.likesFromOthers!,
-            "photos": dog.photos!
-        ]
     }
     
     do {

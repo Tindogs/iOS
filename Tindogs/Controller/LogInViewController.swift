@@ -10,6 +10,11 @@ class LogInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LogInViewController.dismissKeyboard))
+        
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+        
         let defaults = UserDefaults.standard
         // there's a stored userid and token so we will navigate to the userprofile VC
         if let _id = defaults.string(forKey: "_id"), let token = defaults.string(forKey: "token") {
@@ -124,6 +129,10 @@ class LogInViewController: UIViewController {
         
         alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 
 }
