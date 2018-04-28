@@ -9,11 +9,12 @@ class DogCell: UICollectionViewCell {
     @IBOutlet weak var dogLabel: UILabel!
     
     func refresh(dog: Dog) {
+        
         self.dog = dog
         self.dogLabel.text = dog.name
         if dog.photos?.isEmpty == false {
-            //dog.photos![0].loadImage(into: self.dogImageView)
             self.dogImageView.kf.setImage(with: URL(string: dog.photos![0]))
         }
+        
     }
 }

@@ -18,7 +18,6 @@ class UserProfileViewController: UIViewController, CLLocationManagerDelegate {
         
         self.dogs = user?.dogs
         self.userNameLabel.text = user?.userName
-        //user?.photo?.loadImage(into: self.photoImageView)
         if user?.photo?.isEmpty == false {
             self.photoImageView.kf.setImage(with: URL(string: (user?.photo)!))
         }
@@ -39,10 +38,6 @@ class UserProfileViewController: UIViewController, CLLocationManagerDelegate {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        //self.dogsCollectionView.reloadData()
     }
     
     @IBAction func signOutButton(_ sender: Any) {

@@ -25,8 +25,8 @@ extension DogQueryPreferencesViewController: UICollectionViewDelegate, UICollect
         
         let match = self.matches?.result[indexPath.row]
         let matchName = ((match?.name_dog_matched) != nil) ? match?.name_dog_matched : "SinNombre"
-        
         let dog: Dog = Dog(_id: match?.id_dog_matched, name: matchName!, age: 0, breed: "", pureBreed: false, color: "", query: nil, likesFromOthers: [], description: "", photos: [(match?.img_dog_matched)!])
+        
         cell.refresh(dog: dog)
         
         return cell

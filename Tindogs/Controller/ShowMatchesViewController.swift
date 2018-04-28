@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ShowMatchesViewController: UIViewController {
     
@@ -36,9 +37,11 @@ class ShowMatchesViewController: UIViewController {
                                         self.dogs = dogs
                                         print("Dogs \(dogs.result[0].photos[0])")
                                         
-                                        if let url = URL(string: (self.dogs?.result[0].photos[0])!) {
-                                            self.downloadImage(url: url)
-                                        }                                        
+                                        self.MatchedDogImage.kf.setImage(with: URL(string: (self.dogs?.result[0].photos[0])!))
+//                                        if let url = URL(string: (self.dogs?.result[0].photos[0])!) {
+//                                            //self.downloadImage(url: url)
+//                                            self.downloadImageKF(url: url)
+//                                        }
                                         self.matchedDogName.text = dogs.result[0].name
                                         self.matchedDogAge.text = "Edad: \(dogs.result[0].age!)"
                                         self.matchedDogBreed.text = "Raza: \(dogs.result[0].breed!)"
@@ -67,4 +70,5 @@ class ShowMatchesViewController: UIViewController {
             }
         }
     }
+    
 }

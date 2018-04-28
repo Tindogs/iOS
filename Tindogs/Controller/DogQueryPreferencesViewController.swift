@@ -41,9 +41,6 @@ class DogQueryPreferencesViewController: UIViewController {
         
         editModeOff()
 
-//        if self.dog?.photos?.isEmpty == false {
-//            self.dog?.photos?[0].loadImage(into: self.photoImageView)
-//        }
         if self.dog?.photos?.isEmpty == false {
             self.photoImageView.kf.setImage(with: URL(string: (dog?.photos?[0])!))
         }
@@ -153,15 +150,17 @@ class DogQueryPreferencesViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       
         if segue.identifier == "showDogLikesMatchesVCSegue" {
             let vc = segue.destination as! MatchViewController
+            
             vc.user  = self.user
             vc.dog   = self.dog
             vc.token = self.token
         }
+        
         if segue.identifier == "showDogMatchesVCSegue" {
             let vc = segue.destination as! ShowMatchesViewController
-            
             let indexPath = self.matchesCollectionView.indexPathsForSelectedItems![0]
             
             vc.idDogMatched = self.matches?.result[indexPath.row].id_dog_matched
