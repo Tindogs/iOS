@@ -59,7 +59,7 @@ class UpdateUserViewController: UIViewController {
         // Show Activity Indicator
         self.showActivityIndicator()
         
-        let updateUserInteractor: UpdateUserInteractor = UpdateUserInteractorImpl()
+        let updateUserInteractor: UpdateUserInteractor = UpdateUserInteractorImpl(updateUserVC: self)
         let user = self.user
         
         
