@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MatchViewController: UIViewController {
     
@@ -64,32 +65,14 @@ class MatchViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    func getDataFromUrl(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            completion(data, response, error)
-            }.resume()
-    }
-    
-    func downloadImage(url: URL) {
-        print("Download Started")
-        getDataFromUrl(url: url) { data, response, error in
-            guard let data = data, error == nil else { return }
-            print(response?.suggestedFilename ?? url.lastPathComponent)
-            print("Download Finished")
-            DispatchQueue.main.async() {
-                self.randomMatchDogImage.image = UIImage(data: data)
-            }
-        }
-    }
-    
     @IBAction func likeButton(_ sender: Any) {
-        self.changeDogImage()
         self.doLikeDislike(like: true)
+        self.changeDogImage()
     }
     
     @IBAction func dontLikeButton(_ sender: Any) {
-        self.changeDogImage()
         self.doLikeDislike(like: false)
+        self.changeDogImage()
     }
     
     func changeDogImage(){
@@ -100,7 +83,7 @@ class MatchViewController: UIViewController {
         if ((self.dogs?.result.count)! > 0 && (self.dogs?.result[index].photos.count)!>0) {
             if let url = URL(string: (self.dogs?.result[index].photos[0])!) {
                 self.randomMatchDogImage.contentMode = .scaleAspectFit
-                self.downloadImage(url: url)
+                self.randomMatchDogImage.kf.setImage(with: url)
                 self.dogNameLabel.text = self.dogs?.result[index].name
             }
         }else{
@@ -123,7 +106,7 @@ class MatchViewController: UIViewController {
                      otherDogId: otherDogId,
                      like: like,
                      onSuccess: { likes in
-                        print("succes match: \(likes.result?.match)")
+                        print("succes match: \(String(describing: likes.result?.match))")
                         
 //                        if (true) {
                         if (likes.result?.match) != nil {
