@@ -45,7 +45,7 @@ class RegisterViewController: UIViewController {
         // Show Activity Indicator
         self.showActivityIndicator()
         
-        let registerUserInteractor: RegisterUserInteractor = RegisterUserInteractorImpl()
+        let registerUserInteractor: RegisterUserInteractor = RegisterUserInteractorImpl(registerVC: self)
         let user = User(firstName: self.firstNameTextField.text!, lastName: self.lastNameTextField.text!, email: self.emailTextField.text!, userName: self.userNameTextField.text!, password: self.passwordTextField.text!, photo: "")
         
         // Check if there is an image selected
