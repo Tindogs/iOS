@@ -19,7 +19,7 @@ class LogInViewController: UIViewController {
         // there's a stored userid and token so we will navigate to the userprofile VC
         if let _id = defaults.string(forKey: "_id"), let token = defaults.string(forKey: "token") {
             self.showActivityIndicator()
-            let getUserInteractor: GetUserInteractor = GetUserInteractorImpl()
+            let getUserInteractor: GetUserInteractor = GetUserInteractorImpl(loginVC: self)
             
             getUserInteractor.execute(userId: _id, token: token, onSuccess: { (user: User) in
                 self.hideActivityIndicator(activityIndicator: self.ActivityInd)
