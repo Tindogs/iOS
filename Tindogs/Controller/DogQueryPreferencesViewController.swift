@@ -12,7 +12,7 @@ class DogQueryPreferencesViewController: UIViewController {
     
     var pickedBreed: String?
     let rowHeight : CGFloat = 20.0
-    let ActivityInd = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+    let activityInd = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var ageTextField: UITextField!
@@ -55,7 +55,7 @@ class DogQueryPreferencesViewController: UIViewController {
             self.breedPicker.selectRow(index, inComponent: 0, animated: false)
         }
         
-        let showMatchesInteractor: ShowMatchesInteractor = ShowMatchesInteractorImpl()
+        let showMatchesInteractor: ShowMatchesInteractor = ShowMatchesInteractorImpl(dogQueryPreferencesVC: self)
         
         showMatchesInteractor.execute(userId: (user?._id)!, dogId: (dog?._id)!, token: token!, onSuccess: { matches in
                 self.matches = matches
@@ -83,10 +83,10 @@ class DogQueryPreferencesViewController: UIViewController {
         self.showActivityIndicator()
         let updateDogInteractor: UpdateDogInteractor = UpdateDogInteractorImpl(updateDogVC: self)
         updateDogInteractor.execute(userid: (self.user?._id)!, token: self.token!, dog: self.dog!, onSuccess: { (user: User) in
-            self.hideActivityIndicator(activityIndicator: self.ActivityInd)
+            self.hideActivityIndicator(activityIndicator: self.activityInd)
             self.showAlert(message: "Las preferencias de \(self.dog?.name ?? "tu perrete") se han guardado correctamente!")
         }) { (error: Error) in
-            self.hideActivityIndicator(activityIndicator: self.ActivityInd)
+            self.hideActivityIndicator(activityIndicator: self.activityInd)
             self.showAlert(message: error.localizedDescription )
         }
         
@@ -95,10 +95,10 @@ class DogQueryPreferencesViewController: UIViewController {
     }
     
     func showActivityIndicator() {
-        ActivityInd.center = view.center
-        ActivityInd.hidesWhenStopped = false
-        ActivityInd.startAnimating()
-        self.view.addSubview(ActivityInd)
+        activityInd.center = view.center
+        activityInd.hidesWhenStopped = false
+        activityInd.startAnimating()
+        self.view.addSubview(activityInd)
     }
     
     func hideActivityIndicator(activityIndicator : UIActivityIndicatorView) {

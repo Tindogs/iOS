@@ -28,7 +28,7 @@ class ShowMatchesViewController: UIViewController {
     override func viewDidLoad() {
         print("ShowMatchesViewController")
         
-        let matchDetailInteractor: MatchedDetailInteractor = MatchedDetailInteractorImpl()
+        let matchDetailInteractor: MatchedDetailInteractor = MatchedDetailInteractorImpl(showMatchesVC: self)
         
         matchDetailInteractor.execute(userId: idUserDogMatched!,
                                       dogId: idDogMatched!,
@@ -48,4 +48,13 @@ class ShowMatchesViewController: UIViewController {
             print("Error: \(error)")
         }
     }
+    
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: "Guau Guau! Grrr..", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Vale", style: .destructive, handler: { (action) -> Void in })
+        
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
 }

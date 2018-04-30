@@ -18,21 +18,21 @@ class MatchViewController: UIViewController {
     var dog: Dog?
     var token: String?
     
+    // Show Activity Indicator
+    let activityInd = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+    
     var index: Int = 0
     var dogs: DogDecodable?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Show Activity Indicator
-        let activityInd = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
-        
-        activityInd.center = view.center
-        activityInd.hidesWhenStopped = false
-        activityInd.startAnimating()
+        self.activityInd.center = view.center
+        self.activityInd.hidesWhenStopped = false
+        self.activityInd.startAnimating()
         view.addSubview(activityInd)
         
-        let matchDogsInteractor: MatchDogsInteractor = MatchDogsInteractorImpl()
+        let matchDogsInteractor: MatchDogsInteractor = MatchDogsInteractorImpl(MatchVC: self)
         
         matchDogsInteractor.execute(userId: (user?._id)!, dogId: (dog?._id)!, token: token!,
         onSuccess: { dogs in
@@ -41,10 +41,10 @@ class MatchViewController: UIViewController {
             self.changeDogImage()
             
             
-            self.hideActivityIndicator(activityIndicator: activityInd)
+            self.hideActivityIndicator(activityIndicator: self.activityInd)
         }) { (error: Error) in
             print("Error: \(error)")
-            self.hideActivityIndicator(activityIndicator: activityInd)
+            self.hideActivityIndicator(activityIndicator: self.activityInd)
             self.showAlert(message: error as! String)
         }
     }
@@ -92,7 +92,7 @@ class MatchViewController: UIViewController {
     }
     
     func doLikeDislike(like: Bool) {
-        let matchDogsLikeInteractor: MatchDogsLikeInteractor = MatchDogsLikeInteractorImpl()
+        let matchDogsLikeInteractor: MatchDogsLikeInteractor = MatchDogsLikeInteractorImpl(MatchVC: self)
         var otherDogId = ""
         
         if ((self.dogs?.result.count)! > 0 && (self.dogs?.result[index].photos.count)!>0) {
