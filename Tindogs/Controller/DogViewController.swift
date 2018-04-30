@@ -53,7 +53,7 @@ class DogViewController: UIViewController {
         // Show Activity Indicator
         self.showActivityIndicator()
 
-        let registerDogInteractor: RegisterDogInteractor = RegisterDogInteractorImpl()
+        let registerDogInteractor: RegisterDogInteractor = RegisterDogInteractorImpl(dogVC: self)
         let dog = Dog(name: self.nameTextField.text!, age: Int(self.ageTextField.text!)!, breed: self.pickedBreed!, pureBreed: self.purebreedSwitch.isOn, color: self.colorTextField.text!, description: self.descriptionTextField.text!, photos:[])
         
         switch transitionType! {

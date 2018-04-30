@@ -93,7 +93,7 @@ class UserProfileViewController: UIViewController, CLLocationManagerDelegate {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         self.locationManager.stopUpdatingLocation()
         
-        let updateLocationInteractor: UpdateLocationInteractor = UpdateLocationInteractorImpl()
+        let updateLocationInteractor: UpdateLocationInteractor = UpdateLocationInteractorImpl(UserProfileVC: self)
         
         //updateLocationInteractor.execute(userid: (self.user?._id)!, token: self.token!, coordinates: [locValue.longitude, locValue.latitude]) { (error: Error) in
         //Hardcodeamos lat y long para la demo, el código correcto es el de arriba.

@@ -81,7 +81,7 @@ class DogQueryPreferencesViewController: UIViewController {
         self.dog?.query = query
         
         self.showActivityIndicator()
-        let updateDogInteractor: UpdateDogInteractor = UpdateDogInteractorImpl()
+        let updateDogInteractor: UpdateDogInteractor = UpdateDogInteractorImpl(updateDogVC: self)
         updateDogInteractor.execute(userid: (self.user?._id)!, token: self.token!, dog: self.dog!, onSuccess: { (user: User) in
             self.hideActivityIndicator(activityIndicator: self.ActivityInd)
             self.showAlert(message: "Las preferencias de \(self.dog?.name ?? "tu perrete") se han guardado correctamente!")
