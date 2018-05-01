@@ -1,6 +1,6 @@
 import UIKit
 
-// This Extension is not used anymore, instead we'll use kingfisher extension for caching purposes
+// This Extension is not used anymore, instead we'll use kingfisher pod library for caching purposes
 extension String {
     func loadImage(into imageView: UIImageView) {
         guard let url = URL(string: self) else { return }

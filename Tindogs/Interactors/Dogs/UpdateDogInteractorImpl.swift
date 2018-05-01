@@ -29,7 +29,7 @@ class UpdateDogInteractorImpl: UpdateDogInteractor{
                     }
                 }
                 else {
-                    self.updateDogVC.hideActivityIndicator(activityIndicator: self.updateDogVC.ActivityInd)
+                    self.updateDogVC.hideActivityIndicator(activityIndicator: self.updateDogVC.activityInd)
                     OperationQueue.main.addOperation {
                         self.updateDogVC.showAlert(message: "Ups, tenemos un error \(httpResponse.statusCode), prueba de nuevo más tarde")
                     }

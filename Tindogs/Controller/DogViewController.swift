@@ -58,7 +58,7 @@ class DogViewController: UIViewController {
         
         switch transitionType! {
         case DogVCTransitionType.newDog:
-             // AÑADIR PERRETE CON FOTO
+             // Adding doggy with photo
             if let image = pickedImage, let name = photoName {
                 let uploadImageInteractor: UploadImageInteractor = UploadImageInteractorImpl()
                 uploadImageInteractor.save(name: name, image: image, onSuccess: { (url) in
@@ -76,7 +76,7 @@ class DogViewController: UIViewController {
                     self.showAlert(message: "Error durante el proceso de registro -dog photo upl err-" + (error.localizedDescription))
                 })                
             } else {
-                 // AÑADIR PERRETE SIN FOTO
+                 // Adding doggy withOUT photo
                 registerDogInteractor.execute(userid: self.userId!, token: self.token!, dog: dog, onSuccess: { (user: User) in
                     self.hideActivityIndicator(activityIndicator: self.ActivityInd)
                     self.showAlertDismissVCAndNavigateToUserProfile(message: "\(dog.name) registrado correctamente")
@@ -86,7 +86,7 @@ class DogViewController: UIViewController {
                     self.showAlert(message: error.localizedDescription)
                 })
             }
-        case DogVCTransitionType.updateDog: // ACTUALIZAR PERRETE
+        case DogVCTransitionType.updateDog: // Edit doggy, feature still not implemented
             print (transitionType!)
         }
     }
