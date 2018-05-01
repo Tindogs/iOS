@@ -12,8 +12,9 @@ class DogCell: UICollectionViewCell {
         
         self.dog = dog
         self.dogLabel.text = dog.name
-        if dog.photos?.isEmpty == false {
-            self.dogImageView.kf.setImage(with: URL(string: dog.photos![0]))
+        guard let photos = dog.photos else {return}
+        if photos.isEmpty == false {
+            self.dogImageView.kf.setImage(with: URL(string: photos[0]))
         }
         
     }

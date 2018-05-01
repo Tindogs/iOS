@@ -57,8 +57,10 @@ class RegisterViewController: UIViewController {
                 // If success Register user
                 user.photo = url
                 registerUserInteractor.execute(user: user, onSuccess: { (user: User, token: String) in
-                    if writeNSUserDefaults(_id: user._id!, token: token) != true {
-                        self.showAlert(message: "Error guardando las preferencias, revisa el espacio libre")
+                    if let _id = user._id {
+                        if writeNSUserDefaults(_id: _id, token: token) != true {
+                            self.showAlert(message: "Error guardando las preferencias, revisa el espacio libre")
+                        }
                     }
                     self.hideActivityIndicator(activityIndicator: self.ActivityInd)
                     self.showAlertDismissVCAndNavigateToUserProfile(message: "Hola \(user.firstName), te has registrado correctamente")
@@ -77,8 +79,10 @@ class RegisterViewController: UIViewController {
             
             // if there's no image selected register user without photo
             registerUserInteractor.execute(user: user, onSuccess: { (user: User, token: String) in
-                if writeNSUserDefaults(_id: user._id!, token: token) != true {
-                    self.showAlert(message: "Error guardando las preferencias, revisa el espacio libre")
+                if let _id = user._id {
+                    if writeNSUserDefaults(_id: _id, token: token) != true {
+                        self.showAlert(message: "Error guardando las preferencias, revisa el espacio libre")
+                    }
                 }
                 self.hideActivityIndicator(activityIndicator: self.ActivityInd)
                 self.showAlertDismissVCAndNavigateToUserProfile(message: "Hola \(user.firstName), te has registrado correctamente")

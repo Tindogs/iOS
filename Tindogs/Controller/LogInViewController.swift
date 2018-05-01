@@ -59,8 +59,10 @@ class LogInViewController: UIViewController {
         loginUserInteractor.execute(email: userNameTextField.text!, password: passwordTextField.text!, onSuccess: { (user: User, token: String) in
             self.hideActivityIndicator(activityIndicator: self.ActivityInd)
             
-            if writeNSUserDefaults(_id: user._id!, token: token) != true {
-                self.showAlert(message: "Error guardando las preferencias, revisa el espacio libre")
+            if let _id = user._id {
+                if writeNSUserDefaults(_id: _id, token: token) != true {
+                    self.showAlert(message: "Error guardando las preferencias, revisa el espacio libre")
+                }
             }
             
             // Destination VC

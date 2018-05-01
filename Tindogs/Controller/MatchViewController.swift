@@ -32,20 +32,23 @@ class MatchViewController: UIViewController {
         self.activityInd.startAnimating()
         view.addSubview(activityInd)
         
-        let matchDogsInteractor: MatchDogsInteractor = MatchDogsInteractorImpl(MatchVC: self)
         
-        matchDogsInteractor.execute(userId: (user?._id)!, dogId: (dog?._id)!, token: token!,
-        onSuccess: { dogs in
-            self.dogs = dogs
-//            print("Dogs \(dogs.result[Int(self.randomNumber())].photos[0])")
-            self.changeDogImage()
-            
-            
-            self.hideActivityIndicator(activityIndicator: self.activityInd)
-        }) { (error: Error) in
-            print("Error: \(error)")
-            self.hideActivityIndicator(activityIndicator: self.activityInd)
-            self.showAlert(message: error as! String)
+        if let _user = user, let _dog = dog ,let userId = _user._id, let dogId = _dog._id, let token = token {
+            let matchDogsInteractor: MatchDogsInteractor = MatchDogsInteractorImpl(MatchVC: self)
+        
+            matchDogsInteractor.execute(userId: userId, dogId: dogId, token: token,
+            onSuccess: { dogs in
+                self.dogs = dogs
+    //            print("Dogs \(dogs.result[Int(self.randomNumber())].photos[0])")
+                self.changeDogImage()
+                
+                
+                self.hideActivityIndicator(activityIndicator: self.activityInd)
+            }) { (error: Error) in
+                print("Error: \(error)")
+                self.hideActivityIndicator(activityIndicator: self.activityInd)
+                self.showAlert(message: error as! String)
+            }
         }
     }
     
@@ -80,53 +83,60 @@ class MatchViewController: UIViewController {
         index+=1
         print("Random Image \(index)")
         
-        if ((self.dogs?.result.count)! > 0 && (self.dogs?.result[index].photos.count)!>0) {
-            if let url = URL(string: (self.dogs?.result[index].photos[0])!) {
-                self.randomMatchDogImage.contentMode = .scaleAspectFit
-                self.randomMatchDogImage.kf.setImage(with: url)
-                self.dogNameLabel.text = self.dogs?.result[index].name
+        if let dogs = self.dogs {
+            if ((dogs.result.count) > 0 && (dogs.result[index].photos.count)>0) {
+                if let url = URL(string: (dogs.result[index].photos[0])) {
+                    self.randomMatchDogImage.contentMode = .scaleAspectFit
+                    self.randomMatchDogImage.kf.setImage(with: url)
+                    self.dogNameLabel.text = dogs.result[index].name
+                }
+            }else{
+                print("No Image")
             }
-        }else{
-            print("No Image")
         }
+        
+        
     }
     
     func doLikeDislike(like: Bool) {
         let matchDogsLikeInteractor: MatchDogsLikeInteractor = MatchDogsLikeInteractorImpl(MatchVC: self)
         var otherDogId = ""
         
-        if ((self.dogs?.result.count)! > 0 && (self.dogs?.result[index].photos.count)!>0) {
-            otherDogId = (dogs?.result[self.index]._id)!
+        if let dogs = self.dogs {
+            if ((dogs.result.count) > 0 && (dogs.result[index].photos.count)>0) {
+                otherDogId = (dogs.result[self.index]._id)
+            }
         }
         
-        matchDogsLikeInteractor
-            .execute(userId: (user?._id)!,
-                     dogId: (dog?._id)!,
-                     token: token!,
-                     otherDogId: otherDogId,
-                     like: like,
-                     onSuccess: { likes in
-                        print("succes match: \(String(describing: likes.result?.match))")
-                        
-//                        if (true) {
-                        if (likes.result?.match) != nil {
-                            if (like && (likes.result?.match)!) {
-                                let matchedVC = self.storyboard?.instantiateViewController(withIdentifier: "MatchedViewController") as! MatchedViewController
-                                
-                                self.present(matchedVC, animated: true )
+        if let user = user, let userId = user._id, let dog = dog, let dogId = dog._id, let token = token {
+            matchDogsLikeInteractor
+                .execute(userId: userId,
+                         dogId: dogId,
+                         token: token,
+                         otherDogId: otherDogId,
+                         like: like,
+                         onSuccess: { likes in
+                            print("succes match: \(String(describing: likes.result?.match))")
+                            if (likes.result?.match) != nil {
+                                if (like && (likes.result?.match)!) {
+                                    let matchedVC = self.storyboard?.instantiateViewController(withIdentifier: "MatchedViewController") as! MatchedViewController
+                                    
+                                    self.present(matchedVC, animated: true )
+                                }
                             }
+                        }) { (error: Error) in
+                            print("error \(error)")
                         }
-                        
-                    }) { (error: Error) in
-                        print("error \(error)")
-                    }
+        }
     }
     
     func randomNumber() -> Int {
-        print("self.dogs?.result.count: \(String(describing: self.dogs?.result.count))")
         
-        if ((self.dogs?.result.count)!>0) {
-            return Int(arc4random_uniform(UInt32((self.dogs?.result.count)!-1)))
+        guard let dogs = self.dogs else {return 0}
+        print("dogs.result.count: \(String(describing: dogs.result.count))")
+        
+        if ((dogs.result.count)>0) {
+            return Int(arc4random_uniform(UInt32((dogs.result.count)-1)))
         }else {
             return 0
         }
